@@ -58,14 +58,14 @@ export default function Home() {
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
+          <a href="/about">About</a>
           <a href="#works">Works</a>
           <a href="#contact">Contact</a>
         </nav>
         <p className="header-note">Novelist. Poet. Storyteller.</p>
         <nav className="social-menu" aria-label="Social links">
           <a href="#works">Books</a>
-          <a href="#about">Bio</a>
+          <a href="/about">Bio</a>
           <a href="#contact">Mail</a>
         </nav>
       </header>
