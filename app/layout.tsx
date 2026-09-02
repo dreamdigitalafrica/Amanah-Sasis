@@ -1,0 +1,41 @@
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+export const metadata: Metadata = {
+  title: 'Amanah Saais | About the Author',
+  description:
+    'About Amanah Saais, novelist, poet, storyteller, and author of Arcane du Beltah: Island Nights.',
+  openGraph: {
+    title: 'Amanah Saais | About the Author',
+    description:
+      'Meet the author of Arcane du Beltah: Island Nights, a debut fantasy novel where magic, destiny, and courage collide.',
+    images: ['/island-nights-cover.jpg'],
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
