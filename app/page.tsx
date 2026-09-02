@@ -119,7 +119,14 @@ export default function Home() {
 
         <section id="about" className="statement-section lighter-bg">
           <div className="container-nevo narrow">
-            <h2>Writing the extraordinary hidden within the ordinary.</h2>
+            <div>
+              <img
+                src="/amanah-saais-author.png"
+                alt="Portrait of Amanah Saais"
+                className="author-portrait"
+              />
+              <h2>Writing the extraordinary hidden within the ordinary.</h2>
+            </div>
             <div className="bio-copy">
               {bioParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>

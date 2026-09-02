@@ -407,6 +407,17 @@ body {
   line-height: 1.05;
 }
 
+.author-portrait {
+  aspect-ratio: 4 / 5;
+  box-shadow: 22px 26px 60px rgba(0, 0, 0, 0.13);
+  display: block;
+  margin-bottom: 34px;
+  max-width: 340px;
+  object-fit: cover;
+  object-position: center 28%;
+  width: 100%;
+}
+
 .bio-copy {
   color: #333;
   font-size: 20px;
