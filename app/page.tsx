@@ -1,30 +1,45 @@
 const works = [
   {
-    label: 'Project',
-    title: 'Arcane du Beltah: Island Nights',
-    sub: 'Debut novel / Book one',
-    feature: true,
+    label: 'Novel',
+    title: 'Island Nights',
+    sub: 'Arcane du Beltah / Book One',
+    kind: 'book',
   },
   {
-    label: 'Writing',
-    title: 'Immersive Worlds',
-    sub: 'Fantasy, mystery, romance',
-  },
-  {
-    label: 'Poetry',
-    title: 'Emotional Imprint',
-    sub: 'Language with feeling',
+    label: 'Author',
+    title: 'Amanah Saais',
+    sub: 'Portrait / Storyteller',
+    kind: 'portrait',
   },
   {
     label: 'Series',
     title: 'Arcane du Beltah',
     sub: 'Magic, destiny, courage',
+    kind: 'series',
+  },
+  {
+    label: 'Poetry',
+    title: 'Poetic Voice',
+    sub: 'Emotion-led writing',
+    kind: 'poetry',
+  },
+  {
+    label: 'Worlds',
+    title: 'Hidden Wonder',
+    sub: 'Mystery and romance',
+    kind: 'worlds',
+  },
+  {
+    label: 'Project',
+    title: 'Debut Journey',
+    sub: 'First installment',
+    kind: 'journey',
   },
 ];
 
 const bioParagraphs = [
-  'Amanah Saais is a novelist, poet, and storyteller with a passion for crafting immersive worlds, unforgettable characters, and stories that resonate long after the final page. Blending imagination with emotion, her writing explores the extraordinary hidden within the ordinary, inviting readers into adventures filled with mystery, romance, hope, and wonder.',
-  'Inspired by the boundless possibilities of storytelling, Amanah writes across genres while remaining committed to one goal: creating stories that captivate the heart, ignite the imagination, and leave a lasting impression.',
+  'Amanah Saais writes immersive fiction shaped by mystery, romance, hope, and wonder. Her work looks for the extraordinary hidden inside ordinary moments.',
+  'Arcane du Beltah: Island Nights is her debut novel and the first step into a series where magic, destiny, and courage collide.',
 ];
 
 const listColumns = [
@@ -36,7 +51,7 @@ const listColumns = [
 
 export default function Home() {
   return (
-    <main className="site-shell min-h-screen bg-[#f7f6f1] text-[#111111]">
+    <main className="site-shell min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="#home" aria-label="Amanah Saais home">
           AS
@@ -47,29 +62,33 @@ export default function Home() {
           <a href="#works">Works</a>
           <a href="#contact">Contact</a>
         </nav>
-        <p className="header-note">
-          Stories that captivate the heart, ignite the imagination, and linger
-          after the final page.
-        </p>
+        <p className="header-note">Novelist. Poet. Storyteller.</p>
         <nav className="social-menu" aria-label="Social links">
-          <a href="#contact">Readers</a>
           <a href="#works">Books</a>
-          <a href="#about">Press</a>
+          <a href="#about">Bio</a>
+          <a href="#contact">Mail</a>
         </nav>
       </header>
 
       <div className="content-frame">
         <section id="home" className="intro-section">
-          <div className="container-nevo">
-            <h1 className="intro-title">
-              <span>I&apos;m Amanah, a </span>
-              <span className="serif black-text">storyteller </span>
-              <br />
-              <span>
-                who creates immersive worlds, unforgettable characters, and
-                stories of mystery, romance, hope, and wonder.
-              </span>
-            </h1>
+          <div className="hero-glow" aria-hidden="true" />
+          <div className="container-nevo hero-grid">
+            <div>
+              <p className="eyebrow reveal-up">About the Author</p>
+              <h1 className="intro-title reveal-up delay-1">
+                <span>Amanah Saais</span>
+                <br />
+                <span className="serif black-text">writes wonder.</span>
+              </h1>
+              <p className="hero-copy reveal-up delay-2">
+                Novelist, poet, and storyteller behind Arcane du Beltah: Island
+                Nights.
+              </p>
+            </div>
+            <div className="hero-card reveal-up delay-3">
+              <img src="/amanah-saais-author.png" alt="Portrait of Amanah Saais" />
+            </div>
           </div>
         </section>
 
@@ -80,27 +99,29 @@ export default function Home() {
               <div className="filter-row" aria-label="Work categories">
                 <span>All</span>
                 <span>Novel</span>
-                <span>Project</span>
                 <span>Series</span>
+                <span>Poetry</span>
               </div>
             </div>
 
             <div className="work-grid">
               {works.map((work) => (
-                <article
-                  key={work.title}
-                  className={work.feature ? 'work-item featured-work' : 'work-item'}
-                >
-                  {work.feature ? (
+                <article key={work.title} className={`work-item ${work.kind}`}>
+                  {work.kind === 'book' && (
                     <div className="book-mockup" aria-hidden="true">
                       <div className="book-spine" />
-                      <img
-                        src="/island-nights-cover.jpg"
-                        alt=""
-                        className="book-cover"
-                      />
+                      <img src="/island-nights-cover.jpg" alt="" className="book-cover" />
                     </div>
-                  ) : (
+                  )}
+                  {work.kind === 'portrait' && (
+                    <img
+                      src="/amanah-saais-author.png"
+                      alt=""
+                      className="tile-image"
+                      aria-hidden="true"
+                    />
+                  )}
+                  {!['book', 'portrait'].includes(work.kind) && (
                     <div className="text-work">
                       <span>{work.label}</span>
                       <p>{work.sub}</p>
@@ -119,14 +140,7 @@ export default function Home() {
 
         <section id="about" className="statement-section lighter-bg">
           <div className="container-nevo narrow">
-            <div>
-              <img
-                src="/amanah-saais-author.png"
-                alt="Portrait of Amanah Saais"
-                className="author-portrait"
-              />
-              <h2>Writing the extraordinary hidden within the ordinary.</h2>
-            </div>
+            <h2>Stories with magic just beneath the surface.</h2>
             <div className="bio-copy">
               {bioParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -140,9 +154,7 @@ export default function Home() {
             <div className="list-grid">
               {listColumns.map((items, index) => (
                 <div key={items[0]}>
-                  <h3>
-                    {['Identity', 'Themes', 'Publication', 'Journey'][index]}
-                  </h3>
+                  <h3>{['Identity', 'Themes', 'Publication', 'Journey'][index]}</h3>
                   <ul>
                     {items.map((item) => (
                       <li key={item}>{item}</li>
@@ -157,23 +169,30 @@ export default function Home() {
         <section id="contact" className="quote-section lighter-bg">
           <div className="container-nevo quote-grid">
             <blockquote>
-              <span>
-                Arcane du Beltah: Island Nights marks the beginning of an epic
-                journey where magic, destiny, and courage collide.
-              </span>
-              <cite>Amanah Saais</cite>
+              <span>For readers, press, and project inquiries.</span>
+              <cite>Contact Amanah Saais</cite>
             </blockquote>
-            <div className="contact-box">
-              <label>Name</label>
-              <div className="fake-input">Reader</div>
-              <label>Email</label>
-              <div className="fake-input">hello@example.com</div>
-              <label>Message</label>
-              <div className="fake-textarea">Ask about the book, the series, or the worlds within.</div>
-              <a className="button-dark" href="mailto:hello@example.com">
+            <form className="contact-box" action="mailto:hello@example.com" method="post">
+              <label htmlFor="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="John Doe" />
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="e.g. johndoe@example.com"
+              />
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Ask me anything"
+                rows={7}
+              />
+              <button className="button-dark" type="submit">
                 Submit
-              </a>
-            </div>
+              </button>
+            </form>
           </div>
         </section>
       </div>

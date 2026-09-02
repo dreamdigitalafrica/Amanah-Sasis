@@ -1,4 +1,4 @@
-import { cp, mkdir, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
 
 const html = String.raw`<!doctype html>
 <html lang="en">
@@ -23,63 +23,57 @@ const html = String.raw`<!doctype html>
           <a href="#works">Works</a>
           <a href="#contact">Contact</a>
         </nav>
-        <p class="header-note">Stories that captivate the heart, ignite the imagination, and linger after the final page.</p>
+        <p class="header-note">Novelist. Poet. Storyteller.</p>
         <nav class="social-menu" aria-label="Social links">
-          <a href="#contact">Readers</a>
           <a href="#works">Books</a>
-          <a href="#about">Press</a>
+          <a href="#about">Bio</a>
+          <a href="#contact">Mail</a>
         </nav>
       </header>
       <div class="content-frame">
         <section id="home" class="intro-section">
-          <div class="container-nevo">
-            <h1 class="intro-title"><span>I'm Amanah, a </span><span class="serif black-text">storyteller </span><br /><span>who creates immersive worlds, unforgettable characters, and stories of mystery, romance, hope, and wonder.</span></h1>
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="container-nevo hero-grid">
+            <div>
+              <p class="eyebrow reveal-up">About the Author</p>
+              <h1 class="intro-title reveal-up delay-1"><span>Amanah Saais</span><br /><span class="serif black-text">writes wonder.</span></h1>
+              <p class="hero-copy reveal-up delay-2">Novelist, poet, and storyteller behind Arcane du Beltah: Island Nights.</p>
+            </div>
+            <div class="hero-card reveal-up delay-3">
+              <img src="/amanah-saais-author.png" alt="Portrait of Amanah Saais" />
+            </div>
           </div>
         </section>
         <section id="works" class="section-size-2">
           <div class="container-nevo">
             <div class="section-row">
               <h2>Selected work</h2>
-              <div class="filter-row" aria-label="Work categories">
-                <span>All</span><span>Novel</span><span>Project</span><span>Series</span>
-              </div>
+              <div class="filter-row" aria-label="Work categories"><span>All</span><span>Novel</span><span>Series</span><span>Poetry</span></div>
             </div>
             <div class="work-grid">
-              <article class="work-item featured-work">
-                <div class="book-mockup" aria-hidden="true">
-                  <div class="book-spine"></div>
-                  <img src="/island-nights-cover.jpg" alt="" class="book-cover" />
-                </div>
-                <div class="labels">Project</div>
-                <div class="caption"><h3>Arcane du Beltah: Island Nights</h3><p>Debut novel / Book one</p></div>
+              <article class="work-item book">
+                <div class="book-mockup" aria-hidden="true"><div class="book-spine"></div><img src="/island-nights-cover.jpg" alt="" class="book-cover" /></div>
+                <div class="labels">Novel</div>
+                <div class="caption"><h3>Island Nights</h3><p>Arcane du Beltah / Book One</p></div>
               </article>
-              <article class="work-item">
-                <div class="text-work"><span>Writing</span><p>Fantasy, mystery, romance</p></div>
-                <div class="labels">Writing</div>
-                <div class="caption"><h3>Immersive Worlds</h3><p>Fantasy, mystery, romance</p></div>
+              <article class="work-item portrait">
+                <img src="/amanah-saais-author.png" alt="" class="tile-image" aria-hidden="true" />
+                <div class="labels">Author</div>
+                <div class="caption"><h3>Amanah Saais</h3><p>Portrait / Storyteller</p></div>
               </article>
-              <article class="work-item">
-                <div class="text-work"><span>Poetry</span><p>Language with feeling</p></div>
-                <div class="labels">Poetry</div>
-                <div class="caption"><h3>Emotional Imprint</h3><p>Language with feeling</p></div>
-              </article>
-              <article class="work-item">
-                <div class="text-work"><span>Series</span><p>Magic, destiny, courage</p></div>
-                <div class="labels">Series</div>
-                <div class="caption"><h3>Arcane du Beltah</h3><p>Magic, destiny, courage</p></div>
-              </article>
+              <article class="work-item series"><div class="text-work"><span>Series</span><p>Magic, destiny, courage</p></div><div class="labels">Series</div><div class="caption"><h3>Arcane du Beltah</h3><p>Magic, destiny, courage</p></div></article>
+              <article class="work-item poetry"><div class="text-work"><span>Poetry</span><p>Emotion-led writing</p></div><div class="labels">Poetry</div><div class="caption"><h3>Poetic Voice</h3><p>Emotion-led writing</p></div></article>
+              <article class="work-item worlds"><div class="text-work"><span>Worlds</span><p>Mystery and romance</p></div><div class="labels">Worlds</div><div class="caption"><h3>Hidden Wonder</h3><p>Mystery and romance</p></div></article>
+              <article class="work-item journey"><div class="text-work"><span>Project</span><p>First installment</p></div><div class="labels">Project</div><div class="caption"><h3>Debut Journey</h3><p>First installment</p></div></article>
             </div>
           </div>
         </section>
         <section id="about" class="statement-section lighter-bg">
           <div class="container-nevo narrow">
-            <div>
-              <img src="/amanah-saais-author.png" alt="Portrait of Amanah Saais" class="author-portrait" />
-              <h2>Writing the extraordinary hidden within the ordinary.</h2>
-            </div>
+            <h2>Stories with magic just beneath the surface.</h2>
             <div class="bio-copy">
-              <p>Amanah Saais is a novelist, poet, and storyteller with a passion for crafting immersive worlds, unforgettable characters, and stories that resonate long after the final page. Blending imagination with emotion, her writing explores the extraordinary hidden within the ordinary, inviting readers into adventures filled with mystery, romance, hope, and wonder.</p>
-              <p>Inspired by the boundless possibilities of storytelling, Amanah writes across genres while remaining committed to one goal: creating stories that captivate the heart, ignite the imagination, and leave a lasting impression.</p>
+              <p>Amanah Saais writes immersive fiction shaped by mystery, romance, hope, and wonder. Her work looks for the extraordinary hidden inside ordinary moments.</p>
+              <p>Arcane du Beltah: Island Nights is her debut novel and the first step into a series where magic, destiny, and courage collide.</p>
             </div>
           </div>
         </section>
@@ -95,13 +89,13 @@ const html = String.raw`<!doctype html>
         </section>
         <section id="contact" class="quote-section lighter-bg">
           <div class="container-nevo quote-grid">
-            <blockquote><span>Arcane du Beltah: Island Nights marks the beginning of an epic journey where magic, destiny, and courage collide.</span><cite>Amanah Saais</cite></blockquote>
-            <div class="contact-box">
-              <label>Name</label><div class="fake-input">Reader</div>
-              <label>Email</label><div class="fake-input">hello@example.com</div>
-              <label>Message</label><div class="fake-textarea">Ask about the book, the series, or the worlds within.</div>
-              <a class="button-dark" href="mailto:hello@example.com">Submit</a>
-            </div>
+            <blockquote><span>For readers, press, and project inquiries.</span><cite>Contact Amanah Saais</cite></blockquote>
+            <form class="contact-box" action="mailto:hello@example.com" method="post">
+              <label for="name">Name</label><input id="name" name="name" type="text" placeholder="John Doe" />
+              <label for="email">Email</label><input id="email" name="email" type="email" placeholder="e.g. johndoe@example.com" />
+              <label for="message">Message</label><textarea id="message" name="message" placeholder="Ask me anything" rows="7"></textarea>
+              <button class="button-dark" type="submit">Submit</button>
+            </form>
           </div>
         </section>
       </div>
@@ -113,7 +107,9 @@ const html = String.raw`<!doctype html>
   </body>
 </html>`;
 
-const css = String.raw`*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f6f1;color:#111;font-family:Arial,Helvetica,sans-serif}.site-shell{letter-spacing:0}.site-header{align-items:flex-start;display:grid;gap:28px;grid-template-columns:92px minmax(0,1fr) minmax(180px,280px) auto;left:0;padding:34px 44px;position:fixed;right:0;top:0;z-index:20}.brand-mark{align-items:center;border:2px solid #111;color:#111;display:inline-flex;font-family:Georgia,'Times New Roman',serif;font-size:24px;height:54px;justify-content:center;line-height:1;text-decoration:none;width:54px}.main-menu,.social-menu{display:flex;flex-wrap:wrap;gap:22px;justify-content:flex-end;margin-top:15px;text-transform:uppercase}.main-menu a,.social-menu a{color:#171717;font-size:12px;font-weight:800;letter-spacing:.12em;text-decoration:none}.header-note{color:#555;font-size:13px;line-height:1.7;margin:7px 0 0}.content-frame{padding-top:114px}.container-nevo{margin:0 auto;max-width:1180px;padding:0 42px;width:100%}.intro-section{align-items:center;display:flex;min-height:calc(100svh - 114px);padding:68px 0 92px}.intro-title{color:#9b9b9b;font-size:clamp(48px,7.6vw,126px);font-weight:800;line-height:1.06;max-width:1120px}.intro-title .serif{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:500}.black-text{color:#111}.section-size-2,.section-size-3,.statement-section,.quote-section{padding:96px 0}.lighter-bg{background:#eceae2}.section-row{align-items:center;display:flex;gap:24px;justify-content:space-between;margin-bottom:36px}.section-row h2,.list-grid h3{font-size:14px;font-weight:900;margin:0;text-transform:uppercase}.filter-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:flex-end}.filter-row span{color:#606060;font-size:13px;font-weight:800;text-transform:uppercase}.work-grid{display:grid;gap:28px;grid-template-columns:repeat(3,minmax(0,1fr))}.work-item{background:#fff;min-height:310px;overflow:hidden;padding:24px;position:relative}.featured-work{align-items:center;background:radial-gradient(circle at 24% 18%,rgba(58,190,215,.22),transparent 34%),linear-gradient(135deg,#07131a 0%,#102831 58%,#e7d6b4 100%);display:flex;grid-column:span 2;min-height:650px}.book-mockup{margin:10px auto 62px;perspective:1300px;position:relative;width:min(66%,350px)}.book-cover{aspect-ratio:2/3;box-shadow:32px 36px 70px rgba(0,0,0,.38);display:block;object-fit:cover;position:relative;transform:rotateY(-14deg) rotateZ(-2deg);transform-origin:left center;width:100%;z-index:2}.book-spine{background:linear-gradient(90deg,#0b1115,#d2a564);bottom:10px;box-shadow:18px 28px 42px rgba(0,0,0,.28);left:-22px;position:absolute;top:12px;transform:skewY(-4deg);width:42px;z-index:1}.text-work{align-items:flex-start;background:linear-gradient(135deg,rgba(17,17,17,.05),transparent),#f2efe6;display:flex;flex-direction:column;height:100%;justify-content:center;min-height:262px;padding:24px}.text-work span{color:#ad7c33;font-size:13px;font-weight:900;text-transform:uppercase}.text-work p{color:#111;font-family:Georgia,'Times New Roman',serif;font-size:36px;line-height:1.05;margin-top:18px}.labels{background:rgba(255,255,255,.9);color:#111;font-size:11px;font-weight:900;left:22px;padding:7px 10px;position:absolute;text-transform:uppercase;top:22px}.caption{bottom:22px;color:#111;left:22px;position:absolute;right:22px}.featured-work .caption{color:#fff}.caption h3{font-size:24px;font-weight:900;line-height:1.1;margin:0}.caption p{font-size:14px;margin-top:6px}.narrow{display:grid;gap:60px;grid-template-columns:minmax(260px,.62fr) 1fr}.statement-section h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(38px,4.5vw,70px);font-weight:500;line-height:1.05}.author-portrait{aspect-ratio:4/5;box-shadow:22px 26px 60px rgba(0,0,0,.13);display:block;margin-bottom:34px;max-width:340px;object-fit:cover;object-position:center 28%;width:100%}.bio-copy{color:#333;font-size:20px;line-height:1.75}.bio-copy p+p{margin-top:26px}.list-grid{display:grid;gap:36px;grid-template-columns:repeat(4,minmax(0,1fr))}.list-grid ul{color:#4d4d4d;font-size:16px;line-height:2.1;list-style:none;margin-top:20px;padding:0}.quote-grid{align-items:center;display:grid;gap:64px;grid-template-columns:.82fr 1fr}blockquote{font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,3.4vw,52px);line-height:1.15;margin:0}blockquote cite{color:#666;display:block;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-style:normal;font-weight:900;margin-top:22px;text-transform:uppercase}.contact-box{background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.1);padding:34px}.contact-box label{display:block;font-size:13px;font-weight:900;margin:16px 0 8px;text-transform:uppercase}.fake-input,.fake-textarea{border-bottom:2px solid #111;color:#6a6a6a;min-height:42px;padding:10px 0}.fake-textarea{min-height:90px}.button-dark{background:#111;color:#fff;display:inline-flex;font-size:12px;font-weight:900;margin-top:22px;padding:14px 22px;text-decoration:none;text-transform:uppercase}.footer-nevo{align-items:center;border-top:1px solid #d6d3c8;display:flex;justify-content:space-between;padding:54px 44px}.footer-nevo p{color:#696969;margin-top:4px}@media(max-width:980px){.site-header{grid-template-columns:auto 1fr;position:static}.header-note,.social-menu{display:none}.content-frame{padding-top:0}.main-menu{align-self:center}.work-grid,.narrow,.quote-grid{grid-template-columns:1fr}.featured-work{grid-column:span 1}.list-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.site-header{padding:22px 20px}.main-menu{gap:12px;justify-content:flex-end}.main-menu a{font-size:10px}.container-nevo{padding:0 20px}.intro-section,.section-size-2,.section-size-3,.statement-section,.quote-section{padding:62px 0}.intro-title{font-size:42px}.section-row,.footer-nevo{align-items:flex-start;flex-direction:column}.work-grid,.list-grid{grid-template-columns:1fr}.featured-work{min-height:520px}.book-mockup{width:min(76%,290px)}}`;
+const globalCss = await readFile('app/globals.css', 'utf8');
+const customCss = globalCss.slice(globalCss.indexOf('.site-shell'));
+const css = `*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f8f7f4;color:#171717;font-family:Arial,Helvetica,sans-serif}p,h1,h2,h3{margin:0}a{color:inherit}${customCss}`;
 
 await mkdir('vercel-static', { recursive: true });
 await writeFile('vercel-static/index.html', html);
