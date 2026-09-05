@@ -153,7 +153,7 @@ body {
   background: rgba(248, 247, 244, 0.78);
   display: grid;
   gap: 28px;
-  grid-template-columns: 92px minmax(0, 1fr) minmax(180px, 250px) auto;
+  grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) auto;
   left: 0;
   padding: 30px 44px 22px;
   position: fixed;
@@ -164,16 +164,29 @@ body {
 
 .brand-mark {
   align-items: center;
-  border: 2px solid #191919;
   color: #191919;
   display: inline-flex;
+  gap: 12px;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 24px;
-  height: 54px;
-  justify-content: center;
+  font-size: 22px;
+  font-style: italic;
+  height: auto;
+  justify-content: flex-start;
   line-height: 1;
   text-decoration: none;
-  width: 54px;
+  width: auto;
+}
+
+.brand-seal {
+  align-items: center;
+  border: 1.5px solid #191919;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 15px;
+  font-style: normal;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
 }
 
 .main-menu,
@@ -825,11 +838,10 @@ blockquote cite {
 
 @media (max-width: 980px) {
   .site-header {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     position: static;
   }
 
-  .header-note,
   .social-menu {
     display: none;
   }
@@ -839,6 +851,11 @@ blockquote cite {
   }
 
   .main-menu {
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+
+  .brand-mark {
     align-self: center;
   }
 
@@ -968,18 +985,40 @@ blockquote cite {
 
 .freelancer-title {
   color: #909097;
-  font-size: clamp(48px, 7.6vw, 122px);
+  font-size: clamp(38px, 5.4vw, 84px);
   font-weight: 850;
-  line-height: 1.08;
-  max-width: 1120px;
+  line-height: 1.12;
+  max-width: 900px;
 }
 
 .typed-word {
-  animation: typePulse 3.6s ease-in-out infinite;
   display: inline-block;
   font-family: Georgia, 'Times New Roman', serif;
   font-style: italic;
   font-weight: 500;
+  min-width: 170px;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.typed-word span {
+  animation: wordCycle 6s ease-in-out infinite;
+  display: inline-block;
+}
+
+.typed-word span + span {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+.typed-word span:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.typed-word span:nth-child(3) {
+  animation-delay: 4s;
 }
 
 .books-section {
@@ -1130,6 +1169,18 @@ blockquote cite {
   text-transform: uppercase;
 }
 
+.mini-section {
+  max-width: 820px;
+}
+
+.mini-section h2 {
+  color: #171717;
+  font-size: clamp(38px, 5vw, 74px);
+  font-weight: 850;
+  line-height: 1.05;
+  margin: 0;
+}
+
 .podcast-section {
   background: #f8f7f4;
 }
@@ -1181,15 +1232,20 @@ blockquote cite {
   }
 }
 
-@keyframes typePulse {
-  0%,
-  100% {
+@keyframes wordCycle {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  10%,
+  31% {
     opacity: 1;
     transform: translateY(0);
   }
-  50% {
-    opacity: 0.72;
-    transform: translateY(-4px);
+  41%,
+  100% {
+    opacity: 0;
+    transform: translateY(-14px);
   }
 }
 
@@ -1205,7 +1261,7 @@ blockquote cite {
 
 @media (max-width: 640px) {
   .freelancer-title {
-    font-size: 44px;
+    font-size: 38px;
   }
 
   .book-showcase {

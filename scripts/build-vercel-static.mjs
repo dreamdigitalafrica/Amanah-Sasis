@@ -13,7 +13,7 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
 </head>`;
 
 const header = (home = false) => String.raw`<header class="site-header">
-  <a class="brand-mark" href="${home ? '#home' : '/'}" aria-label="Amanah Saais home">AS</a>
+  <a class="brand-mark" href="${home ? '#home' : '/'}" aria-label="Amanah Saais home"><span class="brand-seal">AS</span><span>Amanah Saais</span></a>
   <nav class="main-menu" aria-label="Primary">
     <a href="${home ? '#home' : '/'}">Home</a>
     <a href="/about/">About</a>
@@ -22,7 +22,6 @@ const header = (home = false) => String.raw`<header class="site-header">
     <a href="${home ? '#podcast' : '/#podcast'}">Podcast</a>
     <a href="${home ? '#contact' : '/#contact'}">Contact</a>
   </nav>
-  <p class="header-note">Novelist. Poet. Storyteller.</p>
   <nav class="social-menu" aria-label="Quick links">
     <a href="${home ? '#books' : '/#books'}">Book One</a>
     <a href="/about/">Bio</a>
@@ -56,7 +55,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
     <div class="content-frame">
       <section id="home" class="freelancer-hero section-size-1">
         <div class="container-nevo">
-          <h1 class="freelancer-title"><span>I'm Amanah, a </span><span class="typed-word serif black-text">novelist </span><br /><span>creating worlds of magic, destiny, romance, and wonder.</span></h1>
+          <h1 class="freelancer-title reveal-up"><span>Amanah Saais is a </span><span class="typed-word serif black-text"><span>novelist.</span><span>writer.</span><span>poet.</span></span></h1>
         </div>
       </section>
       <section id="books" class="section-size-2 books-section">
@@ -85,9 +84,10 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
         </div>
       </section>
       <section id="shop" class="statement-section lighter-bg">
-        <div class="container-nevo narrow">
-          <h2>Shop the debut novel.</h2>
-          <div class="bio-copy"><p>Arcane du Beltah: Island Nights introduces readers to a world shaped by mystery, romance, hope, and wonder.</p><a class="inline-button" href="#contact">Request Purchase Details</a></div>
+        <div class="container-nevo mini-section">
+          <p class="eyebrow">Shop</p>
+          <h2>Book shop coming soon.</h2>
+          <a class="inline-button" href="#contact">Request Purchase Details</a>
         </div>
       </section>
       <section id="podcast" class="section-size-3 podcast-section">

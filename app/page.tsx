@@ -10,7 +10,8 @@ export default function Home() {
     <main className="site-shell min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="#home" aria-label="Amanah Saais home">
-          AS
+          <span className="brand-seal">AS</span>
+          <span>Amanah Saais</span>
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="#home">Home</a>
@@ -20,7 +21,6 @@ export default function Home() {
           <a href="#podcast">Podcast</a>
           <a href="#contact">Contact</a>
         </nav>
-        <p className="header-note">Novelist. Poet. Storyteller.</p>
         <nav className="social-menu" aria-label="Quick links">
           <a href="#books">Book One</a>
           <a href="/about">Bio</a>
@@ -31,11 +31,13 @@ export default function Home() {
       <div className="content-frame">
         <section id="home" className="freelancer-hero section-size-1">
           <div className="container-nevo">
-            <h1 className="freelancer-title">
-              <span>I&apos;m Amanah, a </span>
-              <span className="typed-word serif black-text">novelist </span>
-              <br />
-              <span>creating worlds of magic, destiny, romance, and wonder.</span>
+            <h1 className="freelancer-title reveal-up">
+              <span>Amanah Saais is a </span>
+              <span className="typed-word serif black-text">
+                <span>novelist.</span>
+                <span>writer.</span>
+                <span>poet.</span>
+              </span>
             </h1>
           </div>
         </section>
@@ -85,18 +87,12 @@ export default function Home() {
         </section>
 
         <section id="shop" className="statement-section lighter-bg">
-          <div className="container-nevo narrow">
-            <h2>Shop the debut novel.</h2>
-            <div className="bio-copy">
-              <p>
-                Arcane du Beltah: Island Nights is the first release from Amanah
-                Saais, introducing readers to a world shaped by mystery, romance,
-                hope, and wonder.
-              </p>
-              <a className="inline-button" href="#contact">
-                Request Purchase Details
-              </a>
-            </div>
+          <div className="container-nevo mini-section">
+            <p className="eyebrow">Shop</p>
+            <h2>Book shop coming soon.</h2>
+            <a className="inline-button" href="#contact">
+              Request Purchase Details
+            </a>
           </div>
         </section>
 

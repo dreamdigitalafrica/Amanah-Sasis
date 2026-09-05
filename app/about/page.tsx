@@ -39,7 +39,8 @@ export default function AboutPage() {
     <main className="site-shell min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="/" aria-label="Amanah Saais home">
-          AS
+          <span className="brand-seal">AS</span>
+          <span>Amanah Saais</span>
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="/">Home</a>
@@ -49,7 +50,6 @@ export default function AboutPage() {
           <a href="/#podcast">Podcast</a>
           <a href="/#contact">Contact</a>
         </nav>
-        <p className="header-note">Novelist. Poet. Storyteller.</p>
         <nav className="social-menu" aria-label="Social links">
           <a href="/#books">Book One</a>
           <a href="/about">Bio</a>
