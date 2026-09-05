@@ -44,12 +44,14 @@ export default function AboutPage() {
         <nav className="main-menu" aria-label="Primary">
           <a href="/">Home</a>
           <a href="/about">About</a>
-          <a href="/#works">Works</a>
+          <a href="/#books">Books</a>
+          <a href="/#shop">Shop</a>
+          <a href="/#podcast">Podcast</a>
           <a href="/#contact">Contact</a>
         </nav>
         <p className="header-note">Novelist. Poet. Storyteller.</p>
         <nav className="social-menu" aria-label="Social links">
-          <a href="/#works">Books</a>
+          <a href="/#books">Book One</a>
           <a href="/about">Bio</a>
           <a href="/#contact">Mail</a>
         </nav>
@@ -110,8 +112,8 @@ export default function AboutPage() {
               ))}
             </div>
             <div className="center-action">
-              <a className="button-dark" href="/#works">
-                View Works
+              <a className="button-dark" href="/#books">
+                View Books
               </a>
             </div>
           </div>
