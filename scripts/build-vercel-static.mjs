@@ -18,7 +18,7 @@ const header = (home = false) => String.raw`<header class="site-header">
     <a href="${home ? '#home' : '/'}">Home</a>
     <a href="/about/">About</a>
     <a href="${home ? '#books' : '/#books'}">Books</a>
-    <a href="${home ? '#shop' : '/#shop'}">Shop</a>
+    <a href="/shop/">Shop</a>
     <a href="${home ? '#podcast' : '/#podcast'}">Podcast</a>
     <a href="${home ? '#contact' : '/#contact'}">Contact</a>
   </nav>
@@ -87,7 +87,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
         <div class="container-nevo mini-section">
           <p class="eyebrow">Shop</p>
           <h2>Book shop coming soon.</h2>
-          <a class="inline-button" href="#contact">Request Purchase Details</a>
+          <a class="inline-button" href="/shop/">Preview Shop</a>
         </div>
       </section>
       <section id="podcast" class="section-size-3 podcast-section">
@@ -140,13 +140,64 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
 </body>
 </html>`;
 
+const shopHtml = String.raw`<!doctype html>
+<html lang="en">
+${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights by Amanah Saais.')}
+<body>
+  <main class="site-shell">
+    ${header(false)}
+    <div class="content-frame">
+      <section class="shop-project-hero section-size-3 lighter-bg">
+        <div class="container-nevo shop-hero-grid">
+          <div class="shop-title-block reveal-up"><p class="eyebrow">Shop</p><h1>Island Nights</h1><h2>Arcane du Beltah / Book One</h2></div>
+          <div class="shop-hero-visual reveal-up delay-1"><div class="shop-book-mockup" aria-hidden="true"><div class="shop-book-pages"></div><img src="/island-nights-cover.jpg" alt="" /></div></div>
+        </div>
+      </section>
+      <section class="shop-project-split section-size-3 lighter-bg">
+        <div class="container-nevo shop-split-grid">
+          <div class="shop-cover-panel"><img src="/island-nights-cover.jpg" alt="Arcane du Beltah: Island Nights book cover" /></div>
+          <div><h2>A debut portal into magic and destiny.</h2><p>Arcane du Beltah: Island Nights opens Amanah Saais's fantasy romance series with mystery, courage, and wonder beneath an island sky.</p></div>
+        </div>
+      </section>
+      <section class="shop-dark-band section-size-6">
+        <div class="container-nevo"><h2>One book. One island night. The journey begins here.</h2></div>
+      </section>
+      <section class="shop-detail-section section-size-3 lighter-bg">
+        <div class="container-nevo shop-detail-grid">
+          <div class="shop-facts">
+            <div><span>Book</span><strong>Arcane du Beltah: Island Nights</strong></div>
+            <div><span>Series</span><strong>Arcane du Beltah</strong></div>
+            <div><span>Format</span><strong>Debut novel</strong></div>
+            <div><span>Status</span><strong>Shop coming soon</strong></div>
+          </div>
+          <div class="shop-cover-wide"><img src="/island-nights-cover.jpg" alt="" aria-hidden="true" /></div>
+        </div>
+      </section>
+      <section class="shop-large-image section-size-2">
+        <div class="container-nevo"><div class="shop-purchase-panel"><p class="eyebrow">Availability</p><h2>Purchase details coming soon.</h2><a class="button-dark" href="/#contact">Request Update</a></div></div>
+      </section>
+      <section class="post-navigation">
+        <a class="post-navigation-link" href="/about/"><span>Previous</span><strong>About the Author</strong></a>
+        <a class="post-navigation-link" href="/#podcast"><span>Next</span><strong>Podcast</strong></a>
+      </section>
+    </div>
+    <footer class="footer-nevo">
+      <a class="button-dark" href="/#books">View Book</a>
+      <div><span>Shop </span><strong>Amanah Saais</strong><p>Arcane du Beltah: Island Nights</p></div>
+    </footer>
+  </main>
+</body>
+</html>`;
+
 const globalCss = await readFile('app/globals.css', 'utf8');
 const customCss = globalCss.slice(globalCss.indexOf('.site-shell'));
 const css = `*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f8f7f4;color:#171717;font-family:Arial,Helvetica,sans-serif}p,h1,h2,h3{margin:0}a{color:inherit}${customCss}`;
 
 await mkdir('vercel-static/about', { recursive: true });
+await mkdir('vercel-static/shop', { recursive: true });
 await writeFile('vercel-static/index.html', homeHtml);
 await writeFile('vercel-static/about/index.html', aboutHtml);
+await writeFile('vercel-static/shop/index.html', shopHtml);
 await writeFile('vercel-static/style.css', css);
 await cp('public/island-nights-cover.jpg', 'vercel-static/island-nights-cover.jpg');
 await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.png');

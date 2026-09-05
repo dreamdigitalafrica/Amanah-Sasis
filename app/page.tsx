@@ -17,7 +17,7 @@ export default function Home() {
           <a href="#home">Home</a>
           <a href="/about">About</a>
           <a href="#books">Books</a>
-          <a href="#shop">Shop</a>
+          <a href="/shop">Shop</a>
           <a href="#podcast">Podcast</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -90,8 +90,8 @@ export default function Home() {
           <div className="container-nevo mini-section">
             <p className="eyebrow">Shop</p>
             <h2>Book shop coming soon.</h2>
-            <a className="inline-button" href="#contact">
-              Request Purchase Details
+            <a className="inline-button" href="/shop">
+              Preview Shop
             </a>
           </div>
         </section>

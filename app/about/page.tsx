@@ -46,7 +46,7 @@ export default function AboutPage() {
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/#books">Books</a>
-          <a href="/#shop">Shop</a>
+          <a href="/shop">Shop</a>
           <a href="/#podcast">Podcast</a>
           <a href="/#contact">Contact</a>
         </nav>

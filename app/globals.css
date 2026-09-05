@@ -1222,6 +1222,241 @@ blockquote cite {
   max-width: 650px;
 }
 
+.shop-project-hero {
+  padding-top: 158px;
+}
+
+.shop-hero-grid {
+  align-items: center;
+  display: grid;
+  gap: 72px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
+}
+
+.shop-title-block h1 {
+  color: #171717;
+  font-size: clamp(64px, 9vw, 142px);
+  font-weight: 850;
+  line-height: 0.92;
+  max-width: 880px;
+}
+
+.shop-title-block h2 {
+  color: #8f8a82;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2.6vw, 42px);
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 22px;
+}
+
+.shop-hero-visual {
+  display: flex;
+  justify-content: center;
+  perspective: 1800px;
+}
+
+.shop-book-mockup {
+  animation: bookFloat 6s ease-in-out infinite;
+  position: relative;
+  transform-style: preserve-3d;
+  width: min(100%, 360px);
+}
+
+.shop-book-mockup img {
+  aspect-ratio: 2 / 3;
+  box-shadow:
+    28px 34px 72px rgba(18, 18, 18, 0.24),
+    inset -12px 0 22px rgba(0, 0, 0, 0.2);
+  display: block;
+  object-fit: cover;
+  position: relative;
+  transform: rotateY(-16deg) rotateZ(-1.2deg);
+  transform-origin: left center;
+  width: 100%;
+  z-index: 2;
+}
+
+.shop-book-pages {
+  background: linear-gradient(90deg, #f6f0e4, #cda461 34%, #0a1115);
+  bottom: 12px;
+  left: -32px;
+  position: absolute;
+  top: 12px;
+  transform: rotateY(-42deg) skewY(-3deg);
+  transform-origin: right center;
+  width: 62px;
+  z-index: 1;
+}
+
+.shop-split-grid,
+.shop-detail-grid {
+  align-items: center;
+  display: grid;
+  gap: 86px;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1fr);
+}
+
+.shop-cover-panel {
+  background: #dfddd7;
+  display: flex;
+  justify-content: center;
+  min-height: 620px;
+  overflow: hidden;
+  padding: clamp(34px, 5vw, 78px);
+}
+
+.shop-cover-panel img {
+  align-self: center;
+  box-shadow: 22px 28px 58px rgba(0, 0, 0, 0.22);
+  display: block;
+  max-width: 360px;
+  object-fit: cover;
+  width: 82%;
+}
+
+.shop-project-split h2,
+.shop-dark-band h2,
+.shop-purchase-panel h2 {
+  font-size: clamp(40px, 5vw, 82px);
+  font-weight: 850;
+  line-height: 1.02;
+}
+
+.shop-project-split p {
+  color: #5a554d;
+  font-size: 21px;
+  line-height: 1.7;
+  margin-top: 28px;
+  max-width: 620px;
+}
+
+.section-size-6 {
+  padding: 150px 0;
+}
+
+.shop-dark-band {
+  background: #191d1e;
+  color: #fff;
+}
+
+.shop-dark-band h2 {
+  max-width: 920px;
+}
+
+.shop-facts {
+  display: grid;
+  gap: 0;
+}
+
+.shop-facts div {
+  border-top: 1px solid #d4d0c6;
+  padding: 24px 0;
+}
+
+.shop-facts div:last-child {
+  border-bottom: 1px solid #d4d0c6;
+}
+
+.shop-facts span {
+  color: #938a7e;
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.shop-facts strong {
+  color: #242424;
+  display: block;
+  font-size: 24px;
+  line-height: 1.25;
+  margin-top: 10px;
+}
+
+.shop-cover-wide {
+  background: #f2eadc;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(32px, 5vw, 70px);
+}
+
+.shop-cover-wide img {
+  box-shadow: 18px 24px 52px rgba(0, 0, 0, 0.18);
+  display: block;
+  max-width: 300px;
+  width: 70%;
+}
+
+.shop-large-image {
+  background: #fff;
+}
+
+.shop-purchase-panel {
+  align-items: center;
+  background:
+    linear-gradient(120deg, rgba(25, 29, 30, 0.78), rgba(25, 29, 30, 0.5)),
+    url('/island-nights-cover.jpg') center 40% / cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 620px;
+  padding: clamp(34px, 8vw, 120px);
+  text-align: center;
+}
+
+.shop-purchase-panel .eyebrow {
+  color: #e4b977;
+}
+
+.shop-purchase-panel .button-dark {
+  background: #fff;
+  color: #191d1e;
+  margin-top: 34px;
+  width: auto;
+}
+
+.post-navigation {
+  border-top: 1px solid #ddd8ce;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-navigation-link {
+  color: #171717;
+  min-height: 190px;
+  padding: 54px 44px;
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+
+.post-navigation-link + .post-navigation-link {
+  border-left: 1px solid #ddd8ce;
+  text-align: right;
+}
+
+.post-navigation-link:hover {
+  background: #efede6;
+}
+
+.post-navigation-link span {
+  color: #918c84;
+  display: block;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.post-navigation-link strong {
+  font-size: clamp(28px, 3vw, 48px);
+  line-height: 1.05;
+}
+
 @keyframes bookFloat {
   0%,
   100% {
@@ -1254,6 +1489,16 @@ blockquote cite {
     grid-template-columns: 1fr;
   }
 
+  .shop-hero-grid,
+  .shop-split-grid,
+  .shop-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-project-hero {
+    padding-top: 80px;
+  }
+
   .book-stage {
     min-height: 400px;
   }
@@ -1279,5 +1524,27 @@ blockquote cite {
 
   .book-meta {
     grid-template-columns: 1fr;
+  }
+
+  .shop-cover-panel {
+    min-height: 460px;
+  }
+
+  .section-size-6 {
+    padding: 76px 0;
+  }
+
+  .shop-purchase-panel {
+    min-height: 480px;
+  }
+
+  .post-navigation {
+    grid-template-columns: 1fr;
+  }
+
+  .post-navigation-link + .post-navigation-link {
+    border-left: 0;
+    border-top: 1px solid #ddd8ce;
+    text-align: left;
   }
 }
