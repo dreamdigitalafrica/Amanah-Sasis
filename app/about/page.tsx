@@ -50,11 +50,6 @@ export default function AboutPage() {
           <a href="/#podcast">Podcast</a>
           <a href="/#contact">Contact</a>
         </nav>
-        <nav className="social-menu" aria-label="Social links">
-          <a href="/#books">Book One</a>
-          <a href="/about">Bio</a>
-          <a href="/#contact">Mail</a>
-        </nav>
       </header>
 
       <div className="content-frame">

@@ -153,7 +153,7 @@ body {
   background: rgba(248, 247, 244, 0.78);
   display: grid;
   gap: 28px;
-  grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(190px, 260px) minmax(0, 1fr);
   left: 0;
   padding: 30px 44px 22px;
   position: fixed;
@@ -189,8 +189,7 @@ body {
   width: 42px;
 }
 
-.main-menu,
-.social-menu {
+.main-menu {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -199,8 +198,7 @@ body {
   text-transform: uppercase;
 }
 
-.main-menu a,
-.social-menu a {
+.main-menu a {
   color: #252525;
   font-size: 12px;
   font-weight: 800;
@@ -209,8 +207,7 @@ body {
   transition: color 180ms ease;
 }
 
-.main-menu a:hover,
-.social-menu a:hover {
+.main-menu a:hover {
   color: #b27635;
 }
 
@@ -840,10 +837,6 @@ blockquote cite {
   .site-header {
     grid-template-columns: 1fr;
     position: static;
-  }
-
-  .social-menu {
-    display: none;
   }
 
   .content-frame {

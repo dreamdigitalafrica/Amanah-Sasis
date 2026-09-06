@@ -22,11 +22,6 @@ const header = (home = false) => String.raw`<header class="site-header">
     <a href="${home ? '#podcast' : '/#podcast'}">Podcast</a>
     <a href="${home ? '#contact' : '/#contact'}">Contact</a>
   </nav>
-  <nav class="social-menu" aria-label="Quick links">
-    <a href="${home ? '#books' : '/#books'}">Book One</a>
-    <a href="/about/">Bio</a>
-    <a href="${home ? '#contact' : '/#contact'}">Mail</a>
-  </nav>
 </header>`;
 
 const footer = String.raw`<footer class="footer-nevo">
