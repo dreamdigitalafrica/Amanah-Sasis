@@ -1,9 +1,19 @@
-const bookDetails = [
-  ['Title', 'Arcane du Beltah: Island Nights'],
-  ['Series', 'Arcane du Beltah'],
-  ['Volume', 'Book One'],
-  ['Genre', 'Fantasy Romance'],
+const books = [
+  {
+    volume: 'Book One',
+    image: '/island-nights-cover.jpg',
+    description:
+      'Book One begins an epic journey where magic, destiny, and courage collide beneath an island night.',
+  },
+  {
+    volume: 'Book Two',
+    image: '/island-nights-book-two.png',
+    description:
+      'Book Two continues the Arcane du Beltah journey with deeper mystery, romance, and courage above an enchanted world.',
+  },
 ];
+
+const price = '₦15,000 / approx. $11.34';
 
 export default function Home() {
   return (
@@ -46,38 +56,49 @@ export default function Home() {
                 <span>Novel</span>
                 <span>Fantasy</span>
                 <span>Book One</span>
+                <span>Book Two</span>
               </div>
             </div>
 
-            <article className="book-showcase">
-              <div className="book-stage" aria-hidden="true">
-                <div className="book-shadow" />
-                <div className="book-3d">
-                  <div className="book-side" />
-                  <img
-                    src="/island-nights-cover.jpg"
-                    alt=""
-                    className="book-cover-pro"
-                  />
-                </div>
-              </div>
-              <div className="book-copy">
-                <div className="labels">Novel</div>
-                <h3>Arcane du Beltah: Island Nights</h3>
-                <p>
-                  Book One begins an epic journey where magic, destiny, and
-                  courage collide beneath an island night.
-                </p>
-                <div className="book-meta">
-                  {bookDetails.map(([label, value]) => (
-                    <div key={label}>
-                      <span>{label}</span>
-                      <strong>{value}</strong>
+            <div className="books-stack">
+              {books.map((book, index) => (
+                <article
+                  className={`book-showcase ${index % 2 === 1 ? 'reverse' : ''}`}
+                  key={book.volume}
+                >
+                  <div className="book-stage" aria-hidden="true">
+                    <div className="book-shadow" />
+                    <div className="book-3d">
+                      <div className="book-side" />
+                      <img src={book.image} alt="" className="book-cover-pro" />
                     </div>
-                  ))}
-                </div>
-              </div>
-            </article>
+                  </div>
+                  <div className="book-copy">
+                    <div className="labels">Novel</div>
+                    <h3>Arcane du Beltah: Island Nights</h3>
+                    <p>{book.description}</p>
+                    <div className="book-meta">
+                      <div>
+                        <span>Series</span>
+                        <strong>Arcane du Beltah</strong>
+                      </div>
+                      <div>
+                        <span>Volume</span>
+                        <strong>{book.volume}</strong>
+                      </div>
+                      <div>
+                        <span>Genre</span>
+                        <strong>Fantasy Romance</strong>
+                      </div>
+                      <div>
+                        <span>Price</span>
+                        <strong>{price}</strong>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

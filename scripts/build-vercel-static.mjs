@@ -57,25 +57,44 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
         <div class="container-nevo">
           <div class="section-row">
             <h2>Selected books</h2>
-            <div class="filter-row" aria-label="Book categories"><span>All</span><span>Novel</span><span>Fantasy</span><span>Book One</span></div>
+            <div class="filter-row" aria-label="Book categories"><span>All</span><span>Novel</span><span>Fantasy</span><span>Book One</span><span>Book Two</span></div>
           </div>
-          <article class="book-showcase">
-            <div class="book-stage" aria-hidden="true">
-              <div class="book-shadow"></div>
-              <div class="book-3d"><div class="book-side"></div><img src="/island-nights-cover.jpg" alt="" class="book-cover-pro" /></div>
-            </div>
-            <div class="book-copy">
-              <div class="labels">Novel</div>
-              <h3>Arcane du Beltah: Island Nights</h3>
-              <p>Book One begins an epic journey where magic, destiny, and courage collide beneath an island night.</p>
-              <div class="book-meta">
-                <div><span>Title</span><strong>Arcane du Beltah: Island Nights</strong></div>
-                <div><span>Series</span><strong>Arcane du Beltah</strong></div>
-                <div><span>Volume</span><strong>Book One</strong></div>
-                <div><span>Genre</span><strong>Fantasy Romance</strong></div>
+          <div class="books-stack">
+            <article class="book-showcase">
+              <div class="book-stage" aria-hidden="true">
+                <div class="book-shadow"></div>
+                <div class="book-3d"><div class="book-side"></div><img src="/island-nights-cover.jpg" alt="" class="book-cover-pro" /></div>
               </div>
-            </div>
-          </article>
+              <div class="book-copy">
+                <div class="labels">Novel</div>
+                <h3>Arcane du Beltah: Island Nights</h3>
+                <p>Book One begins an epic journey where magic, destiny, and courage collide beneath an island night.</p>
+                <div class="book-meta">
+                  <div><span>Series</span><strong>Arcane du Beltah</strong></div>
+                  <div><span>Volume</span><strong>Book One</strong></div>
+                  <div><span>Genre</span><strong>Fantasy Romance</strong></div>
+                  <div><span>Price</span><strong>₦15,000 / approx. $11.34</strong></div>
+                </div>
+              </div>
+            </article>
+            <article class="book-showcase reverse">
+              <div class="book-stage" aria-hidden="true">
+                <div class="book-shadow"></div>
+                <div class="book-3d"><div class="book-side"></div><img src="/island-nights-book-two.png" alt="" class="book-cover-pro" /></div>
+              </div>
+              <div class="book-copy">
+                <div class="labels">Novel</div>
+                <h3>Arcane du Beltah: Island Nights</h3>
+                <p>Book Two continues the Arcane du Beltah journey with deeper mystery, romance, and courage above an enchanted world.</p>
+                <div class="book-meta">
+                  <div><span>Series</span><strong>Arcane du Beltah</strong></div>
+                  <div><span>Volume</span><strong>Book Two</strong></div>
+                  <div><span>Genre</span><strong>Fantasy Romance</strong></div>
+                  <div><span>Price</span><strong>₦15,000 / approx. $11.34</strong></div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
       <section id="shop" class="statement-section lighter-bg">
@@ -137,35 +156,42 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
 
 const shopHtml = String.raw`<!doctype html>
 <html lang="en">
-${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights by Amanah Saais.')}
+${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights books by Amanah Saais.')}
 <body>
   <main class="site-shell">
     ${header(false)}
     <div class="content-frame">
       <section class="shop-project-hero section-size-3 lighter-bg">
         <div class="container-nevo shop-hero-grid">
-          <div class="shop-title-block reveal-up"><p class="eyebrow">Shop</p><h1>Island Nights</h1><h2>Arcane du Beltah / Book One</h2></div>
-          <div class="shop-hero-visual reveal-up delay-1"><div class="shop-book-mockup" aria-hidden="true"><div class="shop-book-pages"></div><img src="/island-nights-cover.jpg" alt="" /></div></div>
+          <div class="shop-title-block reveal-up"><p class="eyebrow">Shop</p><h1>Island Nights</h1><h2>Arcane du Beltah / Books One & Two</h2></div>
+          <div class="shop-hero-visual reveal-up delay-1"><div class="shop-book-pair" aria-hidden="true"><div class="shop-book-mockup secondary"><div class="shop-book-pages"></div><img src="/island-nights-book-two.png" alt="" /></div><div class="shop-book-mockup"><div class="shop-book-pages"></div><img src="/island-nights-cover.jpg" alt="" /></div></div></div>
         </div>
       </section>
       <section class="shop-project-split section-size-3 lighter-bg">
         <div class="container-nevo shop-split-grid">
           <div class="shop-cover-panel"><img src="/island-nights-cover.jpg" alt="Arcane du Beltah: Island Nights book cover" /></div>
-          <div><h2>A debut portal into magic and destiny.</h2><p>Arcane du Beltah: Island Nights opens Amanah Saais's fantasy romance series with mystery, courage, and wonder beneath an island sky.</p></div>
+          <div><h2>Two books. One enchanted world.</h2><p>Arcane du Beltah: Island Nights opens Amanah Saais's fantasy romance series and continues with Book Two. Each title is priced at ₦15,000 / approx. $11.34.</p></div>
         </div>
       </section>
       <section class="shop-dark-band section-size-6">
-        <div class="container-nevo"><h2>One book. One island night. The journey begins here.</h2></div>
+        <div class="container-nevo"><h2>Magic, destiny, and courage across two island nights.</h2></div>
       </section>
       <section class="shop-detail-section section-size-3 lighter-bg">
-        <div class="container-nevo shop-detail-grid">
-          <div class="shop-facts">
-            <div><span>Book</span><strong>Arcane du Beltah: Island Nights</strong></div>
-            <div><span>Series</span><strong>Arcane du Beltah</strong></div>
-            <div><span>Format</span><strong>Debut novel</strong></div>
-            <div><span>Status</span><strong>Shop coming soon</strong></div>
+        <div class="container-nevo">
+          <div class="section-row">
+            <h2>Books</h2>
+            <div class="filter-row" aria-label="Book prices"><span>₦15,000</span><span>Approx. $11.34</span></div>
           </div>
-          <div class="shop-cover-wide"><img src="/island-nights-cover.jpg" alt="" aria-hidden="true" /></div>
+          <div class="shop-products-grid">
+            <article class="shop-product-card">
+              <div class="shop-cover-wide"><img src="/island-nights-cover.jpg" alt="" aria-hidden="true" /></div>
+              <div class="shop-product-copy"><span>Book One</span><h3>Arcane du Beltah: Island Nights</h3><p>The opening novel in the Arcane du Beltah series.</p><strong>₦15,000 / approx. $11.34</strong></div>
+            </article>
+            <article class="shop-product-card">
+              <div class="shop-cover-wide"><img src="/island-nights-book-two.png" alt="" aria-hidden="true" /></div>
+              <div class="shop-product-copy"><span>Book Two</span><h3>Arcane du Beltah: Island Nights</h3><p>The next chapter in the Island Nights journey.</p><strong>₦15,000 / approx. $11.34</strong></div>
+            </article>
+          </div>
         </div>
       </section>
       <section class="shop-large-image section-size-2">
@@ -195,5 +221,6 @@ await writeFile('vercel-static/about/index.html', aboutHtml);
 await writeFile('vercel-static/shop/index.html', shopHtml);
 await writeFile('vercel-static/style.css', css);
 await cp('public/island-nights-cover.jpg', 'vercel-static/island-nights-cover.jpg');
+await cp('public/island-nights-book-two.png', 'vercel-static/island-nights-book-two.png');
 await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.png');
 await cp('public/favicon.svg', 'vercel-static/favicon.svg');

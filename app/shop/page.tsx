@@ -1,9 +1,17 @@
-const productFacts = [
-  ['Book', 'Arcane du Beltah: Island Nights'],
-  ['Series', 'Arcane du Beltah'],
-  ['Format', 'Debut novel'],
-  ['Status', 'Shop coming soon'],
+const products = [
+  {
+    volume: 'Book One',
+    image: '/island-nights-cover.jpg',
+    note: 'The opening novel in the Arcane du Beltah series.',
+  },
+  {
+    volume: 'Book Two',
+    image: '/island-nights-book-two.png',
+    note: 'The next chapter in the Island Nights journey.',
+  },
 ];
+
+const price = '₦15,000 / approx. $11.34';
 
 export default function ShopPage() {
   return (
@@ -29,12 +37,18 @@ export default function ShopPage() {
             <div className="shop-title-block reveal-up">
               <p className="eyebrow">Shop</p>
               <h1>Island Nights</h1>
-              <h2>Arcane du Beltah / Book One</h2>
+              <h2>Arcane du Beltah / Books One & Two</h2>
             </div>
             <div className="shop-hero-visual reveal-up delay-1">
-              <div className="shop-book-mockup" aria-hidden="true">
-                <div className="shop-book-pages" />
-                <img src="/island-nights-cover.jpg" alt="" />
+              <div className="shop-book-pair" aria-hidden="true">
+                <div className="shop-book-mockup secondary">
+                  <div className="shop-book-pages" />
+                  <img src="/island-nights-book-two.png" alt="" />
+                </div>
+                <div className="shop-book-mockup">
+                  <div className="shop-book-pages" />
+                  <img src="/island-nights-cover.jpg" alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -49,11 +63,11 @@ export default function ShopPage() {
               />
             </div>
             <div>
-              <h2>A debut portal into magic and destiny.</h2>
+              <h2>Two books. One enchanted world.</h2>
               <p>
                 Arcane du Beltah: Island Nights opens Amanah Saais&apos;s fantasy
-                romance series with mystery, courage, and wonder beneath an
-                island sky.
+                romance series and continues with Book Two. Each title is priced
+                at {price}.
               </p>
             </div>
           </div>
@@ -61,22 +75,33 @@ export default function ShopPage() {
 
         <section className="shop-dark-band section-size-6">
           <div className="container-nevo">
-            <h2>One book. One island night. The journey begins here.</h2>
+            <h2>Magic, destiny, and courage across two island nights.</h2>
           </div>
         </section>
 
         <section className="shop-detail-section section-size-3 lighter-bg">
-          <div className="container-nevo shop-detail-grid">
-            <div className="shop-facts">
-              {productFacts.map(([label, value]) => (
-                <div key={label}>
-                  <span>{label}</span>
-                  <strong>{value}</strong>
-                </div>
-              ))}
+          <div className="container-nevo">
+            <div className="section-row">
+              <h2>Books</h2>
+              <div className="filter-row" aria-label="Book prices">
+                <span>₦15,000</span>
+                <span>Approx. $11.34</span>
+              </div>
             </div>
-            <div className="shop-cover-wide">
-              <img src="/island-nights-cover.jpg" alt="" aria-hidden="true" />
+            <div className="shop-products-grid">
+              {products.map((product) => (
+                <article className="shop-product-card" key={product.volume}>
+                  <div className="shop-cover-wide">
+                    <img src={product.image} alt="" aria-hidden="true" />
+                  </div>
+                  <div className="shop-product-copy">
+                    <span>{product.volume}</span>
+                    <h3>Arcane du Beltah: Island Nights</h3>
+                    <p>{product.note}</p>
+                    <strong>{price}</strong>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>

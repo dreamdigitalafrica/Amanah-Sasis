@@ -1022,6 +1022,11 @@ blockquote cite {
   font-size: 28px;
 }
 
+.books-stack {
+  display: grid;
+  gap: 42px;
+}
+
 .book-showcase {
   align-items: center;
   background: #f1f0ec;
@@ -1032,6 +1037,10 @@ blockquote cite {
   overflow: hidden;
   padding: clamp(34px, 6vw, 92px);
   position: relative;
+}
+
+.book-showcase.reverse .book-stage {
+  order: 2;
 }
 
 .book-showcase::before {
@@ -1249,11 +1258,35 @@ blockquote cite {
   perspective: 1800px;
 }
 
+.shop-book-pair {
+  min-height: 540px;
+  position: relative;
+  width: min(100%, 480px);
+}
+
 .shop-book-mockup {
   animation: bookFloat 6s ease-in-out infinite;
   position: relative;
   transform-style: preserve-3d;
   width: min(100%, 360px);
+}
+
+.shop-book-pair .shop-book-mockup {
+  bottom: 0;
+  position: absolute;
+  right: 6%;
+  width: min(72%, 340px);
+  z-index: 2;
+}
+
+.shop-book-pair .shop-book-mockup.secondary {
+  animation-delay: 450ms;
+  left: 0;
+  right: auto;
+  top: 26px;
+  transform: scale(0.9) rotate(-3deg);
+  width: min(66%, 310px);
+  z-index: 1;
 }
 
 .shop-book-mockup img {
@@ -1383,6 +1416,62 @@ blockquote cite {
   width: 70%;
 }
 
+.shop-products-grid {
+  display: grid;
+  gap: 42px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.shop-product-card {
+  background: #fff;
+  overflow: hidden;
+}
+
+.shop-product-card .shop-cover-wide {
+  min-height: 560px;
+}
+
+.shop-product-card .shop-cover-wide img {
+  max-width: 340px;
+}
+
+.shop-product-copy {
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.shop-product-copy span {
+  color: #b27635;
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.shop-product-copy h3 {
+  color: #171717;
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 850;
+  line-height: 1.04;
+}
+
+.shop-product-copy p {
+  color: #625c53;
+  font-size: 18px;
+  line-height: 1.65;
+  margin-top: 18px;
+}
+
+.shop-product-copy strong {
+  border-top: 1px solid #ddd8ce;
+  color: #171717;
+  display: block;
+  font-size: 22px;
+  margin-top: 28px;
+  padding-top: 22px;
+}
+
 .shop-large-image {
   background: #fff;
 }
@@ -1482,6 +1571,10 @@ blockquote cite {
     grid-template-columns: 1fr;
   }
 
+  .book-showcase.reverse .book-stage {
+    order: 0;
+  }
+
   .shop-hero-grid,
   .shop-split-grid,
   .shop-detail-grid {
@@ -1490,6 +1583,10 @@ blockquote cite {
 
   .shop-project-hero {
     padding-top: 80px;
+  }
+
+  .shop-products-grid {
+    grid-template-columns: 1fr;
   }
 
   .book-stage {
@@ -1521,6 +1618,10 @@ blockquote cite {
 
   .shop-cover-panel {
     min-height: 460px;
+  }
+
+  .shop-book-pair {
+    min-height: 420px;
   }
 
   .section-size-6 {
