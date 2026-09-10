@@ -1,17 +1,28 @@
 const products = [
   {
+    id: 'book-one',
     volume: 'Book One',
     image: '/island-nights-cover.jpg',
-    note: 'The opening novel in the Arcane du Beltah series.',
+    title: 'Arcane du Beltah: Island Nights',
+    note: 'A magical island romance where courage, destiny, and hidden power meet beneath the night sky.',
+    glimpse:
+      'The story begins on an island where ordinary choices open the door to a world of magic, danger, and longing. As destiny pulls closer, the heart must decide what courage truly costs.',
+    paystackUrl: 'https://paystack.com/pay/amanah-saais-book-one',
   },
   {
+    id: 'book-two',
     volume: 'Book Two',
     image: '/island-nights-book-two.png',
-    note: 'The next chapter in the Island Nights journey.',
+    title: 'Arcane du Beltah: Island Nights',
+    note: 'The journey continues with deeper mystery, romance, and a world balanced between wonder and risk.',
+    glimpse:
+      'Book Two returns to Arcane du Beltah with higher stakes and a wider horizon. Love, loyalty, and power are tested as the island reveals more than anyone expected.',
+    paystackUrl: 'https://paystack.com/pay/amanah-saais-book-two',
   },
 ];
 
-const price = '₦15,000 / approx. $11.34';
+const price = '₦15,000';
+const usdPrice = 'approx. $11.34';
 
 export default function ShopPage() {
   return (
@@ -32,73 +43,62 @@ export default function ShopPage() {
       </header>
 
       <div className="content-frame">
-        <section className="shop-project-hero section-size-3 lighter-bg">
-          <div className="container-nevo shop-hero-grid">
-            <div className="shop-title-block reveal-up">
-              <p className="eyebrow">Shop</p>
-              <h1>Island Nights</h1>
-              <h2>Arcane du Beltah / Books One & Two</h2>
-            </div>
-            <div className="shop-hero-visual reveal-up delay-1">
-              <div className="shop-book-pair" aria-hidden="true">
-                <div className="shop-book-mockup secondary">
-                  <div className="shop-book-pages" />
-                  <img src="/island-nights-book-two.png" alt="" />
-                </div>
-                <div className="shop-book-mockup">
-                  <div className="shop-book-pages" />
-                  <img src="/island-nights-cover.jpg" alt="" />
-                </div>
-              </div>
-            </div>
+        <section className="shop-page-hero section-size-2 lighter-bg">
+          <div className="container-nevo shop-page-heading reveal-up">
+            <p className="eyebrow">Shop</p>
+            <h1>Arcane du Beltah Books</h1>
+            <p>
+              Explore the Island Nights series and purchase each volume through
+              Paystack.
+            </p>
           </div>
         </section>
 
-        <section className="shop-project-split section-size-3 lighter-bg">
-          <div className="container-nevo shop-split-grid">
-            <div className="shop-cover-panel">
-              <img
-                src="/island-nights-cover.jpg"
-                alt="Arcane du Beltah: Island Nights book cover"
-              />
-            </div>
-            <div>
-              <h2>Two books. One enchanted world.</h2>
-              <p>
-                Arcane du Beltah: Island Nights opens Amanah Saais&apos;s fantasy
-                romance series and continues with Book Two. Each title is priced
-                at {price}.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="shop-dark-band section-size-6">
+        <section className="shop-products-section section-size-2">
           <div className="container-nevo">
-            <h2>Magic, destiny, and courage across two island nights.</h2>
-          </div>
-        </section>
-
-        <section className="shop-detail-section section-size-3 lighter-bg">
-          <div className="container-nevo">
-            <div className="section-row">
-              <h2>Books</h2>
-              <div className="filter-row" aria-label="Book prices">
-                <span>₦15,000</span>
-                <span>Approx. $11.34</span>
-              </div>
+            <div className="shop-products-header">
+              <h2>Available Books</h2>
+              <span>
+                {price} / {usdPrice}
+              </span>
             </div>
-            <div className="shop-products-grid">
-              {products.map((product) => (
-                <article className="shop-product-card" key={product.volume}>
-                  <div className="shop-cover-wide">
-                    <img src={product.image} alt="" aria-hidden="true" />
+
+            <div className="shop-products-grid refined">
+              {products.map((product, index) => (
+                <article
+                  className={`shop-book-card ${index === 1 ? 'accent' : ''}`}
+                  key={product.id}
+                >
+                  <div className="shop-book-visual">
+                    <div className="shop-card-book" aria-hidden="true">
+                      <div className="shop-card-pages" />
+                      <img src={product.image} alt="" />
+                    </div>
                   </div>
-                  <div className="shop-product-copy">
+
+                  <div className="shop-book-info">
                     <span>{product.volume}</span>
-                    <h3>Arcane du Beltah: Island Nights</h3>
+                    <h3>{product.title}</h3>
                     <p>{product.note}</p>
-                    <strong>{price}</strong>
+
+                    <div className="shop-price-row">
+                      <strong>{price}</strong>
+                      <em>{usdPrice}</em>
+                    </div>
+
+                    <div className="shop-actions">
+                      <a className="button-dark" href={`#${product.id}-preview`}>
+                        Read Glimpse
+                      </a>
+                      <a
+                        className="button-outline"
+                        href={product.paystackUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Buy Now
+                      </a>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -106,33 +106,51 @@ export default function ShopPage() {
           </div>
         </section>
 
-        <section className="shop-large-image section-size-2">
-          <div className="container-nevo">
-            <div className="shop-purchase-panel">
-              <p className="eyebrow">Availability</p>
-              <h2>Purchase details coming soon.</h2>
-              <a className="button-dark" href="/#contact">
-                Request Update
-              </a>
-            </div>
+        <section className="shop-note-section lighter-bg">
+          <div className="container-nevo shop-note">
+            <h2>Secure checkout through Paystack.</h2>
+            <p>
+              Payment links are prepared for each book and can be connected to
+              the final Paystack product pages when ready.
+            </p>
           </div>
         </section>
 
-        <section className="post-navigation">
-          <a className="post-navigation-link" href="/about">
-            <span>Previous</span>
-            <strong>About the Author</strong>
-          </a>
-          <a className="post-navigation-link" href="/#podcast">
-            <span>Next</span>
-            <strong>Podcast</strong>
-          </a>
-        </section>
+        {products.map((product) => (
+          <div className="book-preview-modal" id={`${product.id}-preview`} key={product.id}>
+            <a className="modal-backdrop" href="/shop" aria-label="Close preview" />
+            <article className="modal-panel" role="dialog" aria-modal="true">
+              <a className="modal-close" href="/shop" aria-label="Close preview">
+                ×
+              </a>
+              <div className="modal-cover">
+                <img src={product.image} alt="" />
+              </div>
+              <div className="modal-copy">
+                <span>{product.volume}</span>
+                <h2>{product.title}</h2>
+                <p>{product.glimpse}</p>
+                <div className="shop-price-row">
+                  <strong>{price}</strong>
+                  <em>{usdPrice}</em>
+                </div>
+                <a
+                  className="button-dark"
+                  href={product.paystackUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Buy with Paystack
+                </a>
+              </div>
+            </article>
+          </div>
+        ))}
       </div>
 
       <footer className="footer-nevo">
         <a className="button-dark" href="/#books">
-          View Book
+          View Books
         </a>
         <div>
           <span>Shop </span>

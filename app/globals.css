@@ -1472,6 +1472,337 @@ blockquote cite {
   padding-top: 22px;
 }
 
+.shop-page-hero {
+  padding-top: 150px;
+}
+
+.shop-page-heading {
+  max-width: 980px;
+}
+
+.shop-page-heading h1 {
+  color: #171717;
+  font-size: clamp(58px, 7vw, 112px);
+  font-weight: 850;
+  line-height: 0.96;
+  max-width: 900px;
+}
+
+.shop-page-heading > p:not(.eyebrow) {
+  color: #615b52;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.6;
+  margin-top: 28px;
+  max-width: 640px;
+}
+
+.shop-products-section {
+  background: #fff;
+}
+
+.shop-products-header {
+  align-items: flex-end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 56px;
+}
+
+.shop-products-header h2 {
+  color: #171717;
+  font-size: 28px;
+  font-weight: 850;
+}
+
+.shop-products-header span {
+  color: #918c84;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.shop-products-grid.refined {
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.shop-book-card {
+  background: #f1f0ec;
+  display: grid;
+  grid-template-rows: minmax(500px, auto) 1fr;
+  overflow: hidden;
+  position: relative;
+}
+
+.shop-book-card.accent {
+  background: #eee8df;
+}
+
+.shop-book-visual {
+  align-items: center;
+  background:
+    radial-gradient(circle at 44% 38%, rgba(196, 154, 91, 0.2), transparent 31%),
+    linear-gradient(140deg, #ebe8e0, #f6f5f2);
+  display: flex;
+  justify-content: center;
+  min-height: 500px;
+  overflow: hidden;
+  padding: clamp(38px, 5vw, 76px);
+  perspective: 1600px;
+}
+
+.shop-book-card.accent .shop-book-visual {
+  background:
+    radial-gradient(circle at 48% 32%, rgba(27, 86, 108, 0.2), transparent 30%),
+    linear-gradient(140deg, #e7e1d8, #f3f0ea);
+}
+
+.shop-card-book {
+  animation: bookFloat 6.5s ease-in-out infinite;
+  max-width: 340px;
+  position: relative;
+  transform-style: preserve-3d;
+  width: min(74%, 340px);
+}
+
+.shop-card-book img {
+  aspect-ratio: 2 / 3;
+  box-shadow:
+    24px 30px 62px rgba(18, 18, 18, 0.26),
+    inset -10px 0 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  object-fit: cover;
+  position: relative;
+  transform: rotateY(-15deg) rotateZ(-1deg);
+  transform-origin: left center;
+  width: 100%;
+  z-index: 2;
+}
+
+.shop-card-pages {
+  background: linear-gradient(90deg, #f8f1e7, #ceb077 36%, #0b1216);
+  bottom: 9px;
+  left: -24px;
+  position: absolute;
+  top: 10px;
+  transform: rotateY(-42deg) skewY(-3deg);
+  transform-origin: right center;
+  width: 48px;
+  z-index: 1;
+}
+
+.shop-book-info {
+  padding: clamp(30px, 4vw, 54px);
+}
+
+.shop-book-info > span,
+.modal-copy > span {
+  color: #b27635;
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.shop-book-info h3 {
+  color: #171717;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 850;
+  line-height: 1.03;
+}
+
+.shop-book-info p {
+  color: #5f5a53;
+  font-size: 18px;
+  line-height: 1.65;
+  margin-top: 18px;
+}
+
+.shop-price-row {
+  align-items: baseline;
+  border-top: 1px solid #d8d2c8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 28px;
+  padding-top: 22px;
+}
+
+.shop-price-row strong {
+  color: #171717;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 850;
+}
+
+.shop-price-row em {
+  color: #8b8379;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.shop-actions {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 30px;
+}
+
+.shop-actions .button-dark,
+.shop-actions .button-outline {
+  min-height: 56px;
+  width: 100%;
+}
+
+.button-outline {
+  align-items: center;
+  background: transparent;
+  border: 1px solid #191d1e;
+  color: #191d1e;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 850;
+  justify-content: center;
+  min-height: 62px;
+  padding: 15px 24px;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.button-outline:hover {
+  background: #191d1e;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.shop-note-section {
+  padding: 88px 0;
+}
+
+.shop-note {
+  align-items: center;
+  display: flex;
+  gap: 36px;
+  justify-content: space-between;
+}
+
+.shop-note h2 {
+  color: #171717;
+  font-size: clamp(34px, 4vw, 64px);
+  font-weight: 850;
+  line-height: 1.02;
+  max-width: 680px;
+}
+
+.shop-note p {
+  color: #625c53;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 440px;
+}
+
+.book-preview-modal {
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 180ms ease;
+  z-index: 60;
+}
+
+.book-preview-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-backdrop {
+  background: rgba(18, 18, 18, 0.56);
+  inset: 0;
+  position: absolute;
+}
+
+.modal-panel {
+  background: #f8f7f4;
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.28);
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+  left: 50%;
+  max-height: calc(100svh - 56px);
+  max-width: 980px;
+  overflow: auto;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -46%);
+  transition: transform 220ms ease;
+  width: calc(100% - 40px);
+}
+
+.book-preview-modal:target .modal-panel {
+  transform: translate(-50%, -50%);
+}
+
+.modal-close {
+  align-items: center;
+  background: #191d1e;
+  color: #fff;
+  display: inline-flex;
+  font-size: 26px;
+  height: 46px;
+  justify-content: center;
+  position: absolute;
+  right: 18px;
+  text-decoration: none;
+  top: 18px;
+  width: 46px;
+  z-index: 2;
+}
+
+.modal-cover {
+  align-items: center;
+  background: #e9e3d8;
+  display: flex;
+  justify-content: center;
+  min-height: 520px;
+  padding: 54px;
+}
+
+.modal-cover img {
+  box-shadow: 18px 26px 58px rgba(0, 0, 0, 0.22);
+  display: block;
+  max-width: 280px;
+  width: 86%;
+}
+
+.modal-copy {
+  padding: clamp(34px, 5vw, 72px);
+}
+
+.modal-copy h2 {
+  color: #171717;
+  font-size: clamp(34px, 4vw, 62px);
+  font-weight: 850;
+  line-height: 1.02;
+}
+
+.modal-copy p {
+  color: #565047;
+  font-size: 20px;
+  line-height: 1.75;
+  margin-top: 24px;
+}
+
+.modal-copy .button-dark {
+  margin-top: 30px;
+  width: auto;
+}
+
 .shop-large-image {
   background: #fff;
 }
@@ -1589,6 +1920,18 @@ blockquote cite {
     grid-template-columns: 1fr;
   }
 
+  .shop-products-header,
+  .shop-note,
+  .modal-panel {
+    align-items: flex-start;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .shop-book-card {
+    grid-template-rows: auto 1fr;
+  }
+
   .book-stage {
     min-height: 400px;
   }
@@ -1624,6 +1967,11 @@ blockquote cite {
     min-height: 420px;
   }
 
+  .shop-book-visual,
+  .modal-cover {
+    min-height: 420px;
+  }
+
   .section-size-6 {
     padding: 76px 0;
   }
@@ -1640,5 +1988,17 @@ blockquote cite {
     border-left: 0;
     border-top: 1px solid #ddd8ce;
     text-align: left;
+  }
+
+  .shop-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-page-hero {
+    padding-top: 70px;
+  }
+
+  .modal-copy .button-dark {
+    width: 100%;
   }
 }

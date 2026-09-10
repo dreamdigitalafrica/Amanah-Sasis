@@ -161,49 +161,68 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
   <main class="site-shell">
     ${header(false)}
     <div class="content-frame">
-      <section class="shop-project-hero section-size-3 lighter-bg">
-        <div class="container-nevo shop-hero-grid">
-          <div class="shop-title-block reveal-up"><p class="eyebrow">Shop</p><h1>Island Nights</h1><h2>Arcane du Beltah / Books One & Two</h2></div>
-          <div class="shop-hero-visual reveal-up delay-1"><div class="shop-book-pair" aria-hidden="true"><div class="shop-book-mockup secondary"><div class="shop-book-pages"></div><img src="/island-nights-book-two.png" alt="" /></div><div class="shop-book-mockup"><div class="shop-book-pages"></div><img src="/island-nights-cover.jpg" alt="" /></div></div></div>
+      <section class="shop-page-hero section-size-2 lighter-bg">
+        <div class="container-nevo shop-page-heading reveal-up">
+          <p class="eyebrow">Shop</p>
+          <h1>Arcane du Beltah Books</h1>
+          <p>Explore the Island Nights series and purchase each volume through Paystack.</p>
         </div>
       </section>
-      <section class="shop-project-split section-size-3 lighter-bg">
-        <div class="container-nevo shop-split-grid">
-          <div class="shop-cover-panel"><img src="/island-nights-cover.jpg" alt="Arcane du Beltah: Island Nights book cover" /></div>
-          <div><h2>Two books. One enchanted world.</h2><p>Arcane du Beltah: Island Nights opens Amanah Saais's fantasy romance series and continues with Book Two. Each title is priced at ₦15,000 / approx. $11.34.</p></div>
-        </div>
-      </section>
-      <section class="shop-dark-band section-size-6">
-        <div class="container-nevo"><h2>Magic, destiny, and courage across two island nights.</h2></div>
-      </section>
-      <section class="shop-detail-section section-size-3 lighter-bg">
+      <section class="shop-products-section section-size-2">
         <div class="container-nevo">
-          <div class="section-row">
-            <h2>Books</h2>
-            <div class="filter-row" aria-label="Book prices"><span>₦15,000</span><span>Approx. $11.34</span></div>
+          <div class="shop-products-header">
+            <h2>Available Books</h2>
+            <span>₦15,000 / approx. $11.34</span>
           </div>
-          <div class="shop-products-grid">
-            <article class="shop-product-card">
-              <div class="shop-cover-wide"><img src="/island-nights-cover.jpg" alt="" aria-hidden="true" /></div>
-              <div class="shop-product-copy"><span>Book One</span><h3>Arcane du Beltah: Island Nights</h3><p>The opening novel in the Arcane du Beltah series.</p><strong>₦15,000 / approx. $11.34</strong></div>
+          <div class="shop-products-grid refined">
+            <article class="shop-book-card">
+              <div class="shop-book-visual"><div class="shop-card-book" aria-hidden="true"><div class="shop-card-pages"></div><img src="/island-nights-cover.jpg" alt="" /></div></div>
+              <div class="shop-book-info">
+                <span>Book One</span>
+                <h3>Arcane du Beltah: Island Nights</h3>
+                <p>A magical island romance where courage, destiny, and hidden power meet beneath the night sky.</p>
+                <div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div>
+                <div class="shop-actions"><a class="button-dark" href="#book-one-preview">Read Glimpse</a><a class="button-outline" href="https://paystack.com/pay/amanah-saais-book-one" target="_blank" rel="noreferrer">Buy Now</a></div>
+              </div>
             </article>
-            <article class="shop-product-card">
-              <div class="shop-cover-wide"><img src="/island-nights-book-two.png" alt="" aria-hidden="true" /></div>
-              <div class="shop-product-copy"><span>Book Two</span><h3>Arcane du Beltah: Island Nights</h3><p>The next chapter in the Island Nights journey.</p><strong>₦15,000 / approx. $11.34</strong></div>
+            <article class="shop-book-card accent">
+              <div class="shop-book-visual"><div class="shop-card-book" aria-hidden="true"><div class="shop-card-pages"></div><img src="/island-nights-book-two.png" alt="" /></div></div>
+              <div class="shop-book-info">
+                <span>Book Two</span>
+                <h3>Arcane du Beltah: Island Nights</h3>
+                <p>The journey continues with deeper mystery, romance, and a world balanced between wonder and risk.</p>
+                <div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div>
+                <div class="shop-actions"><a class="button-dark" href="#book-two-preview">Read Glimpse</a><a class="button-outline" href="https://paystack.com/pay/amanah-saais-book-two" target="_blank" rel="noreferrer">Buy Now</a></div>
+              </div>
             </article>
           </div>
         </div>
       </section>
-      <section class="shop-large-image section-size-2">
-        <div class="container-nevo"><div class="shop-purchase-panel"><p class="eyebrow">Availability</p><h2>Purchase details coming soon.</h2><a class="button-dark" href="/#contact">Request Update</a></div></div>
+      <section class="shop-note-section lighter-bg">
+        <div class="container-nevo shop-note">
+          <h2>Secure checkout through Paystack.</h2>
+          <p>Payment links are prepared for each book and can be connected to the final Paystack product pages when ready.</p>
+        </div>
       </section>
-      <section class="post-navigation">
-        <a class="post-navigation-link" href="/about/"><span>Previous</span><strong>About the Author</strong></a>
-        <a class="post-navigation-link" href="/#podcast"><span>Next</span><strong>Podcast</strong></a>
-      </section>
+      <div class="book-preview-modal" id="book-one-preview">
+        <a class="modal-backdrop" href="/shop/" aria-label="Close preview"></a>
+        <article class="modal-panel" role="dialog" aria-modal="true">
+          <a class="modal-close" href="/shop/" aria-label="Close preview">×</a>
+          <div class="modal-cover"><img src="/island-nights-cover.jpg" alt="" /></div>
+          <div class="modal-copy"><span>Book One</span><h2>Arcane du Beltah: Island Nights</h2><p>The story begins on an island where ordinary choices open the door to a world of magic, danger, and longing. As destiny pulls closer, the heart must decide what courage truly costs.</p><div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div><a class="button-dark" href="https://paystack.com/pay/amanah-saais-book-one" target="_blank" rel="noreferrer">Buy with Paystack</a></div>
+        </article>
+      </div>
+      <div class="book-preview-modal" id="book-two-preview">
+        <a class="modal-backdrop" href="/shop/" aria-label="Close preview"></a>
+        <article class="modal-panel" role="dialog" aria-modal="true">
+          <a class="modal-close" href="/shop/" aria-label="Close preview">×</a>
+          <div class="modal-cover"><img src="/island-nights-book-two.png" alt="" /></div>
+          <div class="modal-copy"><span>Book Two</span><h2>Arcane du Beltah: Island Nights</h2><p>Book Two returns to Arcane du Beltah with higher stakes and a wider horizon. Love, loyalty, and power are tested as the island reveals more than anyone expected.</p><div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div><a class="button-dark" href="https://paystack.com/pay/amanah-saais-book-two" target="_blank" rel="noreferrer">Buy with Paystack</a></div>
+        </article>
+      </div>
     </div>
     <footer class="footer-nevo">
-      <a class="button-dark" href="/#books">View Book</a>
+      <a class="button-dark" href="/#books">View Books</a>
       <div><span>Shop </span><strong>Amanah Saais</strong><p>Arcane du Beltah: Island Nights</p></div>
     </footer>
   </main>
