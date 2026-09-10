@@ -164,7 +164,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
       <section class="shop-page-hero section-size-2 lighter-bg">
         <div class="container-nevo shop-page-heading reveal-up">
           <p class="eyebrow">Shop</p>
-          <h1>Arcane du Beltah Books</h1>
+          <h1>Amanah Books</h1>
           <p>Explore the Island Nights series and purchase each volume through Paystack.</p>
         </div>
       </section>

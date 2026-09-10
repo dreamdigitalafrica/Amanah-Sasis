@@ -46,7 +46,7 @@ export default function ShopPage() {
         <section className="shop-page-hero section-size-2 lighter-bg">
           <div className="container-nevo shop-page-heading reveal-up">
             <p className="eyebrow">Shop</p>
-            <h1>Arcane du Beltah Books</h1>
+            <h1>Amanah Books</h1>
             <p>
               Explore the Island Nights series and purchase each volume through
               Paystack.
