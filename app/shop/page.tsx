@@ -7,7 +7,7 @@ const products = [
     note: 'A magical island romance where courage, destiny, and hidden power meet beneath the night sky.',
     glimpse:
       'The story begins on an island where ordinary choices open the door to a world of magic, danger, and longing. As destiny pulls closer, the heart must decide what courage truly costs.',
-    paystackUrl: 'https://paystack.com/pay/amanah-saais-book-one',
+    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
   },
   {
     id: 'book-two',
@@ -17,7 +17,7 @@ const products = [
     note: 'The journey continues with deeper mystery, romance, and a world balanced between wonder and risk.',
     glimpse:
       'Book Two returns to Arcane du Beltah with higher stakes and a wider horizon. Love, loyalty, and power are tested as the island reveals more than anyone expected.',
-    paystackUrl: 'https://paystack.com/pay/amanah-saais-book-two',
+    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
   },
 ];
 

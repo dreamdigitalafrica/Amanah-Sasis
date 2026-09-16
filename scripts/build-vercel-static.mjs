@@ -182,7 +182,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
                 <h3>Arcane du Beltah: Island Nights</h3>
                 <p>A magical island romance where courage, destiny, and hidden power meet beneath the night sky.</p>
                 <div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div>
-                <div class="shop-actions"><a class="button-dark" href="#book-one-preview">Read Glimpse</a><a class="button-outline" href="https://paystack.com/pay/amanah-saais-book-one" target="_blank" rel="noreferrer">Buy Now</a></div>
+                <div class="shop-actions"><a class="button-dark" href="#book-one-preview">Read Glimpse</a><a class="button-outline" href="https://paystack.shop/pay/jeqoqeorm8" target="_blank" rel="noreferrer">Buy Now</a></div>
               </div>
             </article>
             <article class="shop-book-card accent">
@@ -192,7 +192,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
                 <h3>Arcane du Beltah: Island Nights</h3>
                 <p>The journey continues with deeper mystery, romance, and a world balanced between wonder and risk.</p>
                 <div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div>
-                <div class="shop-actions"><a class="button-dark" href="#book-two-preview">Read Glimpse</a><a class="button-outline" href="https://paystack.com/pay/amanah-saais-book-two" target="_blank" rel="noreferrer">Buy Now</a></div>
+                <div class="shop-actions"><a class="button-dark" href="#book-two-preview">Read Glimpse</a><a class="button-outline" href="https://paystack.shop/pay/jeqoqeorm8" target="_blank" rel="noreferrer">Buy Now</a></div>
               </div>
             </article>
           </div>
@@ -209,7 +209,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
         <article class="modal-panel" role="dialog" aria-modal="true">
           <a class="modal-close" href="/shop/" aria-label="Close preview">×</a>
           <div class="modal-cover"><img src="/island-nights-cover.jpg" alt="" /></div>
-          <div class="modal-copy"><span>Book One</span><h2>Arcane du Beltah: Island Nights</h2><p>The story begins on an island where ordinary choices open the door to a world of magic, danger, and longing. As destiny pulls closer, the heart must decide what courage truly costs.</p><div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div><a class="button-dark" href="https://paystack.com/pay/amanah-saais-book-one" target="_blank" rel="noreferrer">Buy with Paystack</a></div>
+          <div class="modal-copy"><span>Book One</span><h2>Arcane du Beltah: Island Nights</h2><p>The story begins on an island where ordinary choices open the door to a world of magic, danger, and longing. As destiny pulls closer, the heart must decide what courage truly costs.</p><div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div><a class="button-dark" href="https://paystack.shop/pay/jeqoqeorm8" target="_blank" rel="noreferrer">Buy with Paystack</a></div>
         </article>
       </div>
       <div class="book-preview-modal" id="book-two-preview">
@@ -217,7 +217,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
         <article class="modal-panel" role="dialog" aria-modal="true">
           <a class="modal-close" href="/shop/" aria-label="Close preview">×</a>
           <div class="modal-cover"><img src="/island-nights-book-two.png" alt="" /></div>
-          <div class="modal-copy"><span>Book Two</span><h2>Arcane du Beltah: Island Nights</h2><p>Book Two returns to Arcane du Beltah with higher stakes and a wider horizon. Love, loyalty, and power are tested as the island reveals more than anyone expected.</p><div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div><a class="button-dark" href="https://paystack.com/pay/amanah-saais-book-two" target="_blank" rel="noreferrer">Buy with Paystack</a></div>
+          <div class="modal-copy"><span>Book Two</span><h2>Arcane du Beltah: Island Nights</h2><p>Book Two returns to Arcane du Beltah with higher stakes and a wider horizon. Love, loyalty, and power are tested as the island reveals more than anyone expected.</p><div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div><a class="button-dark" href="https://paystack.shop/pay/jeqoqeorm8" target="_blank" rel="noreferrer">Buy with Paystack</a></div>
         </article>
       </div>
     </div>
