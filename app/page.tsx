@@ -28,7 +28,7 @@ export default function Home() {
           <a href="/about">About</a>
           <a href="#books">Books</a>
           <a href="/shop">Shop</a>
-          <a href="#podcast">Podcast</a>
+          <a href="/podcast">Podcast</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -125,6 +125,9 @@ export default function Home() {
                 A future audio space for book reflections, creative notes, and
                 conversations with readers.
               </p>
+              <a className="inline-button light" href="/podcast">
+                View Podcast
+              </a>
             </div>
           </div>
         </section>

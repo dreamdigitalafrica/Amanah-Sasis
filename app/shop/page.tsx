@@ -37,7 +37,7 @@ export default function ShopPage() {
           <a href="/about">About</a>
           <a href="/#books">Books</a>
           <a href="/shop">Shop</a>
-          <a href="/#podcast">Podcast</a>
+          <a href="/podcast">Podcast</a>
           <a href="/#contact">Contact</a>
         </nav>
       </header>

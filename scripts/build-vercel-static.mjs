@@ -19,7 +19,7 @@ const header = (home = false) => String.raw`<header class="site-header">
     <a href="/about/">About</a>
     <a href="${home ? '#books' : '/#books'}">Books</a>
     <a href="/shop/">Shop</a>
-    <a href="${home ? '#podcast' : '/#podcast'}">Podcast</a>
+    <a href="/podcast/">Podcast</a>
     <a href="${home ? '#contact' : '/#contact'}">Contact</a>
   </nav>
 </header>`;
@@ -107,7 +107,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
       <section id="podcast" class="section-size-3 podcast-section">
         <div class="container-nevo">
           <div class="section-row"><h2>Podcast</h2><p>Conversations on story, imagination, and the worlds behind the page.</p></div>
-          <div class="podcast-panel"><span>Coming Soon</span><h3>Behind Island Nights</h3><p>A future audio space for book reflections, creative notes, and conversations with readers.</p></div>
+          <div class="podcast-panel"><span>Coming Soon</span><h3>Behind Island Nights</h3><p>A future audio space for book reflections, creative notes, and conversations with readers.</p><a class="inline-button light" href="/podcast/">View Podcast</a></div>
         </div>
       </section>
       ${contactSection}
@@ -229,15 +229,61 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
 </body>
 </html>`;
 
+const podcastHtml = String.raw`<!doctype html>
+<html lang="en">
+${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featuring book notes and conversations behind Amanah Books.', '/amanah-saais-author.png')}
+<body>
+  <main class="site-shell">
+    ${header(false)}
+    <div class="content-frame">
+      <section class="podcast-page-hero section-size-2 lighter-bg">
+        <div class="container-nevo podcast-hero-grid">
+          <div class="podcast-hero-copy reveal-up">
+            <p class="eyebrow">Podcast</p>
+            <h1>Stories behind the stories.</h1>
+            <p>A minimal audio space for Amanah Saais to share book notes, creative reflections, and the worlds behind the page.</p>
+          </div>
+          <div class="podcast-mark reveal-up delay-1" aria-hidden="true"><span>AS</span><strong>Listen soon</strong></div>
+        </div>
+      </section>
+      <section class="podcast-episodes section-size-2">
+        <div class="container-nevo">
+          <div class="section-row"><h2>Episodes</h2><p>Short, thoughtful conversations are in preparation.</p></div>
+          <div class="episode-list">
+            <article class="episode-item"><span>01</span><div><p>Coming soon</p><h3>Behind Island Nights</h3></div><p>A quiet introduction to the world of Arcane du Beltah, the emotional thread of the series, and the ideas that shaped the island.</p></article>
+            <article class="episode-item"><span>02</span><div><p>In planning</p><h3>The Making of Amanah Books</h3></div><p>A short conversation-style note on writing across romance, wonder, mystery, and courage.</p></article>
+          </div>
+        </div>
+      </section>
+      <section class="podcast-note-section lighter-bg">
+        <div class="container-nevo podcast-note-grid">
+          <div><p class="eyebrow">Format</p><h2>Simple, intimate, and book-led.</h2></div>
+          <div class="podcast-note-list"><span>Worldbuilding</span><span>Writing life</span><span>Reader questions</span><span>Behind the books</span></div>
+        </div>
+      </section>
+      <section class="podcast-closing section-size-2">
+        <div class="container-nevo"><blockquote><span>For the readers who want to linger a little longer in the world.</span><cite>Amanah Books Podcast</cite></blockquote></div>
+      </section>
+    </div>
+    <footer class="footer-nevo">
+      <a class="button-dark" href="/shop/">Shop Books</a>
+      <div><span>Podcast </span><strong>Amanah Saais</strong><p>Stories behind the stories</p></div>
+    </footer>
+  </main>
+</body>
+</html>`;
+
 const globalCss = await readFile('app/globals.css', 'utf8');
 const customCss = globalCss.slice(globalCss.indexOf('.site-shell'));
 const css = `*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f8f7f4;color:#171717;font-family:Arial,Helvetica,sans-serif}p,h1,h2,h3{margin:0}a{color:inherit}${customCss}`;
 
 await mkdir('vercel-static/about', { recursive: true });
 await mkdir('vercel-static/shop', { recursive: true });
+await mkdir('vercel-static/podcast', { recursive: true });
 await writeFile('vercel-static/index.html', homeHtml);
 await writeFile('vercel-static/about/index.html', aboutHtml);
 await writeFile('vercel-static/shop/index.html', shopHtml);
+await writeFile('vercel-static/podcast/index.html', podcastHtml);
 await writeFile('vercel-static/style.css', css);
 await cp('public/island-nights-cover.jpg', 'vercel-static/island-nights-cover.jpg');
 await cp('public/island-nights-book-two.png', 'vercel-static/island-nights-book-two.png');
