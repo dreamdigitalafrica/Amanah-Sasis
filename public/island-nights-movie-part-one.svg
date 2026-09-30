@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Island Nights Part 1 minimalist movie cover</title>
+  <desc id="desc">Minimal cinematic landscape cover concept for Island Nights Part 1 by Amanah Saais.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07131f"/>
+      <stop offset=".48" stop-color="#0b5c79"/>
+      <stop offset="1" stop-color="#ed9b45"/>
+    </linearGradient>
+    <radialGradient id="portal" cx=".52" cy=".45" r=".3">
+      <stop offset=".58" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".7" stop-color="#ffd78e" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#36b7e6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="830" cy="390" r="278" fill="url(#portal)"/>
+  <path d="M0 680c210-96 388-112 536-48 156 68 313 57 471 2 185-64 388-29 593 106v160H0Z" fill="#061018" opacity=".92"/>
+  <path d="M102 706c164-46 312-43 445 8 155 59 314 43 478-28 169-72 337-53 505 58" fill="none" stroke="#54d4ff" stroke-width="3" opacity=".28"/>
+  <g fill="#f9c879" opacity=".78">
+    <rect x="720" y="330" width="24" height="224"/>
+    <rect x="758" y="276" width="28" height="278"/>
+    <rect x="804" y="210" width="36" height="344"/>
+    <rect x="856" y="296" width="26" height="258"/>
+    <rect x="900" y="352" width="22" height="202"/>
+  </g>
+  <path d="M324 408c154-42 356-20 534 42 213 74 381 61 498-39" fill="none" stroke="#fff4d3" stroke-width="2" opacity=".2"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="800" y="116" fill="#f6d19a" font-size="34" letter-spacing="13">AMANAH SAAIS</text>
+    <text x="800" y="698" fill="#fff7e8" font-size="54" letter-spacing="18">ARCANE DU BELTAH</text>
+    <text x="800" y="792" fill="#fff7e8" font-size="102" letter-spacing="8">ISLAND NIGHTS</text>
+    <text x="800" y="850" fill="#f6d19a" font-size="34" letter-spacing="18">PART ONE</text>
+  </g>
+</svg>

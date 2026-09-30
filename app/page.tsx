@@ -1,27 +1,94 @@
 const books = [
   {
-    volume: 'Book One',
-    image: '/island-nights-cover.jpg',
-    description:
-      'Book One begins an epic journey where magic, destiny, and courage collide beneath an island night.',
+    tag: 'Book',
+    title: 'Island Nights',
+    subtitle: 'Arcane du Beltah / Part One',
+    image: '/island-nights-book-one-card.jpg',
+    layout: 'portrait',
+    tone: '#0b5c79',
   },
   {
-    volume: 'Book Two',
-    image: '/island-nights-book-two.png',
-    description:
-      'Book Two continues the Arcane du Beltah journey with deeper mystery, romance, and courage above an enchanted world.',
+    tag: 'Book',
+    title: 'Island Nights',
+    subtitle: 'Arcane du Beltah / Part Two',
+    image: '/island-nights-book-two-card.jpg',
+    layout: 'portrait',
+    tone: '#432a70',
+  },
+  {
+    tag: 'Coming Soon',
+    title: 'Behind Hind Sight',
+    subtitle: 'Amanah Saais',
+    image: '/behind-hind-sight-cover.svg',
+    layout: 'portrait',
+    tone: '#8f6b3d',
+  },
+  {
+    tag: 'Movie',
+    title: 'Island Nights',
+    subtitle: 'Arcane du Beltah / Part 1',
+    image: '/island-nights-movie-part-one-card.jpg',
+    layout: 'landscape',
+    tone: '#0b5c79',
+  },
+  {
+    tag: 'Movie',
+    title: 'Island Nights',
+    subtitle: 'Arcane du Beltah / Part 2',
+    image: '/island-nights-movie-part-two-card.jpg',
+    layout: 'landscape',
+    tone: '#170f31',
   },
 ];
 
-const price = '₦15,000 / approx. $11.34';
+const featuredBy = ['Fantasy', 'Romance', 'Mystery', 'Magic', 'Destiny', 'Wonder'];
+
+const process = [
+  {
+    step: '01',
+    title: 'World',
+    text: 'Every story begins with atmosphere: islands, secrets, magic, and the feeling that something unseen is close.',
+  },
+  {
+    step: '02',
+    title: 'Heart',
+    text: 'Characters move through romance, courage, and longing with emotional choices at the center.',
+  },
+  {
+    step: '03',
+    title: 'Journey',
+    text: 'Each book opens another door into Arcane du Beltah, building a series made to linger.',
+  },
+];
+
+const notes = [
+  {
+    label: 'Podcast',
+    title: 'Behind Island Nights',
+    text: 'A quiet audio space for the ideas, worldbuilding, and emotional notes behind the books.',
+    href: '/podcast',
+  },
+  {
+    label: 'About',
+    title: 'Meet Amanah',
+    text: 'A novelist, writer, and poet crafting immersive stories filled with hope and wonder.',
+    href: '/about',
+  },
+  {
+    label: 'Shop',
+    title: 'Amanah Books',
+    text: 'Buy through Paystack or Amazon and begin the Arcane du Beltah series.',
+    href: '/shop',
+  },
+];
 
 export default function Home() {
   return (
-    <main className="site-shell min-h-screen">
+    <main className="site-shell aver-home min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="#home" aria-label="Amanah Saais home">
           <span className="brand-seal">AS</span>
-          <span>Amanah Saais</span>
+          <span>Amanah</span>
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="#home">Home</a>
@@ -29,105 +96,135 @@ export default function Home() {
           <a href="#books">Books</a>
           <a href="/shop">Shop</a>
           <a href="/podcast">Podcast</a>
-          <a href="#contact">Contact</a>
         </nav>
+        <div className="social-links-mini" aria-label="Social links">
+          <span>Social Links:</span>
+          <div>
+            <a href="#contact">Mail</a>
+            <a href="https://paystack.shop/pay/jeqoqeorm8">Pay</a>
+            <a href="/shop">Shop</a>
+          </div>
+        </div>
       </header>
 
       <div className="content-frame">
-        <section id="home" className="freelancer-hero section-size-1">
+        <section id="home" className="amanah-banner">
+          <div className="banner-watermark" aria-hidden="true">
+            <span>Amanah</span>
+          </div>
           <div className="container-nevo">
-            <h1 className="freelancer-title reveal-up">
-              <span>Amanah Saais is a </span>
-              <span className="typed-word serif black-text">
-                <span>novelist.</span>
-                <span>writer.</span>
-                <span>poet.</span>
-              </span>
-            </h1>
+            <div className="banner-title reveal-up">
+              <p className="eyebrow">Novelist / Writer / Poet</p>
+              <h1>
+                <span>Amanah</span>
+                <span className="author-orb">
+                  <img src="/amanah-saais-author.png" alt="" />
+                  <i aria-hidden="true">✦</i>
+                </span>
+                <span>Saais</span>
+              </h1>
+              <p>
+                Fantasy romance, mystery, magic, and stories made to linger.
+              </p>
+            </div>
+
+            <div className="banner-feature hero-featured reveal-up delay-1">
+              <h2>As Featured By</h2>
+              <div className="featured-list" aria-label="Featured themes">
+                {featuredBy.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="books" className="section-size-2 books-section">
+        <section id="books" className="landing-books section-size-2">
           <div className="container-nevo">
-            <div className="section-row">
-              <h2>Selected books</h2>
-              <div className="filter-row" aria-label="Book categories">
-                <span>All</span>
-                <span>Novel</span>
-                <span>Fantasy</span>
-                <span>Book One</span>
-                <span>Book Two</span>
+            <div className="landing-section-head">
+              <div>
+                <p className="eyebrow">Books</p>
+                <h2>Selected work</h2>
               </div>
+              <span>Books / Covers / Movie Concepts</span>
             </div>
 
-            <div className="books-stack">
+            <div className="project-grid">
               {books.map((book, index) => (
                 <article
-                  className={`book-showcase ${index % 2 === 1 ? 'reverse' : ''}`}
-                  key={book.volume}
+                  className={`project-book-card ${book.layout}`}
+                  key={`${book.title}-${book.subtitle}`}
+                  style={{ '--card-tone': book.tone } as any}
                 >
-                  <div className="book-stage" aria-hidden="true">
-                    <div className="book-shadow" />
-                    <div className="book-3d">
-                      <div className="book-side" />
-                      <img src={book.image} alt="" className="book-cover-pro" />
-                    </div>
+                  <span className="card-reveal" aria-hidden="true" />
+                  <div className="project-cover">
+                    <img src={book.image} alt={`${book.title} cover`} />
                   </div>
-                  <div className="book-copy">
-                    <div className="labels">Novel</div>
-                    <h3>Arcane du Beltah: Island Nights</h3>
-                    <p>{book.description}</p>
-                    <div className="book-meta">
-                      <div>
-                        <span>Series</span>
-                        <strong>Arcane du Beltah</strong>
-                      </div>
-                      <div>
-                        <span>Volume</span>
-                        <strong>{book.volume}</strong>
-                      </div>
-                      <div>
-                        <span>Genre</span>
-                        <strong>Fantasy Romance</strong>
-                      </div>
-                      <div>
-                        <span>Price</span>
-                        <strong>{price}</strong>
-                      </div>
-                    </div>
+                  <div className="project-copy">
+                    <span className="book-tag">{book.tag}</span>
+                    <a className="project-arrow" href="/shop" aria-label={`Open ${book.title}`}>
+                      ↙
+                    </a>
+                    <h3>{book.title}</h3>
+                    <p>{book.subtitle}</p>
                   </div>
                 </article>
+              ))}
+            </div>
+
+            <div className="landing-center-action">
+              <a className="button" href="/shop">
+                <span>All Books</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="work-process-section">
+          <div className="container-nevo">
+            <div className="landing-section-head">
+              <div>
+                <p className="eyebrow">Process</p>
+                <h2>Process Delivers Wonder</h2>
+              </div>
+              <span>The approach</span>
+            </div>
+
+            <div className="process-grid work-process">
+              {process.map((item) => (
+                <div key={item.step}>
+                  <article className="work-process-item">
+                    <span>{item.step}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </article>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="shop" className="statement-section lighter-bg">
-          <div className="container-nevo mini-section">
-            <p className="eyebrow">Shop</p>
-            <h2>Book shop coming soon.</h2>
-            <a className="inline-button" href="/shop">
-              Preview Shop
-            </a>
-          </div>
-        </section>
-
-        <section id="podcast" className="section-size-3 podcast-section">
+        <section id="podcast" className="journal-section">
           <div className="container-nevo">
-            <div className="section-row">
-              <h2>Podcast</h2>
-              <p>Conversations on story, imagination, and the worlds behind the page.</p>
+            <div className="landing-section-head">
+              <div>
+                <p className="eyebrow">Notes</p>
+                <h2>My weekly thoughts</h2>
+              </div>
+              <span>Podcast / Bio / Shop</span>
             </div>
-            <div className="podcast-panel">
-              <span>Coming Soon</span>
-              <h3>Behind Island Nights</h3>
-              <p>
-                A future audio space for book reflections, creative notes, and
-                conversations with readers.
-              </p>
-              <a className="inline-button light" href="/podcast">
-                View Podcast
-              </a>
+
+            <div className="journal-grid">
+              {notes.map((item) => (
+                <article key={item.title}>
+                  <span>{item.label}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <a className="inline-button" href={item.href}>
+                    Open
+                  </a>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -156,7 +253,7 @@ export default function Home() {
                 rows={7}
               />
               <button className="button-dark" type="submit">
-                Submit
+                <span>Submit</span>
               </button>
             </form>
           </div>
@@ -164,8 +261,70 @@ export default function Home() {
       </div>
 
       <footer className="footer-nevo">
-        <a className="button-dark" href="#books">
-          View Book
+        <a className="footer-cta" href="#contact">
+          <div className="animated-line animated-line-one">
+            <div className="line-block">
+              <span>
+                <span className="cta-text">Let’s talk books</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Let’s talk books</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Let’s talk books</span>
+                <span className="cta-icon">↗</span>
+              </span>
+            </div>
+            <div className="line-block-copy">
+              <span>
+                <span className="cta-text">Let’s talk books</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Let’s talk books</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Let’s talk books</span>
+                <span className="cta-icon">↗</span>
+              </span>
+            </div>
+          </div>
+          <div className="animated-line animated-line-two">
+            <div className="line-block">
+              <span>
+                <span className="cta-text">Enter Arcane du Beltah</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Enter Arcane du Beltah</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Enter Arcane du Beltah</span>
+                <span className="cta-icon">↗</span>
+              </span>
+            </div>
+            <div className="line-block-copy">
+              <span>
+                <span className="cta-text">Enter Arcane du Beltah</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Enter Arcane du Beltah</span>
+                <span className="cta-icon">↗</span>
+              </span>
+              <span>
+                <span className="cta-text">Enter Arcane du Beltah</span>
+                <span className="cta-icon">↗</span>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a className="button" href="#books">
+          <span>View Book</span>
         </a>
         <div>
           <span>Built for </span>

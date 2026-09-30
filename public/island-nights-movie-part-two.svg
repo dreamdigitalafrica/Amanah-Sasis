@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Island Nights Part 2 minimalist movie cover</title>
+  <desc id="desc">Minimal cinematic landscape cover concept for Island Nights Part 2 by Amanah Saais.</desc>
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#170f31"/>
+      <stop offset=".48" stop-color="#0a2f45"/>
+      <stop offset="1" stop-color="#06080c"/>
+    </linearGradient>
+    <radialGradient id="moon" cx=".3" cy=".34" r=".28">
+      <stop offset="0" stop-color="#fff4d9" stop-opacity=".95"/>
+      <stop offset=".26" stop-color="#98d8ff" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9ad8ff"/>
+      <stop offset=".55" stop-color="#f5d18e"/>
+      <stop offset="1" stop-color="#ff7a44"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#night)"/>
+  <rect width="1600" height="900" fill="url(#moon)"/>
+  <path d="M84 626c280-82 448-62 600 8 194 90 410 38 832-88v354H84Z" fill="#020508" opacity=".88"/>
+  <path d="M240 603c180-205 402-240 665-90 174 100 322 101 443 3" fill="none" stroke="url(#gold)" stroke-width="8" opacity=".75"/>
+  <path d="M242 602c178-203 401-236 660-88 173 98 319 99 438 4" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
+  <g fill="#f6d19a" opacity=".7">
+    <circle cx="122" cy="122" r="2"/>
+    <circle cx="214" cy="172" r="2"/>
+    <circle cx="398" cy="92" r="2"/>
+    <circle cx="1192" cy="134" r="2"/>
+    <circle cx="1418" cy="218" r="2"/>
+    <circle cx="996" cy="86" r="2"/>
+  </g>
+  <g fill="#9ad8ff" opacity=".55">
+    <rect x="1030" y="328" width="26" height="180"/>
+    <rect x="1072" y="280" width="32" height="228"/>
+    <rect x="1124" y="220" width="44" height="288"/>
+    <rect x="1190" y="302" width="30" height="206"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="800" y="116" fill="#f6d19a" font-size="34" letter-spacing="13">AMANAH SAAIS</text>
+    <text x="800" y="696" fill="#fff7e8" font-size="54" letter-spacing="18">ARCANE DU BELTAH</text>
+    <text x="800" y="790" fill="#fff7e8" font-size="102" letter-spacing="8">ISLAND NIGHTS</text>
+    <text x="800" y="850" fill="#9ad8ff" font-size="34" letter-spacing="18">PART TWO</text>
+  </g>
+</svg>

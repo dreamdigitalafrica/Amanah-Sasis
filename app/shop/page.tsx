@@ -2,21 +2,21 @@ const products = [
   {
     id: 'book-one',
     volume: 'Book One',
-    image: '/island-nights-cover.jpg',
+    image: '/island-nights-part-one-cover.png',
     title: 'Arcane du Beltah: Island Nights',
-    note: 'A magical island romance where courage, destiny, and hidden power meet beneath the night sky.',
-    glimpse:
-      'The story begins on an island where ordinary choices open the door to a world of magic, danger, and longing. As destiny pulls closer, the heart must decide what courage truly costs.',
+    note: 'Part One begins an island journey where courage, destiny, and hidden power meet beneath the night sky.',
+    amazonUrl:
+      'https://www.amazon.com/Arcane-Du-Beltah-Island-Nights-ebook/dp/B0HJ7719YF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-1',
     paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
   },
   {
     id: 'book-two',
     volume: 'Book Two',
-    image: '/island-nights-book-two.png',
+    image: '/island-nights-part-two-cover.png',
     title: 'Arcane du Beltah: Island Nights',
-    note: 'The journey continues with deeper mystery, romance, and a world balanced between wonder and risk.',
-    glimpse:
-      'Book Two returns to Arcane du Beltah with higher stakes and a wider horizon. Love, loyalty, and power are tested as the island reveals more than anyone expected.',
+    note: 'Part Two expands the world with deeper mystery, romance, and a fate balanced between wonder and risk.',
+    amazonUrl:
+      'https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3',
     paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
   },
 ];
@@ -26,11 +26,11 @@ const usdPrice = 'approx. $11.34';
 
 export default function ShopPage() {
   return (
-    <main className="site-shell min-h-screen">
+    <main className="site-shell aver-home shop-template-page min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="/" aria-label="Amanah Saais home">
           <span className="brand-seal">AS</span>
-          <span>Amanah Saais</span>
+          <span>Amanah</span>
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="/">Home</a>
@@ -38,126 +38,83 @@ export default function ShopPage() {
           <a href="/#books">Books</a>
           <a href="/shop">Shop</a>
           <a href="/podcast">Podcast</a>
-          <a href="/#contact">Contact</a>
         </nav>
+        <div className="social-links-mini" aria-label="Social links">
+          <span>Social Links:</span>
+          <div>
+            <a href="/#contact">Mail</a>
+            <a href="https://paystack.shop/pay/jeqoqeorm8">Pay</a>
+            <a href="/shop">Shop</a>
+          </div>
+        </div>
       </header>
 
       <div className="content-frame">
-        <section className="shop-page-hero section-size-2 lighter-bg">
-          <div className="container-nevo shop-page-heading reveal-up">
-            <p className="eyebrow">Shop</p>
-            <h1>Amanah Books</h1>
-            <p>
-              Explore the Island Nights series and purchase each volume through
-              Paystack.
-            </p>
+        <section className="page-banner">
+          <div className="banner-watermark" aria-hidden="true">
+            <span>Shop</span>
+          </div>
+          <div className="container-nevo page-banner-inner">
+            <span className="eyebrow">Amanah Books</span>
+            <h1>Shop</h1>
+            <p>Island Nights editions available through Paystack and Amazon.</p>
           </div>
         </section>
 
-        <section className="shop-products-section section-size-2">
+        <section className="shop-listing-template">
           <div className="container-nevo">
-            <div className="shop-products-header">
-              <h2>Available Books</h2>
-              <span>
-                {price} / {usdPrice}
-              </span>
-            </div>
-
-            <div className="shop-products-grid refined">
+            <div className="shop-listing-grid">
               {products.map((product, index) => (
                 <article
-                  className={`shop-book-card ${index === 1 ? 'accent' : ''}`}
+                  className="shop-listing-card init-delay"
                   key={product.id}
+                  style={
+                    {
+                      '--lg-delay': `${(index % 3) * 75}ms`,
+                      '--md-delay': `${(index % 2) * 75}ms`,
+                      '--sm-delay': `${(index % 2) * 75}ms`,
+                    } as any
+                  }
                 >
-                  <div className="shop-book-visual">
-                    <div className="shop-card-book" aria-hidden="true">
-                      <div className="shop-card-pages" />
-                      <img src={product.image} alt="" />
-                    </div>
+                  <div className="shop-listing-image">
+                    <img src={product.image} alt={`${product.title} ${product.volume}`} />
                   </div>
-
-                  <div className="shop-book-info">
+                  <div className="shop-listing-copy">
                     <span>{product.volume}</span>
-                    <h3>{product.title}</h3>
+                    <h2>{product.title}</h2>
                     <p>{product.note}</p>
-
                     <div className="shop-price-row">
                       <strong>{price}</strong>
                       <em>{usdPrice}</em>
                     </div>
-
-                    <div className="shop-actions">
-                      <a className="button-dark" href={`#${product.id}-preview`}>
-                        Read Glimpse
-                      </a>
+                    <div className="shop-listing-actions">
                       <a
-                        className="button-outline"
+                        className="button-dark"
                         href={product.paystackUrl}
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Buy Now
+                        <span>Buy with Paystack</span>
+                      </a>
+                      <a
+                        className="button-outline"
+                        href={product.amazonUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Buy from Amazon
                       </a>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
+            <div className="shop-pagination">
+              <span>1</span>
+            </div>
           </div>
         </section>
-
-        <section className="shop-note-section lighter-bg">
-          <div className="container-nevo shop-note">
-            <h2>Secure checkout through Paystack.</h2>
-            <p>
-              Payment links are prepared for each book and can be connected to
-              the final Paystack product pages when ready.
-            </p>
-          </div>
-        </section>
-
-        {products.map((product) => (
-          <div className="book-preview-modal" id={`${product.id}-preview`} key={product.id}>
-            <a className="modal-backdrop" href="/shop" aria-label="Close preview" />
-            <article className="modal-panel" role="dialog" aria-modal="true">
-              <a className="modal-close" href="/shop" aria-label="Close preview">
-                ×
-              </a>
-              <div className="modal-cover">
-                <img src={product.image} alt="" />
-              </div>
-              <div className="modal-copy">
-                <span>{product.volume}</span>
-                <h2>{product.title}</h2>
-                <p>{product.glimpse}</p>
-                <div className="shop-price-row">
-                  <strong>{price}</strong>
-                  <em>{usdPrice}</em>
-                </div>
-                <a
-                  className="button-dark"
-                  href={product.paystackUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Buy with Paystack
-                </a>
-              </div>
-            </article>
-          </div>
-        ))}
       </div>
-
-      <footer className="footer-nevo">
-        <a className="button-dark" href="/#books">
-          View Books
-        </a>
-        <div>
-          <span>Shop </span>
-          <strong>Amanah Saais</strong>
-          <p>Arcane du Beltah: Island Nights</p>
-        </div>
-      </footer>
     </main>
   );
 }
