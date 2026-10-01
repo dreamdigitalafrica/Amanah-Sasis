@@ -277,7 +277,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
         <div class="container-nevo">
           <div class="shop-listing-grid">
             <article class="shop-listing-card">
-              <div class="shop-listing-image"><img src="/island-nights-part-one-cover.png" alt="Arcane du Beltah Island Nights Book One" /></div>
+              <div class="shop-listing-image"><img src="/island-nights-book-one-mockup.png" alt="Arcane du Beltah Island Nights Book One" /></div>
               <div class="shop-listing-copy">
                 <span>Book One</span>
                 <h3>Arcane du Beltah: Island Nights</h3>
@@ -287,7 +287,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
               </div>
             </article>
             <article class="shop-listing-card">
-              <div class="shop-listing-image"><img src="/island-nights-part-two-cover.png" alt="Arcane du Beltah Island Nights Book Two" /></div>
+              <div class="shop-listing-image"><img src="/island-nights-book-two-mockup.png" alt="Arcane du Beltah Island Nights Book Two" /></div>
               <div class="shop-listing-copy">
                 <span>Book Two</span>
                 <h3>Arcane du Beltah: Island Nights</h3>

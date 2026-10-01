@@ -2,7 +2,7 @@ const products = [
   {
     id: 'book-one',
     volume: 'Book One',
-    image: '/island-nights-part-one-cover.png',
+    image: '/island-nights-book-one-mockup.png',
     title: 'Arcane du Beltah: Island Nights',
     note: 'Part One begins an island journey where courage, destiny, and hidden power meet beneath the night sky.',
     amazonUrl:
@@ -12,7 +12,7 @@ const products = [
   {
     id: 'book-two',
     volume: 'Book Two',
-    image: '/island-nights-part-two-cover.png',
+    image: '/island-nights-book-two-mockup.png',
     title: 'Arcane du Beltah: Island Nights',
     note: 'Part Two expands the world with deeper mystery, romance, and a fate balanced between courage and risk.',
     amazonUrl:
