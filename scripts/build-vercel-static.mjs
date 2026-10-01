@@ -31,7 +31,7 @@ const header = (home = false) => String.raw`<header class="site-header">
 </header>`;
 
 const motionScript = String.raw`<script>
-(() => {
+const initAverMotion = () => {
   const root = document.querySelector('.aver-home');
   const header = document.querySelector('.site-header');
   const nav = document.querySelector('.main-menu');
@@ -92,7 +92,13 @@ const motionScript = String.raw`<script>
   } else {
     [...revealItems, ...projectCards].forEach((item) => item.classList.add('is-visible'));
   }
-})();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAverMotion, { once: true });
+} else {
+  initAverMotion();
+}
 </script>`;
 
 const footer = String.raw`<footer class="footer-nevo">

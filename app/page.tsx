@@ -44,7 +44,7 @@ const books = [
 const featuredBy = ['Inspirational', 'Fantasy', 'Romance', 'Mystery', 'Destiny', 'Faith Based'];
 
 const motionScript = `
-(() => {
+const initAverMotion = () => {
   const root = document.querySelector('.aver-home');
   const header = document.querySelector('.site-header');
   const nav = document.querySelector('.main-menu');
@@ -105,7 +105,13 @@ const motionScript = `
   } else {
     [...revealItems, ...projectCards].forEach((item) => item.classList.add('is-visible'));
   }
-})();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAverMotion, { once: true });
+} else {
+  initAverMotion();
+}
 `;
 
 const process = [
