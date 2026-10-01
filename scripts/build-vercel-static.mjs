@@ -30,6 +30,71 @@ const header = (home = false) => String.raw`<header class="site-header">
   </div>
 </header>`;
 
+const motionScript = String.raw`<script>
+(() => {
+  const root = document.querySelector('.aver-home');
+  const header = document.querySelector('.site-header');
+  const nav = document.querySelector('.main-menu');
+  if (!root) return;
+
+  root.classList.add('motion-ready');
+
+  if (nav) {
+    const links = [...nav.querySelectorAll('a')];
+    const active = links[0];
+    const moveIndicator = (link) => {
+      if (!link) return;
+      nav.style.setProperty('--indicator-left', link.offsetLeft + 'px');
+      nav.style.setProperty('--indicator-width', link.offsetWidth + 'px');
+    };
+
+    requestAnimationFrame(() => moveIndicator(active));
+    links.forEach((link) => {
+      link.addEventListener('mouseenter', () => moveIndicator(link));
+      link.addEventListener('focus', () => moveIndicator(link));
+      link.addEventListener('mouseleave', () => moveIndicator(active));
+      link.addEventListener('blur', () => moveIndicator(active));
+    });
+    window.addEventListener('resize', () => moveIndicator(active));
+  }
+
+  if (header) {
+    let lastScroll = window.scrollY;
+    const syncHeader = () => {
+      const current = window.scrollY;
+      header.classList.toggle('is-scrolled', current > 50);
+      header.classList.toggle('is-hidden', current > window.innerHeight * 0.9 && current > lastScroll);
+      lastScroll = Math.max(current, 0);
+    };
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+  }
+
+  const revealItems = [
+    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *'),
+  ];
+  const projectCards = [...document.querySelectorAll('.project-book-card')];
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+    [...revealItems, ...projectCards].forEach((item, index) => {
+      item.style.setProperty('--motion-delay', Math.min(index * 75, 420) + 'ms');
+      observer.observe(item);
+    });
+  } else {
+    [...revealItems, ...projectCards].forEach((item) => item.classList.add('is-visible'));
+  }
+})();
+</script>`;
+
 const footer = String.raw`<footer class="footer-nevo">
   <a class="footer-cta" href="/#contact">
     <div class="animated-line animated-line-one">
@@ -63,6 +128,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
 <body>
   <main class="site-shell aver-home">
     ${header(true)}
+    ${motionScript}
     <div class="content-frame">
       <section id="home" class="amanah-banner">
         <div class="banner-watermark" aria-hidden="true"><span>Amanah</span></div>
@@ -87,11 +153,11 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
           <div class="project-grid">
             <article class="project-book-card portrait" style="--card-tone:#0b5c79">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-book-one-card.jpg" alt="Island Nights cover" /></div>
+              <div class="project-cover"><img src="/island-nights-book-one-mockup.png" alt="Island Nights cover" /></div>
             </article>
             <article class="project-book-card portrait" style="--card-tone:#432a70">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-book-two-card.jpg" alt="Island Nights Part Two cover" /></div>
+              <div class="project-cover"><img src="/island-nights-book-two-mockup.png" alt="Island Nights Part Two cover" /></div>
             </article>
             <article class="project-book-card portrait" style="--card-tone:#8f6b3d">
               <span class="card-reveal" aria-hidden="true"></span>
@@ -148,6 +214,7 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
 <body>
   <main class="site-shell aver-home about-template-page">
     ${header(false)}
+    ${motionScript}
     <div class="content-frame">
       <section class="page-banner">
         <div class="banner-watermark" aria-hidden="true"><span>About</span></div>
@@ -193,6 +260,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
 <body>
   <main class="site-shell aver-home shop-template-page">
     ${header(false)}
+    ${motionScript}
     <div class="content-frame">
       <section class="page-banner">
         <div class="banner-watermark" aria-hidden="true"><span>Shop</span></div>
@@ -234,8 +302,9 @@ const podcastHtml = String.raw`<!doctype html>
 <html lang="en">
 ${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featuring book notes and conversations behind Amanah Books.', '/amanah-saais-author.png')}
 <body>
-  <main class="site-shell">
+  <main class="site-shell aver-home podcast-template-page">
     ${header(false)}
+    ${motionScript}
     <div class="content-frame">
       <section class="podcast-page-hero section-size-2 lighter-bg">
         <div class="container-nevo podcast-hero-grid">
@@ -290,8 +359,8 @@ await cp('public/island-nights-cover.jpg', 'vercel-static/island-nights-cover.jp
 await cp('public/island-nights-book-two.png', 'vercel-static/island-nights-book-two.png');
 await cp('public/island-nights-part-one-cover.png', 'vercel-static/island-nights-part-one-cover.png');
 await cp('public/island-nights-part-two-cover.png', 'vercel-static/island-nights-part-two-cover.png');
-await cp('public/island-nights-book-one-card.jpg', 'vercel-static/island-nights-book-one-card.jpg');
-await cp('public/island-nights-book-two-card.jpg', 'vercel-static/island-nights-book-two-card.jpg');
+await cp('public/island-nights-book-one-mockup.png', 'vercel-static/island-nights-book-one-mockup.png');
+await cp('public/island-nights-book-two-mockup.png', 'vercel-static/island-nights-book-two-mockup.png');
 await cp('public/behind-hind-sight-cover.svg', 'vercel-static/behind-hind-sight-cover.svg');
 await cp('public/island-nights-movie-part-one.svg', 'vercel-static/island-nights-movie-part-one.svg');
 await cp('public/island-nights-movie-part-two.svg', 'vercel-static/island-nights-movie-part-two.svg');

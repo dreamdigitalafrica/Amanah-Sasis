@@ -3,7 +3,7 @@ const books = [
     tag: 'Book',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part One',
-    image: '/island-nights-book-one-card.jpg',
+    image: '/island-nights-book-one-mockup.png',
     layout: 'portrait',
     tone: '#0b5c79',
   },
@@ -11,7 +11,7 @@ const books = [
     tag: 'Book',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part Two',
-    image: '/island-nights-book-two-card.jpg',
+    image: '/island-nights-book-two-mockup.png',
     layout: 'portrait',
     tone: '#432a70',
   },
@@ -42,6 +42,71 @@ const books = [
 ];
 
 const featuredBy = ['Inspirational', 'Fantasy', 'Romance', 'Mystery', 'Destiny', 'Faith Based'];
+
+const motionScript = `
+(() => {
+  const root = document.querySelector('.aver-home');
+  const header = document.querySelector('.site-header');
+  const nav = document.querySelector('.main-menu');
+  if (!root) return;
+
+  root.classList.add('motion-ready');
+
+  if (nav) {
+    const links = [...nav.querySelectorAll('a')];
+    const active = links[0];
+    const moveIndicator = (link) => {
+      if (!link) return;
+      nav.style.setProperty('--indicator-left', link.offsetLeft + 'px');
+      nav.style.setProperty('--indicator-width', link.offsetWidth + 'px');
+    };
+
+    requestAnimationFrame(() => moveIndicator(active));
+    links.forEach((link) => {
+      link.addEventListener('mouseenter', () => moveIndicator(link));
+      link.addEventListener('focus', () => moveIndicator(link));
+      link.addEventListener('mouseleave', () => moveIndicator(active));
+      link.addEventListener('blur', () => moveIndicator(active));
+    });
+    window.addEventListener('resize', () => moveIndicator(active));
+  }
+
+  if (header) {
+    let lastScroll = window.scrollY;
+    const syncHeader = () => {
+      const current = window.scrollY;
+      header.classList.toggle('is-scrolled', current > 50);
+      header.classList.toggle('is-hidden', current > window.innerHeight * 0.9 && current > lastScroll);
+      lastScroll = Math.max(current, 0);
+    };
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+  }
+
+  const revealItems = [
+    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *'),
+  ];
+  const projectCards = [...document.querySelectorAll('.project-book-card')];
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+    [...revealItems, ...projectCards].forEach((item, index) => {
+      item.style.setProperty('--motion-delay', Math.min(index * 75, 420) + 'ms');
+      observer.observe(item);
+    });
+  } else {
+    [...revealItems, ...projectCards].forEach((item) => item.classList.add('is-visible'));
+  }
+})();
+`;
 
 const process = [
   {
@@ -106,6 +171,7 @@ export default function Home() {
           </div>
         </div>
       </header>
+      <script dangerouslySetInnerHTML={{ __html: motionScript }} />
 
       <div className="content-frame">
         <section id="home" className="amanah-banner">

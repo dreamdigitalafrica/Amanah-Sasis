@@ -4437,6 +4437,1038 @@ html {
   }
 }
 
+/* Production lock: Aver-like motion and Bootstrap-style mobile grid */
+.aver-home.motion-ready .reveal-up,
+.aver-home.motion-ready .landing-section-head,
+.aver-home.motion-ready .work-process-item,
+.aver-home.motion-ready .journal-grid article,
+.aver-home.motion-ready .quote-grid > * {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.aver-home.motion-ready .reveal-up.is-visible,
+.aver-home.motion-ready .landing-section-head.is-visible,
+.aver-home.motion-ready .work-process-item.is-visible,
+.aver-home.motion-ready .journal-grid article.is-visible,
+.aver-home.motion-ready .quote-grid > *.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.aver-home.motion-ready .project-book-card .card-reveal,
+.aver-home.motion-ready .project-book-card .project-cover img {
+  animation: none;
+}
+
+.aver-home.motion-ready .project-book-card .card-reveal {
+  height: 100%;
+  transition: height 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.aver-home.motion-ready .project-book-card.is-visible .card-reveal {
+  height: 0;
+}
+
+.aver-home.motion-ready .project-book-card .project-cover img {
+  transform: scale(1.5);
+  transition:
+    filter 300ms ease,
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.aver-home.motion-ready .project-book-card.is-visible .project-cover img {
+  transform: scale(1);
+}
+
+.aver-home.motion-ready .project-book-card.is-visible:hover .project-cover img {
+  filter: none;
+  transform: scale(1.08);
+  transition-delay: 0ms;
+}
+
+.aver-home .site-header {
+  will-change: transform, opacity;
+}
+
+.aver-home .site-header.is-hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.aver-home .site-header.is-scrolled .brand-mark,
+.aver-home .site-header.is-scrolled .social-links-mini {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.aver-home .brand-mark,
+.aver-home .social-links-mini {
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.aver-home .main-menu::before {
+  transform: translateX(var(--indicator-left, 0));
+  width: var(--indicator-width, calc((100% - 16px) / 5));
+}
+
+.aver-home .main-menu:has(a:nth-child(2):hover)::before,
+.aver-home .main-menu:has(a:nth-child(3):hover)::before,
+.aver-home .main-menu:has(a:nth-child(4):hover)::before,
+.aver-home .main-menu:has(a:nth-child(5):hover)::before {
+  transform: translateX(var(--indicator-left, 0));
+}
+
+.aver-home .project-book-card::after,
+.aver-home .project-copy,
+.aver-home .project-arrow {
+  display: none !important;
+}
+
+.aver-home .project-book-card {
+  background: var(--card-tone, #27223f);
+  display: block;
+  min-height: 0 !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.aver-home .project-grid {
+  align-items: stretch;
+  display: grid;
+}
+
+.aver-home .project-cover,
+.aver-home .card-reveal {
+  inset: 0;
+  position: absolute;
+}
+
+.aver-home .card-reveal {
+  z-index: 3;
+}
+
+.aver-home .project-cover {
+  z-index: 1;
+}
+
+.aver-home .project-cover img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+@media (min-width: 1081px) {
+  .aver-home .project-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .aver-home .project-book-card.portrait {
+    aspect-ratio: 2 / 3;
+    grid-column: span 2;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 16 / 9;
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 1080px) {
+  .container-nevo {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .aver-home .site-header {
+    left: 0;
+    padding: 22px 24px;
+    position: fixed;
+    right: 0;
+  }
+
+  .aver-home .site-header.is-scrolled .brand-mark,
+  .aver-home .site-header.is-scrolled .social-links-mini {
+    opacity: 1;
+    transform: none;
+  }
+
+  .aver-home .main-menu {
+    justify-content: center;
+    width: min(100%, 680px);
+  }
+
+  .aver-home .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aver-home .project-book-card,
+  .aver-home .project-book-card.landscape {
+    grid-column: span 1;
+  }
+
+  .aver-home .project-book-card.portrait {
+    aspect-ratio: 2 / 3;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 720px) {
+  .container-nevo {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .aver-home .site-header {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .aver-home .brand-mark {
+    font-size: 32px;
+  }
+
+  .aver-home .brand-seal {
+    display: none;
+  }
+
+  .aver-home .main-menu {
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: visible;
+    padding: 7px;
+  }
+
+  .aver-home .main-menu::before {
+    display: none;
+  }
+
+  .aver-home .main-menu a,
+  .aver-home .main-menu a:first-child {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 12px;
+    justify-content: center;
+    min-height: 39px;
+    padding: 10px 8px;
+    white-space: nowrap;
+  }
+
+  .social-links-mini {
+    display: none;
+  }
+
+  .content-frame {
+    padding-top: 0;
+  }
+
+  .aver-home .amanah-banner {
+    min-height: 100svh;
+    padding-top: 178px;
+  }
+
+  .banner-title h1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: clamp(52px, 16vw, 82px);
+    justify-content: center;
+    letter-spacing: -0.05em;
+  }
+
+  .author-orb {
+    flex: 0 0 auto;
+    height: 78px;
+    width: 78px;
+  }
+
+  .banner-title > p:not(.eyebrow) {
+    font-size: 15.5px;
+    max-width: 340px;
+  }
+
+  .banner-feature {
+    margin-top: 58px;
+  }
+
+  .aver-home .featured-list {
+    display: grid;
+    gap: 13px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aver-home .featured-list span {
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .aver-home .landing-section-head {
+    margin-bottom: 30px;
+  }
+
+  .aver-home .landing-section-head h2 {
+    font-size: 38px;
+  }
+
+  .aver-home .landing-section-head > span {
+    font-size: 16px;
+  }
+
+  .aver-home .project-grid {
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .aver-home .project-book-card.portrait {
+    aspect-ratio: 2 / 3;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  .footer-nevo {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .footer-cta {
+    font-size: clamp(38px, 13vw, 58px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aver-home *,
+  .aver-home *::before,
+  .aver-home *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Final Aver parity: typography, motion, interactions, mobile */
+.aver-home {
+  font-family: var(--font-outfit), Outfit, Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+
+.aver-home .site-header {
+  grid-template-columns: minmax(160px, 1fr) auto minmax(160px, 1fr);
+  padding: 30px clamp(32px, 6.25vw, 128px);
+  z-index: 9000;
+}
+
+.aver-home .brand-mark {
+  font-size: clamp(38px, 3vw, 56px);
+  font-weight: 650;
+}
+
+.aver-home .main-menu {
+  background: rgba(24, 24, 26, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 8px;
+  position: relative;
+}
+
+.aver-home .main-menu::before {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  content: '';
+  height: calc(100% - 16px);
+  left: 8px;
+  position: absolute;
+  top: 8px;
+  transition:
+    transform 0.45s cubic-bezier(0.075, 0.82, 0.165, 1),
+    width 0.45s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: calc((100% - 16px) / 5);
+}
+
+.aver-home .main-menu:has(a:nth-child(2):hover)::before {
+  transform: translateX(100%);
+}
+
+.aver-home .main-menu:has(a:nth-child(3):hover)::before {
+  transform: translateX(200%);
+}
+
+.aver-home .main-menu:has(a:nth-child(4):hover)::before {
+  transform: translateX(300%);
+}
+
+.aver-home .main-menu:has(a:nth-child(5):hover)::before {
+  transform: translateX(400%);
+}
+
+.aver-home .main-menu a {
+  font-size: clamp(15px, 1vw, 18px);
+  font-weight: 650;
+  padding: 14px 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.social-links-mini {
+  font-size: 15px;
+}
+
+.aver-home .amanah-banner {
+  min-height: 100svh;
+  padding: clamp(144px, 13vw, 214px) 0 0;
+}
+
+.banner-watermark {
+  font-size: clamp(330px, 55vw, 960px);
+  inset: 8% auto auto -5%;
+}
+
+.banner-title h1 {
+  font-size: clamp(74px, 8vw, 146px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.author-orb {
+  height: clamp(92px, 8.4vw, 150px);
+  margin: 0 clamp(14px, 1.6vw, 26px);
+  width: clamp(92px, 8.4vw, 150px);
+}
+
+.banner-title > p:not(.eyebrow) {
+  font-size: clamp(18px, 1.46vw, 22px);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 30px;
+  max-width: 690px;
+}
+
+.banner-feature {
+  margin-top: clamp(118px, 17vh, 190px);
+}
+
+.hero-featured h2 {
+  font-size: clamp(32px, 3vw, 48px);
+  line-height: 1;
+}
+
+.aver-home .featured-list {
+  gap: clamp(30px, 5.2vw, 82px);
+}
+
+.aver-home .featured-list span {
+  font-size: clamp(30px, 3.35vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+
+.aver-home .landing-books {
+  padding: clamp(96px, 8.5vw, 128px) 0;
+}
+
+.aver-home .landing-section-head {
+  margin-bottom: clamp(46px, 5vw, 64px);
+}
+
+.aver-home .landing-section-head h2 {
+  font-size: clamp(36px, 3.75vw, 58px);
+  line-height: 1;
+}
+
+.aver-home .landing-section-head > span {
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1;
+}
+
+.aver-home .project-grid {
+  gap: clamp(24px, 2.4vw, 36px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.aver-home .project-book-card {
+  border-radius: 8px;
+  grid-column: span 2;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.aver-home .project-book-card.portrait {
+  aspect-ratio: 0.74 / 1;
+}
+
+.aver-home .project-book-card.landscape {
+  aspect-ratio: 1.78 / 1;
+  grid-column: span 3;
+}
+
+.aver-home .project-cover {
+  inset: 0;
+  position: absolute;
+}
+
+.aver-home .project-cover img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.5);
+  transition:
+    filter 0.3s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 100%;
+}
+
+.aver-home .project-book-card .project-cover img {
+  animation: averProjectImageIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.aver-home .project-book-card:nth-child(2) .project-cover img {
+  animation-delay: 100ms;
+}
+
+.aver-home .project-book-card:nth-child(3) .project-cover img {
+  animation-delay: 200ms;
+}
+
+.aver-home .project-book-card:nth-child(4) .project-cover img {
+  animation-delay: 300ms;
+}
+
+.aver-home .project-book-card:nth-child(5) .project-cover img {
+  animation-delay: 400ms;
+}
+
+@keyframes averProjectImageIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+.aver-home .project-book-card:hover .project-cover img {
+  filter: brightness(0.76);
+  transform: scale(1.12);
+}
+
+.aver-home .project-book-card::after,
+.aver-home .project-copy {
+  display: none !important;
+}
+
+.aver-home .card-reveal {
+  animation: cardRevealLift 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  height: 100%;
+}
+
+.aver-home .button,
+.aver-home .button-dark,
+.button-outline,
+.inline-button {
+  border-radius: 999px;
+}
+
+@media (max-width: 1080px) {
+  .aver-home .site-header {
+    gap: 18px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 24px;
+    position: absolute;
+  }
+
+  .aver-home .brand-mark {
+    font-size: 42px;
+  }
+
+  .aver-home .main-menu {
+    max-width: calc(100vw - 32px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .aver-home .main-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aver-home .main-menu::before {
+    display: none;
+  }
+
+  .aver-home .main-menu a:first-child {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .aver-home .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aver-home .project-book-card,
+  .aver-home .project-book-card.landscape {
+    grid-column: span 1;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 1.45 / 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .aver-home .site-header {
+    align-items: center;
+    padding: 18px 14px;
+  }
+
+  .aver-home .brand-mark {
+    font-size: 34px;
+  }
+
+  .aver-home .main-menu {
+    border-radius: 26px;
+    gap: 4px;
+    padding: 6px;
+    width: 100%;
+  }
+
+  .aver-home .main-menu a {
+    flex: 1 0 auto;
+    font-size: 13px;
+    padding: 11px 13px;
+    text-align: center;
+  }
+
+  .aver-home .amanah-banner {
+    min-height: 820px;
+    padding-top: 150px;
+  }
+
+  .banner-watermark {
+    font-size: clamp(210px, 86vw, 430px);
+    inset: 10% auto auto -22%;
+  }
+
+  .banner-title .eyebrow {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .banner-title h1 {
+    font-size: clamp(55px, 17vw, 86px);
+    line-height: 1;
+  }
+
+  .author-orb {
+    height: 86px;
+    margin: 10px 12px;
+    width: 86px;
+  }
+
+  .author-orb i {
+    font-size: 38px;
+    right: -12px;
+    top: -8px;
+  }
+
+  .banner-title > p:not(.eyebrow) {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-top: 22px;
+    max-width: 330px;
+  }
+
+  .banner-feature {
+    margin-top: 82px;
+    padding-bottom: 42px;
+  }
+
+  .hero-featured h2 {
+    font-size: 32px;
+  }
+
+  .aver-home .featured-list {
+    flex-wrap: wrap;
+    gap: 16px 26px;
+    overflow: visible;
+  }
+
+  .aver-home .featured-list span {
+    font-size: 28px;
+  }
+
+  .aver-home .landing-books {
+    padding: 70px 0;
+  }
+
+  .aver-home .landing-section-head {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .aver-home .landing-section-head h2 {
+    font-size: 42px;
+  }
+
+  .aver-home .project-grid {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .aver-home .project-book-card.portrait {
+    aspect-ratio: 0.78 / 1;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .aver-home .process-grid,
+  .aver-home .journal-grid,
+  .quote-grid,
+  .about-intro-grid,
+  .about-service-grid,
+  .shop-listing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Final responsive interaction lock */
+.aver-home.motion-ready .reveal-up,
+.aver-home.motion-ready .landing-section-head,
+.aver-home.motion-ready .work-process-item,
+.aver-home.motion-ready .journal-grid article,
+.aver-home.motion-ready .quote-grid > * {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.aver-home.motion-ready .reveal-up.is-visible,
+.aver-home.motion-ready .landing-section-head.is-visible,
+.aver-home.motion-ready .work-process-item.is-visible,
+.aver-home.motion-ready .journal-grid article.is-visible,
+.aver-home.motion-ready .quote-grid > *.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.aver-home.motion-ready .project-book-card .card-reveal,
+.aver-home.motion-ready .project-book-card .project-cover img {
+  animation: none;
+}
+
+.aver-home.motion-ready .project-book-card .card-reveal {
+  height: 100%;
+  transition: height 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.aver-home.motion-ready .project-book-card.is-visible .card-reveal {
+  height: 0;
+}
+
+.aver-home.motion-ready .project-book-card .project-cover img {
+  transform: scale(1.5);
+  transition:
+    filter 300ms ease,
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.aver-home.motion-ready .project-book-card.is-visible .project-cover img {
+  transform: scale(1);
+}
+
+.aver-home.motion-ready .project-book-card.is-visible:hover .project-cover img {
+  filter: none;
+  transform: scale(1.08);
+  transition-delay: 0ms;
+}
+
+.aver-home .site-header {
+  will-change: transform, opacity;
+}
+
+.aver-home .site-header.is-hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.aver-home .site-header.is-scrolled .brand-mark,
+.aver-home .site-header.is-scrolled .social-links-mini {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.aver-home .brand-mark,
+.aver-home .social-links-mini {
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.aver-home .main-menu::before {
+  transform: translateX(var(--indicator-left, 0));
+  width: var(--indicator-width, calc((100% - 16px) / 5));
+}
+
+.aver-home .main-menu:has(a:nth-child(2):hover)::before,
+.aver-home .main-menu:has(a:nth-child(3):hover)::before,
+.aver-home .main-menu:has(a:nth-child(4):hover)::before,
+.aver-home .main-menu:has(a:nth-child(5):hover)::before {
+  transform: translateX(var(--indicator-left, 0));
+}
+
+.aver-home .project-book-card::after,
+.aver-home .project-copy,
+.aver-home .project-arrow {
+  display: none !important;
+}
+
+.aver-home .project-book-card {
+  background: var(--card-tone, #27223f);
+  display: block;
+  position: relative;
+}
+
+.aver-home .project-grid {
+  align-items: stretch;
+  display: grid;
+}
+
+.aver-home .project-cover,
+.aver-home .card-reveal {
+  inset: 0;
+  position: absolute;
+}
+
+.aver-home .card-reveal {
+  z-index: 3;
+}
+
+.aver-home .project-cover {
+  z-index: 1;
+}
+
+.aver-home .project-cover img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1081px) {
+  .aver-home .project-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .aver-home .project-book-card.portrait {
+    aspect-ratio: 2 / 3;
+    grid-column: span 2;
+    min-height: 0;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 16 / 9;
+    grid-column: span 3;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 1080px) {
+  .container-nevo {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .aver-home .site-header {
+    left: 0;
+    padding: 22px 24px;
+    position: fixed;
+    right: 0;
+  }
+
+  .aver-home .site-header.is-scrolled .brand-mark,
+  .aver-home .site-header.is-scrolled .social-links-mini {
+    opacity: 1;
+    transform: none;
+  }
+
+  .aver-home .main-menu {
+    justify-content: center;
+    width: min(100%, 680px);
+  }
+
+  .aver-home .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aver-home .project-book-card,
+  .aver-home .project-book-card.landscape {
+    grid-column: span 1;
+    min-height: 0;
+  }
+
+  .aver-home .project-book-card.portrait {
+    aspect-ratio: 2 / 3;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 720px) {
+  .container-nevo {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .aver-home .site-header {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .aver-home .brand-mark {
+    font-size: 32px;
+  }
+
+  .aver-home .brand-seal {
+    display: none;
+  }
+
+  .aver-home .main-menu {
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: visible;
+    padding: 7px;
+  }
+
+  .aver-home .main-menu::before {
+    display: none;
+  }
+
+  .aver-home .main-menu a,
+  .aver-home .main-menu a:first-child {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 12px;
+    justify-content: center;
+    min-height: 39px;
+    padding: 10px 8px;
+    white-space: nowrap;
+  }
+
+  .social-links-mini {
+    display: none;
+  }
+
+  .content-frame {
+    padding-top: 0;
+  }
+
+  .aver-home .amanah-banner {
+    min-height: 100svh;
+    padding-top: 178px;
+  }
+
+  .banner-title h1 {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: clamp(52px, 16vw, 82px);
+    justify-content: center;
+    letter-spacing: -0.05em;
+  }
+
+  .author-orb {
+    flex: 0 0 auto;
+    height: 78px;
+    width: 78px;
+  }
+
+  .banner-title > p:not(.eyebrow) {
+    font-size: 15.5px;
+    max-width: 340px;
+  }
+
+  .banner-feature {
+    margin-top: 58px;
+  }
+
+  .aver-home .featured-list {
+    display: grid;
+    gap: 13px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aver-home .featured-list span {
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .aver-home .landing-section-head {
+    margin-bottom: 30px;
+  }
+
+  .aver-home .landing-section-head h2 {
+    font-size: 38px;
+  }
+
+  .aver-home .landing-section-head > span {
+    font-size: 16px;
+  }
+
+  .aver-home .project-grid {
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .aver-home .project-book-card.portrait {
+    aspect-ratio: 2 / 3;
+  }
+
+  .aver-home .project-book-card.landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  .footer-nevo {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .footer-cta {
+    font-size: clamp(38px, 13vw, 58px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aver-home *,
+  .aver-home *::before,
+  .aver-home *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
 /* User-directed image-only works grid */
 .aver-home .project-book-card::after {
   display: none;
