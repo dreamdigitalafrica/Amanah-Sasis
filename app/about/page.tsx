@@ -2,19 +2,28 @@ const featuredBy = ['Inspirational', 'Fantasy', 'Romance', 'Mystery', 'Destiny',
 
 const services = [
   {
-    title: 'Immersive Worlds',
+    title: 'Story Worlds',
     description:
-      'Amanah builds settings with atmosphere first: island light, hidden mystery, and the quiet sense that destiny is already moving.',
+      'Atmospheric worlds shaped by island light, hidden mystery, and the quiet pull of destiny.',
   },
   {
-    title: 'Emotional Characters',
+    title: 'Character Emotion',
     description:
-      'Her stories follow people caught between longing, courage, loyalty, and the choices that change everything.',
+      'Romance, courage, loyalty, and choices that stay with readers beyond the last page.',
   },
   {
-    title: 'Series Storytelling',
+    title: 'Faith-led Themes',
     description:
-      'Arcane du Beltah begins with Island Nights and expands into a world shaped by mystery, romance, and destiny.',
+      'Hopeful, faith-based threads woven through mystery, longing, and personal courage.',
+  },
+  {
+    title: 'Poetry & Prose',
+    description:
+      'Minimal, lyrical writing that keeps the emotional pulse close and memorable.',
+  },
+  {
+    title: 'Reader Notes',
+    description: 'Coming Soon...',
   },
 ];
 
@@ -50,7 +59,7 @@ export default function AboutPage() {
           </div>
           <div className="container-nevo page-banner-inner page-banner-split">
             <div>
-              <h1>About the Author</h1>
+              <h1>About Me</h1>
               <nav className="page-breadcrumb" aria-label="Breadcrumb">
                 <a href="/">Home</a>
                 <span>•</span>
@@ -76,7 +85,7 @@ export default function AboutPage() {
             </div>
             <div className="about-intro-copy">
               <span className="eyebrow">Bio</span>
-              <h2>A storyteller drawn to worlds that feel close enough to touch.</h2>
+              <h2>A novelist, writer, and poet creating worlds that feel close enough to touch.</h2>
               <p>
                 Amanah Saais is a novelist, poet, and storyteller drawn to immersive
                 worlds, unforgettable characters, and stories that stay with readers
@@ -92,6 +101,10 @@ export default function AboutPage() {
                 Arcane du Beltah: Island Nights is her debut novel and the first
                 installment in a series where mystery, destiny, and courage collide.
               </p>
+              <a className="about-intro-button" href="/#books">
+                <span aria-hidden="true">↻</span>
+                More Books
+              </a>
             </div>
           </div>
         </section>
@@ -111,19 +124,21 @@ export default function AboutPage() {
           <div className="container-nevo">
             <div className="landing-section-head">
               <div>
-                <p className="eyebrow">Writing</p>
                 <h2>What the stories carry</h2>
               </div>
-              <span>The approach</span>
+              <span>Services</span>
             </div>
             <div className="about-service-grid">
               {services.map((item, index) => (
-                <article key={item.title}>
+                <article className={index === services.length - 1 ? 'muted' : ''} key={item.title}>
                   <span>/ 0{index + 1}</span>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </article>
               ))}
+              <div className="service-star" aria-hidden="true" />
+              <div className="service-star" aria-hidden="true" />
+              <div className="service-star" aria-hidden="true" />
             </div>
           </div>
         </section>

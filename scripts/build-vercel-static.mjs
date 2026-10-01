@@ -228,17 +228,18 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
     <div class="content-frame">
       <section class="page-banner">
         <div class="banner-watermark" aria-hidden="true"><span>About</span></div>
-        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>About the Author</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>About</span></nav></div><p>Who I Am</p></div>
+        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>About Me</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>About</span></nav></div><p>Who I Am</p></div>
       </section>
       <section class="about-intro-template">
         <div class="container-nevo about-intro-grid">
           <div class="about-photo-stack" aria-label="Amanah Saais and featured books"><figure><img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/amanah-saais-author-fast.webp" alt="Amanah Saais" loading="eager" fetchpriority="high" /></figure></div>
           <div class="about-intro-copy">
             <span class="eyebrow">Bio</span>
-            <h2>A storyteller drawn to worlds that feel close enough to touch.</h2>
+            <h2>A novelist, writer, and poet creating worlds that feel close enough to touch.</h2>
             <p>Amanah Saais is a novelist, poet, and storyteller drawn to immersive worlds, unforgettable characters, and stories that stay with readers after the final page.</p>
             <p>Her writing blends imagination with emotion, exploring the extraordinary hidden within ordinary moments. Across genres, she writes with one clear aim: to captivate the heart and ignite the imagination.</p>
             <p>Arcane du Beltah: Island Nights is her debut novel and the first installment in a series where mystery, destiny, and courage collide.</p>
+            <a class="about-intro-button" href="/#books"><span aria-hidden="true">↻</span>More Books</a>
           </div>
         </div>
       </section>
@@ -250,11 +251,14 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
       </section>
       <section class="about-services-template">
         <div class="container-nevo">
-          <div class="landing-section-head"><div><p class="eyebrow">Writing</p><h2>What the stories carry</h2></div><span>The approach</span></div>
+          <div class="landing-section-head"><div><h2>What the stories carry</h2></div><span>Services</span></div>
           <div class="about-service-grid">
-            <article><span>/ 01</span><h3>Immersive Worlds</h3><p>Amanah builds settings with atmosphere first: island light, hidden mystery, and the quiet sense that destiny is already moving.</p></article>
-            <article><span>/ 02</span><h3>Emotional Characters</h3><p>Her stories follow people caught between longing, courage, loyalty, and the choices that change everything.</p></article>
-            <article><span>/ 03</span><h3>Series Storytelling</h3><p>Arcane du Beltah begins with Island Nights and expands into a world shaped by mystery, romance, and destiny.</p></article>
+            <article><span>/ 01</span><h3>Story Worlds</h3><p>Atmospheric worlds shaped by island light, hidden mystery, and the quiet pull of destiny.</p></article>
+            <article><span>/ 02</span><h3>Character Emotion</h3><p>Romance, courage, loyalty, and choices that stay with readers beyond the last page.</p></article>
+            <article><span>/ 03</span><h3>Faith-led Themes</h3><p>Hopeful, faith-based threads woven through mystery, longing, and personal courage.</p></article>
+            <article><span>/ 04</span><h3>Poetry & Prose</h3><p>Minimal, lyrical writing that keeps the emotional pulse close and memorable.</p></article>
+            <article class="muted"><span>/ 05</span><h3>Reader Notes</h3><p>Coming Soon...</p></article>
+            <div class="service-star" aria-hidden="true"></div><div class="service-star" aria-hidden="true"></div><div class="service-star" aria-hidden="true"></div>
           </div>
         </div>
       </section>
