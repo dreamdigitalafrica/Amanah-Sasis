@@ -8,7 +8,8 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
   <meta property="og:image" content="${image}" />
-  <link rel="icon" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -375,6 +376,7 @@ await cp('public/island-nights-movie-part-two-wide.png', 'vercel-static/island-n
 await cp('public/island-nights-movie-wide.jpg', 'vercel-static/island-nights-movie-wide.jpg');
 await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.png');
 await cp('public/favicon.svg', 'vercel-static/favicon.svg');
+await cp('public/favicon.png', 'vercel-static/favicon.png');
 await mkdir('vercel-static/images', { recursive: true });
 await cp('public/images/noise.webp', 'vercel-static/images/noise.webp');
 await mkdir('vercel-static/fonts/melodrama', { recursive: true });

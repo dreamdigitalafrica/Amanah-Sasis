@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: 'Amanah Saais | About the Author',
   description:
     'About Amanah Saais, novelist, poet, storyteller, and author of Arcane du Beltah: Island Nights.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'Amanah Saais | About the Author',
     description:
