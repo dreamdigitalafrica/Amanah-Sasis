@@ -10,7 +10,7 @@ const episodes = [
     number: '02',
     title: 'The Making of Amanah Books',
     summary:
-      'A short conversation-style note on writing across romance, wonder, mystery, and courage.',
+      'A short conversation-style note on writing across romance, mystery, and courage.',
     status: 'In planning',
   },
 ];

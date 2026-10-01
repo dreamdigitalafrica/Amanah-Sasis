@@ -112,7 +112,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
       <section class="work-process-section">
         <div class="container-nevo">
           <div class="landing-section-head">
-            <div><p class="eyebrow">Process</p><h2>Process Delivers Wonder</h2></div>
+            <div><p class="eyebrow">Process</p><h2>Process Delivers Stories</h2></div>
             <span>The approach</span>
           </div>
           <div class="process-grid work-process">
@@ -130,7 +130,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
           </div>
           <div class="journal-grid">
             <article><span>Podcast</span><h3>Behind Island Nights</h3><p>A quiet audio space for the ideas, worldbuilding, and emotional notes behind the books.</p><a class="inline-button" href="/podcast/">Open</a></article>
-            <article><span>About</span><h3>Meet Amanah</h3><p>A novelist, writer, and poet crafting immersive stories filled with hope and wonder.</p><a class="inline-button" href="/about/">Open</a></article>
+            <article><span>About</span><h3>Meet Amanah</h3><p>A novelist, writer, and poet crafting immersive stories filled with hope and courage.</p><a class="inline-button" href="/about/">Open</a></article>
             <article><span>Shop</span><h3>Amanah Books</h3><p>Buy through Paystack or Amazon and begin the Arcane du Beltah series.</p><a class="inline-button" href="/shop/">Open</a></article>
           </div>
         </div>
@@ -177,7 +177,7 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
           <div class="about-service-grid">
             <article><span>/ 01</span><h3>Immersive Worlds</h3><p>Amanah builds settings with atmosphere first: island light, hidden mystery, and the quiet sense that destiny is already moving.</p></article>
             <article><span>/ 02</span><h3>Emotional Characters</h3><p>Her stories follow people caught between longing, courage, loyalty, and the choices that change everything.</p></article>
-            <article><span>/ 03</span><h3>Series Storytelling</h3><p>Arcane du Beltah begins with Island Nights and expands into a world shaped by wonder, mystery, and romance.</p></article>
+            <article><span>/ 03</span><h3>Series Storytelling</h3><p>Arcane du Beltah begins with Island Nights and expands into a world shaped by mystery, romance, and destiny.</p></article>
           </div>
         </div>
       </section>
@@ -216,7 +216,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
               <div class="shop-listing-copy">
                 <span>Book Two</span>
                 <h3>Arcane du Beltah: Island Nights</h3>
-                <p>Part Two expands the world with deeper mystery, romance, and a fate balanced between wonder and risk.</p>
+                <p>Part Two expands the world with deeper mystery, romance, and a fate balanced between courage and risk.</p>
                 <div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div>
                 <div class="shop-listing-actions"><a class="button-dark" href="https://paystack.shop/pay/jeqoqeorm8" target="_blank" rel="noreferrer"><span>Buy with Paystack</span></a><a class="button-outline" href="https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3" target="_blank" rel="noreferrer">Buy from Amazon</a></div>
               </div>
@@ -252,7 +252,7 @@ ${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featu
           <div class="section-row"><h2>Episodes</h2><p>Short, thoughtful conversations are in preparation.</p></div>
           <div class="episode-list">
             <article class="episode-item"><span>01</span><div><p>Coming soon</p><h3>Behind Island Nights</h3></div><p>A quiet introduction to the world of Arcane du Beltah, the emotional thread of the series, and the ideas that shaped the island.</p></article>
-            <article class="episode-item"><span>02</span><div><p>In planning</p><h3>The Making of Amanah Books</h3></div><p>A short conversation-style note on writing across romance, wonder, mystery, and courage.</p></article>
+            <article class="episode-item"><span>02</span><div><p>In planning</p><h3>The Making of Amanah Books</h3></div><p>A short conversation-style note on writing across romance, mystery, and courage.</p></article>
           </div>
         </div>
       </section>

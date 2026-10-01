@@ -71,7 +71,7 @@ const notes = [
   {
     label: 'About',
     title: 'Meet Amanah',
-    text: 'A novelist, writer, and poet crafting immersive stories filled with hope and wonder.',
+    text: 'A novelist, writer, and poet crafting immersive stories filled with hope and courage.',
     href: '/about',
   },
   {
@@ -177,7 +177,7 @@ export default function Home() {
             <div className="landing-section-head">
               <div>
                 <p className="eyebrow">Process</p>
-                <h2>Process Delivers Wonder</h2>
+                <h2>Process Delivers Stories</h2>
               </div>
               <span>The approach</span>
             </div>

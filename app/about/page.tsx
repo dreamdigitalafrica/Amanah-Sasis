@@ -14,7 +14,7 @@ const services = [
   {
     title: 'Series Storytelling',
     description:
-      'Arcane du Beltah begins with Island Nights and expands into a world shaped by wonder, mystery, and romance.',
+      'Arcane du Beltah begins with Island Nights and expands into a world shaped by mystery, romance, and destiny.',
   },
 ];
 

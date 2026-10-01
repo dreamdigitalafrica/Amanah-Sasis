@@ -14,7 +14,7 @@ const products = [
     volume: 'Book Two',
     image: '/island-nights-part-two-cover.png',
     title: 'Arcane du Beltah: Island Nights',
-    note: 'Part Two expands the world with deeper mystery, romance, and a fate balanced between wonder and risk.',
+    note: 'Part Two expands the world with deeper mystery, romance, and a fate balanced between courage and risk.',
     amazonUrl:
       'https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3',
     paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',

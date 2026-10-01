@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Amanah Saais | About the Author',
     description:
-      'Meet the author of Arcane du Beltah: Island Nights, a debut fantasy novel where magic, destiny, and courage collide.',
+      'Meet the author of Arcane du Beltah: Island Nights, a debut fantasy novel where mystery, destiny, and courage collide.',
     images: ['/island-nights-cover.jpg'],
   },
 };
