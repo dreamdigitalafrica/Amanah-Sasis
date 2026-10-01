@@ -1,10 +1,10 @@
-const featuredBy = ['Fantasy', 'Romance', 'Mystery', 'Magic', 'Destiny', 'Wonder'];
+const featuredBy = ['Inspirational', 'Fantasy', 'Romance', 'Mystery', 'Destiny', 'Faith Based'];
 
 const services = [
   {
     title: 'Immersive Worlds',
     description:
-      'Amanah builds settings with atmosphere first: island light, hidden magic, and the quiet sense that destiny is already moving.',
+      'Amanah builds settings with atmosphere first: island light, hidden mystery, and the quiet sense that destiny is already moving.',
   },
   {
     title: 'Emotional Characters',
@@ -76,7 +76,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Arcane du Beltah: Island Nights is her debut novel and the first
-                installment in a series where magic, destiny, and courage collide.
+                installment in a series where mystery, destiny, and courage collide.
               </p>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
         <section className="about-featured-template">
           <div className="container-nevo">
-            <h2>Featured Themes</h2>
+            <h2>Genres</h2>
             <div className="featured-list">
               {featuredBy.map((item) => (
                 <span key={item}>{item}</span>

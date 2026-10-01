@@ -27,7 +27,7 @@ const books = [
     tag: 'Movie',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part 1',
-    image: '/island-nights-movie-part-one-card.jpg',
+    image: '/island-nights-movie-part-one-wide.png',
     layout: 'landscape',
     tone: '#0b5c79',
   },
@@ -35,19 +35,19 @@ const books = [
     tag: 'Movie',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part 2',
-    image: '/island-nights-movie-part-two-card.jpg',
+    image: '/island-nights-movie-part-two-wide.png',
     layout: 'landscape',
     tone: '#170f31',
   },
 ];
 
-const featuredBy = ['Fantasy', 'Romance', 'Mystery', 'Magic', 'Destiny', 'Wonder'];
+const featuredBy = ['Inspirational', 'Fantasy', 'Romance', 'Mystery', 'Destiny', 'Faith Based'];
 
 const process = [
   {
     step: '01',
     title: 'World',
-    text: 'Every story begins with atmosphere: islands, secrets, magic, and the feeling that something unseen is close.',
+    text: 'Every story begins with atmosphere: islands, secrets, and the feeling that something unseen is close.',
   },
   {
     step: '02',
@@ -124,13 +124,13 @@ export default function Home() {
                 <span>Saais</span>
               </h1>
               <p>
-                Fantasy romance, mystery, magic, and stories made to linger.
+                Amanah Saais is a novelist, poet, and storyteller writing faith-led stories of romance, mystery, and courage.
               </p>
             </div>
 
             <div className="banner-feature hero-featured reveal-up delay-1">
-              <h2>As Featured By</h2>
-              <div className="featured-list" aria-label="Featured themes">
+              <h2>Genres</h2>
+              <div className="featured-list" aria-label="Genres">
                 {featuredBy.map((item) => (
                   <span key={item}>{item}</span>
                 ))}
@@ -159,14 +159,6 @@ export default function Home() {
                   <span className="card-reveal" aria-hidden="true" />
                   <div className="project-cover">
                     <img src={book.image} alt={`${book.title} cover`} />
-                  </div>
-                  <div className="project-copy">
-                    <span className="book-tag">{book.tag}</span>
-                    <a className="project-arrow" href="/shop" aria-label={`Open ${book.title}`}>
-                      ↙
-                    </a>
-                    <h3>{book.title}</h3>
-                    <p>{book.subtitle}</p>
                   </div>
                 </article>
               ))}

@@ -4437,6 +4437,29 @@ html {
   }
 }
 
+/* User-directed image-only works grid */
+.aver-home .project-book-card::after {
+  display: none;
+}
+
+.aver-home .project-copy {
+  display: none;
+}
+
+.aver-home .project-book-card:hover .project-cover img {
+  filter: none;
+  transform: scale(1.035);
+}
+
+.aver-home .project-book-card.landscape .project-cover img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.aver-home .featured-list span {
+  font-size: clamp(20px, 2.3vw, 38px);
+}
+
 /* Aver exactness pass */
 .aver-home {
   --aver-dark: #18181a;

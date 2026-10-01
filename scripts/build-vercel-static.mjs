@@ -70,11 +70,11 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
           <div class="banner-title reveal-up">
             <p class="eyebrow">Novelist / Writer / Poet</p>
             <h1><span>Amanah</span><span class="author-orb"><img src="/amanah-saais-author.png" alt="" /><i aria-hidden="true">✦</i></span><span>Saais</span></h1>
-            <p>Fantasy romance, mystery, magic, and stories made to linger.</p>
+            <p>Amanah Saais is a novelist, poet, and storyteller writing faith-led stories of romance, mystery, and courage.</p>
           </div>
           <div class="banner-feature hero-featured reveal-up delay-1">
-            <h2>As Featured By</h2>
-            <div class="featured-list" aria-label="Featured themes"><span>Fantasy</span><span>Romance</span><span>Mystery</span><span>Magic</span><span>Destiny</span><span>Wonder</span></div>
+            <h2>Genres</h2>
+            <div class="featured-list" aria-label="Genres"><span>Inspirational</span><span>Fantasy</span><span>Romance</span><span>Mystery</span><span>Destiny</span><span>Faith Based</span></div>
           </div>
         </div>
       </section>
@@ -88,42 +88,22 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
             <article class="project-book-card portrait" style="--card-tone:#0b5c79">
               <span class="card-reveal" aria-hidden="true"></span>
               <div class="project-cover"><img src="/island-nights-book-one-card.jpg" alt="Island Nights cover" /></div>
-              <div class="project-copy">
-                <span class="book-tag">Book</span><a class="project-arrow" href="/shop/" aria-label="Open Island Nights">↙</a>
-                <h3>Island Nights</h3><p>Arcane du Beltah / Part One</p>
-              </div>
             </article>
             <article class="project-book-card portrait" style="--card-tone:#432a70">
               <span class="card-reveal" aria-hidden="true"></span>
               <div class="project-cover"><img src="/island-nights-book-two-card.jpg" alt="Island Nights Part Two cover" /></div>
-              <div class="project-copy">
-                <span class="book-tag">Book</span><a class="project-arrow" href="/shop/" aria-label="Open Island Nights">↙</a>
-                <h3>Island Nights</h3><p>Arcane du Beltah / Part Two</p>
-              </div>
             </article>
             <article class="project-book-card portrait" style="--card-tone:#8f6b3d">
               <span class="card-reveal" aria-hidden="true"></span>
               <div class="project-cover"><img src="/behind-hind-sight-cover.svg" alt="Behind Hind Sight cover" /></div>
-              <div class="project-copy">
-                <span class="book-tag">Coming Soon</span><a class="project-arrow" href="/shop/" aria-label="Open Behind Hind Sight">↙</a>
-                <h3>Behind Hind Sight</h3><p>Amanah Saais</p>
-              </div>
             </article>
             <article class="project-book-card landscape" style="--card-tone:#0b5c79">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-movie-part-one-card.jpg" alt="Island Nights movie Part 1 cover" /></div>
-              <div class="project-copy">
-                <span class="book-tag">Movie</span><a class="project-arrow" href="/shop/" aria-label="Open Island Nights Movie Part 1">↙</a>
-                <h3>Island Nights</h3><p>Arcane du Beltah / Part 1</p>
-              </div>
+              <div class="project-cover"><img src="/island-nights-movie-part-one-wide.png" alt="Island Nights movie Part 1 cover" /></div>
             </article>
             <article class="project-book-card landscape" style="--card-tone:#170f31">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-movie-part-two-card.jpg" alt="Island Nights movie Part 2 cover" /></div>
-              <div class="project-copy">
-                <span class="book-tag">Movie</span><a class="project-arrow" href="/shop/" aria-label="Open Island Nights Movie Part 2">↙</a>
-                <h3>Island Nights</h3><p>Arcane du Beltah / Part 2</p>
-              </div>
+              <div class="project-cover"><img src="/island-nights-movie-part-two-wide.png" alt="Island Nights movie Part 2 cover" /></div>
             </article>
           </div>
           <div class="landing-center-action"><a class="button" href="/shop/"><span>All Books</span></a></div>
@@ -136,7 +116,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
             <span>The approach</span>
           </div>
           <div class="process-grid work-process">
-            <div><article class="work-process-item"><span>01</span><h3>World</h3><p>Every story begins with atmosphere: islands, secrets, magic, and the feeling that something unseen is close.</p></article></div>
+            <div><article class="work-process-item"><span>01</span><h3>World</h3><p>Every story begins with atmosphere: islands, secrets, and the feeling that something unseen is close.</p></article></div>
             <div><article class="work-process-item"><span>02</span><h3>Heart</h3><p>Characters move through romance, courage, and longing with emotional choices at the center.</p></article></div>
             <div><article class="work-process-item"><span>03</span><h3>Journey</h3><p>Each book opens another door into Arcane du Beltah, building a series made to linger.</p></article></div>
           </div>
@@ -181,21 +161,21 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
             <h2>A storyteller drawn to worlds that feel close enough to touch.</h2>
             <p>Amanah Saais is a novelist, poet, and storyteller drawn to immersive worlds, unforgettable characters, and stories that stay with readers after the final page.</p>
             <p>Her writing blends imagination with emotion, exploring the extraordinary hidden within ordinary moments. Across genres, she writes with one clear aim: to captivate the heart and ignite the imagination.</p>
-            <p>Arcane du Beltah: Island Nights is her debut novel and the first installment in a series where magic, destiny, and courage collide.</p>
+            <p>Arcane du Beltah: Island Nights is her debut novel and the first installment in a series where mystery, destiny, and courage collide.</p>
           </div>
         </div>
       </section>
       <section class="about-featured-template">
         <div class="container-nevo">
-          <h2>Featured Themes</h2>
-          <div class="featured-list"><span>Fantasy</span><span>Romance</span><span>Mystery</span><span>Magic</span><span>Destiny</span><span>Wonder</span></div>
+          <h2>Genres</h2>
+          <div class="featured-list"><span>Inspirational</span><span>Fantasy</span><span>Romance</span><span>Mystery</span><span>Destiny</span><span>Faith Based</span></div>
         </div>
       </section>
       <section class="about-services-template">
         <div class="container-nevo">
           <div class="landing-section-head"><div><p class="eyebrow">Writing</p><h2>What the stories carry</h2></div><span>The approach</span></div>
           <div class="about-service-grid">
-            <article><span>/ 01</span><h3>Immersive Worlds</h3><p>Amanah builds settings with atmosphere first: island light, hidden magic, and the quiet sense that destiny is already moving.</p></article>
+            <article><span>/ 01</span><h3>Immersive Worlds</h3><p>Amanah builds settings with atmosphere first: island light, hidden mystery, and the quiet sense that destiny is already moving.</p></article>
             <article><span>/ 02</span><h3>Emotional Characters</h3><p>Her stories follow people caught between longing, courage, loyalty, and the choices that change everything.</p></article>
             <article><span>/ 03</span><h3>Series Storytelling</h3><p>Arcane du Beltah begins with Island Nights and expands into a world shaped by wonder, mystery, and romance.</p></article>
           </div>
@@ -315,8 +295,8 @@ await cp('public/island-nights-book-two-card.jpg', 'vercel-static/island-nights-
 await cp('public/behind-hind-sight-cover.svg', 'vercel-static/behind-hind-sight-cover.svg');
 await cp('public/island-nights-movie-part-one.svg', 'vercel-static/island-nights-movie-part-one.svg');
 await cp('public/island-nights-movie-part-two.svg', 'vercel-static/island-nights-movie-part-two.svg');
-await cp('public/island-nights-movie-part-one-card.jpg', 'vercel-static/island-nights-movie-part-one-card.jpg');
-await cp('public/island-nights-movie-part-two-card.jpg', 'vercel-static/island-nights-movie-part-two-card.jpg');
+await cp('public/island-nights-movie-part-one-wide.png', 'vercel-static/island-nights-movie-part-one-wide.png');
+await cp('public/island-nights-movie-part-two-wide.png', 'vercel-static/island-nights-movie-part-two-wide.png');
 await cp('public/island-nights-movie-wide.jpg', 'vercel-static/island-nights-movie-wide.jpg');
 await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.png');
 await cp('public/favicon.svg', 'vercel-static/favicon.svg');
