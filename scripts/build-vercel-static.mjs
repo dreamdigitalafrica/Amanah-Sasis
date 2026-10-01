@@ -10,6 +10,9 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
   <meta property="og:image" content="${image}" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="preload" as="image" href="/amanah-saais-author-fast.webp" />
+  <link rel="preload" as="image" href="/island-nights-book-one-mockup-fast.webp" />
+  <link rel="preload" as="image" href="/island-nights-book-two-mockup-fast.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -72,7 +75,7 @@ const initAverMotion = () => {
   }
 
   const revealItems = [
-    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *'),
+    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .episode-item, .podcast-note-grid > *'),
   ];
   const projectCards = [...document.querySelectorAll('.project-book-card')];
 
@@ -142,7 +145,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
         <div class="container-nevo">
           <div class="banner-title reveal-up">
             <p class="eyebrow">Novelist / Writer / Poet</p>
-            <h1><span>Amanah</span><span class="author-orb"><img src="/amanah-saais-author.png" alt="" /><i aria-hidden="true">✦</i></span><span>Saais</span></h1>
+            <h1><span>Amanah</span><span class="author-orb"><img src="/amanah-saais-author-fast.webp" alt="" loading="eager" fetchpriority="high" /><i aria-hidden="true">✦</i></span><span>Saais</span></h1>
             <p>Amanah Saais is a novelist, poet, and storyteller writing faith-led stories of romance, mystery, and courage.</p>
           </div>
           <div class="banner-feature hero-featured reveal-up delay-1">
@@ -160,11 +163,11 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
           <div class="project-grid">
             <article class="project-book-card portrait" style="--card-tone:#0b5c79">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-book-one-mockup.png" alt="Island Nights cover" /></div>
+              <div class="project-cover"><img src="/island-nights-book-one-mockup-fast.webp" alt="Island Nights cover" loading="eager" fetchpriority="high" /></div>
             </article>
             <article class="project-book-card portrait" style="--card-tone:#432a70">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-book-two-mockup.png" alt="Island Nights Part Two cover" /></div>
+              <div class="project-cover"><img src="/island-nights-book-two-mockup-fast.webp" alt="Island Nights Part Two cover" loading="eager" fetchpriority="high" /></div>
             </article>
             <article class="project-book-card portrait" style="--card-tone:#8f6b3d">
               <span class="card-reveal" aria-hidden="true"></span>
@@ -172,11 +175,11 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
             </article>
             <article class="project-book-card landscape" style="--card-tone:#0b5c79">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-movie-part-one-wide.png" alt="Island Nights movie Part 1 cover" /></div>
+              <div class="project-cover"><img src="/island-nights-movie-part-one-wide-fast.webp" alt="Island Nights movie Part 1 cover" loading="lazy" /></div>
             </article>
             <article class="project-book-card landscape" style="--card-tone:#170f31">
               <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-movie-part-two-wide.png" alt="Island Nights movie Part 2 cover" /></div>
+              <div class="project-cover"><img src="/island-nights-movie-part-two-wide-fast.webp" alt="Island Nights movie Part 2 cover" loading="lazy" /></div>
             </article>
           </div>
           <div class="landing-center-action"><a class="button" href="/shop/"><span>All Books</span></a></div>
@@ -217,7 +220,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
 
 const aboutHtml = String.raw`<!doctype html>
 <html lang="en">
-${head('About Amanah Saais', 'The official About page for Amanah Saais, author of Arcane du Beltah: Island Nights.', '/amanah-saais-author.png')}
+${head('About Amanah Saais', 'The official About page for Amanah Saais, author of Arcane du Beltah: Island Nights.', '/amanah-saais-author-fast.webp')}
 <body>
   <main class="site-shell aver-home about-template-page">
     ${header(false)}
@@ -225,11 +228,11 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
     <div class="content-frame">
       <section class="page-banner">
         <div class="banner-watermark" aria-hidden="true"><span>About</span></div>
-        <div class="container-nevo page-banner-inner"><span class="eyebrow">Amanah Saais</span><h1>About the Author</h1><p>Novelist. Writer. Poet.</p></div>
+        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>About the Author</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>About</span></nav></div><p>Who I Am</p></div>
       </section>
       <section class="about-intro-template">
         <div class="container-nevo about-intro-grid">
-          <div class="about-intro-image"><img src="/amanah-saais-author.png" alt="Amanah Saais" /></div>
+          <div class="about-photo-stack" aria-label="Amanah Saais and featured books"><figure><img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/amanah-saais-author-fast.webp" alt="Amanah Saais" loading="eager" fetchpriority="high" /></figure></div>
           <div class="about-intro-copy">
             <span class="eyebrow">Bio</span>
             <h2>A storyteller drawn to worlds that feel close enough to touch.</h2>
@@ -277,7 +280,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
         <div class="container-nevo">
           <div class="shop-listing-grid">
             <article class="shop-listing-card">
-              <div class="shop-listing-image"><img src="/island-nights-book-one-mockup.png" alt="Arcane du Beltah Island Nights Book One" /></div>
+              <div class="shop-listing-image"><img src="/island-nights-book-one-mockup-fast.webp" alt="Arcane du Beltah Island Nights Book One" loading="eager" fetchpriority="high" /></div>
               <div class="shop-listing-copy">
                 <span>Book One</span>
                 <h3>Arcane du Beltah: Island Nights</h3>
@@ -287,7 +290,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
               </div>
             </article>
             <article class="shop-listing-card">
-              <div class="shop-listing-image"><img src="/island-nights-book-two-mockup.png" alt="Arcane du Beltah Island Nights Book Two" /></div>
+              <div class="shop-listing-image"><img src="/island-nights-book-two-mockup-fast.webp" alt="Arcane du Beltah Island Nights Book Two" loading="lazy" /></div>
               <div class="shop-listing-copy">
                 <span>Book Two</span>
                 <h3>Arcane du Beltah: Island Nights</h3>
@@ -307,20 +310,25 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
 
 const podcastHtml = String.raw`<!doctype html>
 <html lang="en">
-${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featuring book notes and conversations behind Amanah Books.', '/amanah-saais-author.png')}
+${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featuring book notes and conversations behind Amanah Books.', '/amanah-saais-author-fast.webp')}
 <body>
   <main class="site-shell aver-home podcast-template-page">
     ${header(false)}
     ${motionScript}
     <div class="content-frame">
-      <section class="podcast-page-hero section-size-2 lighter-bg">
-        <div class="container-nevo podcast-hero-grid">
-          <div class="podcast-hero-copy reveal-up">
-            <p class="eyebrow">Podcast</p>
-            <h1>Stories behind the stories.</h1>
+      <section class="page-banner podcast-page-banner">
+        <div class="banner-watermark" aria-hidden="true"><span>Podcast</span></div>
+        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>Podcast</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>Podcast</span></nav></div><p>Coming Soon</p></div>
+      </section>
+      <section class="about-intro-template podcast-intro-template">
+        <div class="container-nevo about-intro-grid">
+          <div class="about-photo-stack podcast-photo-stack" aria-hidden="true"><figure><img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/amanah-saais-author-fast.webp" alt="" loading="eager" fetchpriority="high" /></figure></div>
+          <div class="about-intro-copy podcast-hero-copy reveal-up">
+            <span class="eyebrow">Coming Soon</span>
+            <h2>Stories behind the stories.</h2>
             <p>A minimal audio space for Amanah Saais to share book notes, creative reflections, and the worlds behind the page.</p>
+            <div class="podcast-mark" aria-hidden="true"><span>AS</span><strong>Listen soon</strong></div>
           </div>
-          <div class="podcast-mark reveal-up delay-1" aria-hidden="true"><span>AS</span><strong>Listen soon</strong></div>
         </div>
       </section>
       <section class="podcast-episodes section-size-2">
@@ -368,13 +376,18 @@ await cp('public/island-nights-part-one-cover.png', 'vercel-static/island-nights
 await cp('public/island-nights-part-two-cover.png', 'vercel-static/island-nights-part-two-cover.png');
 await cp('public/island-nights-book-one-mockup.png', 'vercel-static/island-nights-book-one-mockup.png');
 await cp('public/island-nights-book-two-mockup.png', 'vercel-static/island-nights-book-two-mockup.png');
+await cp('public/island-nights-book-one-mockup-fast.webp', 'vercel-static/island-nights-book-one-mockup-fast.webp');
+await cp('public/island-nights-book-two-mockup-fast.webp', 'vercel-static/island-nights-book-two-mockup-fast.webp');
 await cp('public/behind-hind-sight-cover.svg', 'vercel-static/behind-hind-sight-cover.svg');
 await cp('public/island-nights-movie-part-one.svg', 'vercel-static/island-nights-movie-part-one.svg');
 await cp('public/island-nights-movie-part-two.svg', 'vercel-static/island-nights-movie-part-two.svg');
 await cp('public/island-nights-movie-part-one-wide.png', 'vercel-static/island-nights-movie-part-one-wide.png');
 await cp('public/island-nights-movie-part-two-wide.png', 'vercel-static/island-nights-movie-part-two-wide.png');
+await cp('public/island-nights-movie-part-one-wide-fast.webp', 'vercel-static/island-nights-movie-part-one-wide-fast.webp');
+await cp('public/island-nights-movie-part-two-wide-fast.webp', 'vercel-static/island-nights-movie-part-two-wide-fast.webp');
 await cp('public/island-nights-movie-wide.jpg', 'vercel-static/island-nights-movie-wide.jpg');
 await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.png');
+await cp('public/amanah-saais-author-fast.webp', 'vercel-static/amanah-saais-author-fast.webp');
 await cp('public/favicon.svg', 'vercel-static/favicon.svg');
 await cp('public/favicon.png', 'vercel-static/favicon.png');
 await mkdir('vercel-static/images', { recursive: true });

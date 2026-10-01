@@ -48,17 +48,31 @@ export default function AboutPage() {
           <div className="banner-watermark" aria-hidden="true">
             <span>About</span>
           </div>
-          <div className="container-nevo page-banner-inner">
-            <span className="eyebrow">Amanah Saais</span>
-            <h1>About the Author</h1>
-            <p>Novelist. Writer. Poet.</p>
+          <div className="container-nevo page-banner-inner page-banner-split">
+            <div>
+              <h1>About the Author</h1>
+              <nav className="page-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span>•</span>
+                <span>About</span>
+              </nav>
+            </div>
+            <p>Who I Am</p>
           </div>
         </section>
 
         <section className="about-intro-template">
           <div className="container-nevo about-intro-grid">
-            <div className="about-intro-image">
-              <img src="/amanah-saais-author.png" alt="Amanah Saais" />
+            <div className="about-photo-stack" aria-label="Amanah Saais and featured books">
+              <figure>
+                <img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" />
+              </figure>
+              <figure>
+                <img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" />
+              </figure>
+              <figure>
+                <img src="/amanah-saais-author-fast.webp" alt="Amanah Saais" loading="eager" fetchPriority="high" />
+              </figure>
             </div>
             <div className="about-intro-copy">
               <span className="eyebrow">Bio</span>

@@ -3,7 +3,7 @@ const books = [
     tag: 'Book',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part One',
-    image: '/island-nights-book-one-mockup.png',
+    image: '/island-nights-book-one-mockup-fast.webp',
     layout: 'portrait',
     tone: '#0b5c79',
   },
@@ -11,7 +11,7 @@ const books = [
     tag: 'Book',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part Two',
-    image: '/island-nights-book-two-mockup.png',
+    image: '/island-nights-book-two-mockup-fast.webp',
     layout: 'portrait',
     tone: '#432a70',
   },
@@ -27,7 +27,7 @@ const books = [
     tag: 'Movie',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part 1',
-    image: '/island-nights-movie-part-one-wide.png',
+    image: '/island-nights-movie-part-one-wide-fast.webp',
     layout: 'landscape',
     tone: '#0b5c79',
   },
@@ -35,7 +35,7 @@ const books = [
     tag: 'Movie',
     title: 'Island Nights',
     subtitle: 'Arcane du Beltah / Part 2',
-    image: '/island-nights-movie-part-two-wide.png',
+    image: '/island-nights-movie-part-two-wide-fast.webp',
     layout: 'landscape',
     tone: '#170f31',
   },
@@ -84,7 +84,7 @@ const initAverMotion = () => {
   }
 
   const revealItems = [
-    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *'),
+    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .episode-item, .podcast-note-grid > *'),
   ];
   const projectCards = [...document.querySelectorAll('.project-book-card')];
 
@@ -190,7 +190,7 @@ export default function Home() {
               <h1>
                 <span>Amanah</span>
                 <span className="author-orb">
-                  <img src="/amanah-saais-author.png" alt="" />
+                  <img src="/amanah-saais-author-fast.webp" alt="" loading="eager" fetchPriority="high" />
                   <i aria-hidden="true">✦</i>
                 </span>
                 <span>Saais</span>
@@ -230,7 +230,12 @@ export default function Home() {
                 >
                   <span className="card-reveal" aria-hidden="true" />
                   <div className="project-cover">
-                    <img src={book.image} alt={`${book.title} cover`} />
+                    <img
+                      src={book.image}
+                      alt={`${book.title} cover`}
+                      loading={index < 2 ? 'eager' : 'lazy'}
+                      fetchPriority={index < 2 ? 'high' : 'auto'}
+                    />
                   </div>
                 </article>
               ))}

@@ -24,11 +24,11 @@ const notes = [
 
 export default function PodcastPage() {
   return (
-    <main className="site-shell min-h-screen">
+    <main className="site-shell aver-home podcast-template-page min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="/" aria-label="Amanah Saais home">
           <span className="brand-seal">AS</span>
-          <span>Amanah Saais</span>
+          <span>Amanah</span>
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="/">Home</a>
@@ -36,24 +36,59 @@ export default function PodcastPage() {
           <a href="/#books">Books</a>
           <a href="/shop">Shop</a>
           <a href="/podcast">Podcast</a>
-          <a href="/#contact">Contact</a>
         </nav>
+        <div className="social-links-mini" aria-label="Social links">
+          <span>Social Links:</span>
+          <div>
+            <a href="/#contact">Mail</a>
+            <a href="https://paystack.shop/pay/jeqoqeorm8">Pay</a>
+            <a href="/shop">Shop</a>
+          </div>
+        </div>
       </header>
 
       <div className="content-frame">
-        <section className="podcast-page-hero section-size-2 lighter-bg">
-          <div className="container-nevo podcast-hero-grid">
-            <div className="podcast-hero-copy reveal-up">
-              <p className="eyebrow">Podcast</p>
-              <h1>Stories behind the stories.</h1>
+        <section className="page-banner podcast-page-banner">
+          <div className="banner-watermark" aria-hidden="true">
+            <span>Podcast</span>
+          </div>
+          <div className="container-nevo page-banner-inner page-banner-split">
+            <div>
+              <h1>Podcast</h1>
+              <nav className="page-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span>•</span>
+                <span>Podcast</span>
+              </nav>
+            </div>
+            <p>Coming Soon</p>
+          </div>
+        </section>
+
+        <section className="about-intro-template podcast-intro-template">
+          <div className="container-nevo about-intro-grid">
+            <div className="about-photo-stack podcast-photo-stack" aria-hidden="true">
+              <figure>
+                <img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" />
+              </figure>
+              <figure>
+                <img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" />
+              </figure>
+              <figure>
+                <img src="/amanah-saais-author-fast.webp" alt="" loading="eager" fetchPriority="high" />
+              </figure>
+            </div>
+            <div className="about-intro-copy podcast-hero-copy reveal-up">
+              <span className="eyebrow">Coming Soon</span>
+              <h2>Stories behind the stories.</h2>
               <p>
                 A minimal audio space for Amanah Saais to share book notes,
                 creative reflections, and the worlds behind the page.
               </p>
-            </div>
-            <div className="podcast-mark reveal-up delay-1" aria-hidden="true">
-              <span>AS</span>
-              <strong>Listen soon</strong>
+              <div className="podcast-mark" aria-hidden="true">
+                <span>AS</span>
+                <strong>Listen soon</strong>
+              </div>
             </div>
           </div>
         </section>
