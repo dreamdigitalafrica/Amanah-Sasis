@@ -167,13 +167,15 @@ export default function Home() {
           <a href="#books">Books</a>
           <a href="/shop">Shop</a>
           <a href="/podcast">Podcast</a>
+          <a href="#contact">Contact</a>
         </nav>
         <div className="social-links-mini" aria-label="Social links">
           <span>Social Links:</span>
           <div>
-            <a href="#contact">Mail</a>
-            <a href="https://paystack.shop/pay/jeqoqeorm8">Pay</a>
-            <a href="/shop">Shop</a>
+            <a href="#contact">FB</a>
+            <a href="#contact">X</a>
+            <a href="#contact">IN</a>
+            <a href="#contact">MAIL</a>
           </div>
         </div>
       </header>
@@ -395,6 +397,12 @@ export default function Home() {
         <a className="button" href="#books">
           <span>View Book</span>
         </a>
+        <nav className="footer-social-links" aria-label="Social links">
+          <a href="#contact">FB</a>
+          <a href="#contact">X</a>
+          <a href="#contact">IN</a>
+          <a href="#contact">MAIL</a>
+        </nav>
         <div>
           <span>Built for </span>
           <strong>Amanah Saais</strong>

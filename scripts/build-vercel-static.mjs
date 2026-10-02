@@ -27,10 +27,11 @@ const header = (home = false) => String.raw`<header class="site-header">
     <a href="${home ? '#books' : '/#books'}">Books</a>
     <a href="/shop/">Shop</a>
     <a href="/podcast/">Podcast</a>
+    <a href="${home ? '#contact' : '/#contact'}">Contact</a>
   </nav>
   <div class="social-links-mini" aria-label="Social links">
     <span>Social Links:</span>
-    <div><a href="${home ? '#contact' : '/#contact'}">Mail</a><a href="https://paystack.shop/pay/jeqoqeorm8">Pay</a><a href="/shop/">Shop</a></div>
+    <div><a href="${home ? '#contact' : '/#contact'}">FB</a><a href="${home ? '#contact' : '/#contact'}">X</a><a href="${home ? '#contact' : '/#contact'}">IN</a><a href="${home ? '#contact' : '/#contact'}">MAIL</a></div>
   </div>
 </header>`;
 
@@ -117,6 +118,7 @@ const footer = String.raw`<footer class="footer-nevo">
     </div>
   </a>
   <a class="button" href="/#books"><span>View Book</span></a>
+  <nav class="footer-social-links" aria-label="Social links"><a href="/#contact">FB</a><a href="/#contact">X</a><a href="/#contact">IN</a><a href="/#contact">MAIL</a></nav>
   <div><span>Built for </span><strong>Amanah Saais</strong><p>Arcane du Beltah: Island Nights</p></div>
 </footer>`;
 
