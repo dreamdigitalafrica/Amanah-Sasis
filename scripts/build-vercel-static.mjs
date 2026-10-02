@@ -31,7 +31,7 @@ const header = (home = false) => String.raw`<header class="site-header">
   </nav>
   <div class="social-links-mini" aria-label="Social links">
     <span>Social Links:</span>
-    <div><a href="${home ? '#contact' : '/#contact'}">FB</a><a href="${home ? '#contact' : '/#contact'}">X</a><a href="${home ? '#contact' : '/#contact'}">IN</a><a href="${home ? '#contact' : '/#contact'}">MAIL</a></div>
+    <div><a href="${home ? '#contact' : '/#contact'}">FB</a><a href="${home ? '#contact' : '/#contact'}">X</a><a href="${home ? '#contact' : '/#contact'}">IN</a><a href="${home ? '#contact' : '/#contact'}">MAIL</a><a class="substack-social-link" href="https://open.substack.com/pub/amanahsaais" target="_blank" rel="noreferrer" aria-label="Amanah Saais on Substack" title="Substack"><span class="substack-icon" aria-hidden="true"></span></a></div>
   </div>
 </header>`;
 
@@ -118,7 +118,7 @@ const footer = String.raw`<footer class="footer-nevo">
     </div>
   </a>
   <a class="button" href="/#books"><span>View Book</span></a>
-  <nav class="footer-social-links" aria-label="Social links"><a href="/#contact">FB</a><a href="/#contact">X</a><a href="/#contact">IN</a><a href="/#contact">MAIL</a></nav>
+  <nav class="footer-social-links" aria-label="Social links"><a href="/#contact">FB</a><a href="/#contact">X</a><a href="/#contact">IN</a><a href="/#contact">MAIL</a><a class="substack-social-link" href="https://open.substack.com/pub/amanahsaais" target="_blank" rel="noreferrer" aria-label="Amanah Saais on Substack" title="Substack"><span class="substack-icon" aria-hidden="true"></span></a></nav>
   <div><span>Built for </span><strong>Amanah Saais</strong><p>Arcane du Beltah: Island Nights</p></div>
 </footer>`;
 

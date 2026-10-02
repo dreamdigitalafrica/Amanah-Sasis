@@ -47,6 +47,16 @@ export default function ShopPage() {
             <a href="/#contact">X</a>
             <a href="/#contact">IN</a>
             <a href="/#contact">MAIL</a>
+            <a
+              className="substack-social-link"
+              href="https://open.substack.com/pub/amanahsaais"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Amanah Saais on Substack"
+              title="Substack"
+            >
+              <span className="substack-icon" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </header>

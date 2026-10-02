@@ -6788,6 +6788,52 @@ html {
   transform: translateY(-2px);
 }
 
+.substack-social-link {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  min-height: 18px;
+  min-width: 18px;
+  vertical-align: middle;
+}
+
+.substack-icon {
+  background: #ff6719;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+  display: inline-block;
+  height: 18px;
+  overflow: hidden;
+  position: relative;
+  width: 18px;
+}
+
+.substack-icon::before,
+.substack-icon::after {
+  background: #fff;
+  content: '';
+  left: 4px;
+  position: absolute;
+  width: 10px;
+}
+
+.substack-icon::before {
+  box-shadow: 0 4px 0 #fff;
+  height: 2px;
+  top: 4px;
+}
+
+.substack-icon::after {
+  clip-path: polygon(0 0, 100% 0, 50% 64%);
+  height: 7px;
+  top: 10px;
+}
+
+.substack-social-link:hover .substack-icon {
+  transform: translateY(-1px);
+}
+
 .banner-title > p:not(.eyebrow),
 .landing-section-head > span,
 .journal-grid p,
