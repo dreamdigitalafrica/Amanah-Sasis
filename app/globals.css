@@ -6729,3 +6729,14 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
+/* Keep the About services block deliberately black, matching the Aver reference. */
+.about-template-page .about-services-template {
+  background:
+    url('/images/noise.webp') repeat,
+    #050506 !important;
+}
+
+.about-template-page .about-service-grid article {
+  background: rgba(5, 5, 6, 0.74);
+}
