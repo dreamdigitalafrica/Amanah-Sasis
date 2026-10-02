@@ -6225,7 +6225,7 @@ html {
 
 .about-template-page .about-intro-template {
   border-radius: 0;
-  padding: clamp(106px, 10vw, 156px) 0 clamp(120px, 10vw, 170px);
+  padding: clamp(106px, 10vw, 156px) 0 clamp(104px, 9vw, 146px);
 }
 
 .about-template-page .about-intro-grid {
@@ -6291,26 +6291,23 @@ html {
   line-height: 1;
 }
 
-.about-template-page .about-featured-template {
-  padding-top: 0;
-}
-
 .about-template-page .about-services-template {
   background:
     url('/images/noise.webp') repeat,
     #18181a;
   color: #fff;
-  padding: clamp(92px, 8vw, 138px) 0;
+  padding: clamp(98px, 8vw, 142px) 0 clamp(110px, 10vw, 170px);
 }
 
 .about-template-page .about-services-template .landing-section-head {
   align-items: flex-start;
-  margin-bottom: clamp(54px, 6vw, 88px);
+  margin: 0 auto clamp(66px, 6.4vw, 96px);
+  max-width: 1360px;
 }
 
 .about-template-page .about-services-template .landing-section-head h2 {
   color: #fff;
-  font-size: clamp(46px, 5vw, 76px);
+  font-size: clamp(50px, 5.3vw, 78px);
   font-weight: 420;
   letter-spacing: -0.045em;
 }
@@ -6325,6 +6322,8 @@ html {
   display: grid;
   gap: 0;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1360px;
   position: relative;
 }
 
@@ -6418,6 +6417,94 @@ html {
   top: 43%;
 }
 
+.reader-review-template {
+  background: #fff;
+  border-radius: 0 0 24px 24px;
+  color: #18181a;
+  padding: clamp(106px, 11vw, 168px) 0 clamp(120px, 12vw, 190px);
+  text-align: center;
+}
+
+.reader-review-template > .container-nevo {
+  max-width: 1180px;
+}
+
+.reader-review-template > .container-nevo > span {
+  color: rgba(24, 24, 26, 0.62);
+  display: block;
+  font-family: Melodrama, Georgia, serif;
+  font-size: clamp(29px, 2.5vw, 42px);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.reader-review-template h2 {
+  color: #18181a;
+  font-family: Melodrama, Georgia, serif;
+  font-size: clamp(52px, 5.3vw, 78px);
+  font-weight: 430;
+  letter-spacing: -0.052em;
+  line-height: 0.95;
+  margin-bottom: clamp(66px, 6.4vw, 92px);
+}
+
+.reader-review-slider {
+  align-items: center;
+  display: grid;
+  gap: clamp(26px, 4vw, 68px);
+  grid-template-columns: 74px minmax(0, 1fr) 74px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.reader-review-slider button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #18181a;
+  cursor: default;
+  display: inline-flex;
+  font-family: Melodrama, Georgia, serif;
+  font-size: clamp(46px, 4.4vw, 68px);
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.reader-review-slider blockquote {
+  margin: 0;
+}
+
+.reader-review-slider blockquote > p {
+  color: #18181a;
+  font-size: clamp(19px, 1.6vw, 27px);
+  font-weight: 690;
+  line-height: 1.48;
+  margin: 0 auto clamp(28px, 3vw, 42px);
+  max-width: 760px;
+}
+
+.reader-review-slider cite {
+  color: #18181a;
+  display: block;
+  font-style: normal;
+}
+
+.reader-review-slider cite strong {
+  display: block;
+  font-size: clamp(24px, 2.1vw, 35px);
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  margin-bottom: 8px;
+}
+
+.reader-review-slider cite span {
+  color: rgba(24, 24, 26, 0.64);
+  display: block;
+  font-size: clamp(16px, 1.2vw, 22px);
+  font-weight: 640;
+}
+
 @keyframes serviceSpin {
   to {
     transform: rotate(360deg);
@@ -6436,6 +6523,14 @@ html {
   }
 
   .service-star {
+    display: none;
+  }
+
+  .reader-review-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .reader-review-slider button {
     display: none;
   }
 }

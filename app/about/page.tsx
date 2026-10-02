@@ -1,5 +1,3 @@
-const featuredBy = ['Inspirational', 'Fantasy', 'Romance', 'Mystery', 'Destiny', 'Faith Based'];
-
 const services = [
   {
     title: 'Story Worlds',
@@ -109,22 +107,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="about-featured-template">
-          <div className="container-nevo">
-            <h2>Genres</h2>
-            <div className="featured-list">
-              {featuredBy.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="about-services-template">
           <div className="container-nevo">
             <div className="landing-section-head">
               <div>
-                <h2>What the stories carry</h2>
+                <h2>What I can do for you</h2>
               </div>
               <span>Services</span>
             </div>
@@ -143,11 +130,24 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="about-quote-template">
+        <section className="about-quote-template reader-review-template">
           <div className="container-nevo">
-            <span>Author Note</span>
-            <h2>Stories can make the unseen feel close enough to touch.</h2>
-            <p>Amanah Saais</p>
+            <span>Reviews</span>
+            <h2>What readers say</h2>
+            <div className="reader-review-slider">
+              <button type="button" aria-label="Previous review">←</button>
+              <blockquote>
+                <p>
+                  Amanah’s writing feels cinematic and intimate at once, with a
+                  world that keeps unfolding after the page ends.
+                </p>
+                <cite>
+                  <strong>Reader Note</strong>
+                  <span>Arcane du Beltah</span>
+                </cite>
+              </blockquote>
+              <button type="button" aria-label="Next review">→</button>
+            </div>
           </div>
         </section>
       </div>

@@ -243,15 +243,9 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
           </div>
         </div>
       </section>
-      <section class="about-featured-template">
-        <div class="container-nevo">
-          <h2>Genres</h2>
-          <div class="featured-list"><span>Inspirational</span><span>Fantasy</span><span>Romance</span><span>Mystery</span><span>Destiny</span><span>Faith Based</span></div>
-        </div>
-      </section>
       <section class="about-services-template">
         <div class="container-nevo">
-          <div class="landing-section-head"><div><h2>What the stories carry</h2></div><span>Services</span></div>
+          <div class="landing-section-head"><div><h2>What I can do for you</h2></div><span>Services</span></div>
           <div class="about-service-grid">
             <article><span>/ 01</span><h3>Story Worlds</h3><p>Atmospheric worlds shaped by island light, hidden mystery, and the quiet pull of destiny.</p></article>
             <article><span>/ 02</span><h3>Character Emotion</h3><p>Romance, courage, loyalty, and choices that stay with readers beyond the last page.</p></article>
@@ -262,7 +256,7 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
           </div>
         </div>
       </section>
-      <section class="about-quote-template"><div class="container-nevo"><span>Author Note</span><h2>Stories can make the unseen feel close enough to touch.</h2><p>Amanah Saais</p></div></section>
+      <section class="about-quote-template reader-review-template"><div class="container-nevo"><span>Reviews</span><h2>What readers say</h2><div class="reader-review-slider"><button type="button" aria-label="Previous review">←</button><blockquote><p>Amanah’s writing feels cinematic and intimate at once, with a world that keeps unfolding after the page ends.</p><cite><strong>Reader Note</strong><span>Arcane du Beltah</span></cite></blockquote><button type="button" aria-label="Next review">→</button></div></div></section>
     </div>
   </main>
 </body>
