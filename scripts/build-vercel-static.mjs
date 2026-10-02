@@ -75,7 +75,7 @@ const initAverMotion = () => {
   }
 
   const revealItems = [
-    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .episode-item, .podcast-note-grid > *'),
+    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .episode-item, .podcast-note-grid > *, .podcast-card'),
   ];
   const projectCards = [...document.querySelectorAll('.project-book-card')];
 
@@ -318,34 +318,16 @@ ${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featu
         <div class="banner-watermark" aria-hidden="true"><span>Podcast</span></div>
         <div class="container-nevo page-banner-inner page-banner-split"><div><h1>Podcast</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>Podcast</span></nav></div><p>Coming Soon</p></div>
       </section>
-      <section class="about-intro-template podcast-intro-template">
-        <div class="container-nevo about-intro-grid">
-          <div class="about-photo-stack podcast-photo-stack" aria-hidden="true"><figure><img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/amanah-saais-author-fast.webp" alt="" loading="eager" fetchpriority="high" /></figure></div>
-          <div class="about-intro-copy podcast-hero-copy reveal-up">
-            <span class="eyebrow">Coming Soon</span>
-            <h2>Stories behind the stories.</h2>
-            <p>A minimal audio space for Amanah Saais to share book notes, creative reflections, and the worlds behind the page.</p>
-            <div class="podcast-mark" aria-hidden="true"><span>AS</span><strong>Listen soon</strong></div>
-          </div>
-        </div>
-      </section>
-      <section class="podcast-episodes section-size-2">
+      <section class="podcast-blog-template">
         <div class="container-nevo">
-          <div class="section-row"><h2>Episodes</h2><p>Short, thoughtful conversations are in preparation.</p></div>
-          <div class="episode-list">
-            <article class="episode-item"><span>01</span><div><p>Coming soon</p><h3>Behind Island Nights</h3></div><p>A quiet introduction to the world of Arcane du Beltah, the emotional thread of the series, and the ideas that shaped the island.</p></article>
-            <article class="episode-item"><span>02</span><div><p>In planning</p><h3>The Making of Amanah Books</h3></div><p>A short conversation-style note on writing across romance, mystery, and courage.</p></article>
+          <div class="podcast-blog-intro"><span>Podcast</span><h2>Stories behind the stories</h2><p>Short, thoughtful audio notes from Amanah Saais are in preparation.</p></div>
+          <div class="podcast-card-grid">
+            <article class="podcast-card init-delay"><div class="podcast-card-image"><img src="/island-nights-movie-part-one-wide-fast.webp" alt="" loading="lazy" /></div><div class="podcast-card-copy"><span>Episode 01</span><h3>Behind Island Nights</h3><p>A quiet introduction to the world of Arcane du Beltah and the emotional thread behind the island.</p><strong>Coming soon</strong></div></article>
+            <article class="podcast-card init-delay"><div class="podcast-card-image"><img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" /></div><div class="podcast-card-copy"><span>Episode 02</span><h3>The Making of Amanah Books</h3><p>A short note on writing across romance, mystery, faith, and courage.</p><strong>In planning</strong></div></article>
+            <article class="podcast-card init-delay"><div class="podcast-card-image"><img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" /></div><div class="podcast-card-copy"><span>Episode 03</span><h3>Reader Questions</h3><p>A simple space for reflections, questions, and the small details readers keep returning to.</p><strong>Coming soon</strong></div></article>
           </div>
-        </div>
-      </section>
-      <section class="podcast-note-section lighter-bg">
-        <div class="container-nevo podcast-note-grid">
-          <div><p class="eyebrow">Format</p><h2>Simple, intimate, and book-led.</h2></div>
-          <div class="podcast-note-list"><span>Worldbuilding</span><span>Writing life</span><span>Reader questions</span><span>Behind the books</span></div>
-        </div>
-      </section>
-      <section class="podcast-closing section-size-2">
-        <div class="container-nevo"><blockquote><span>For the readers who want to linger a little longer in the world.</span><cite>Amanah Books Podcast</cite></blockquote></div>
+          <div class="shop-pagination"><span>1</span></div>
+        </div>  
       </section>
     </div>
     <footer class="footer-nevo">

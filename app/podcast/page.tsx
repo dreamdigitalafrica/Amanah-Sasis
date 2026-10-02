@@ -1,25 +1,28 @@
 const episodes = [
   {
-    number: '01',
+    image: '/island-nights-movie-part-one-wide-fast.webp',
+    label: 'Episode 01',
     title: 'Behind Island Nights',
     summary:
-      'A quiet introduction to the world of Arcane du Beltah, the emotional thread of the series, and the ideas that shaped the island.',
+      'A quiet introduction to the world of Arcane du Beltah and the emotional thread behind the island.',
     status: 'Coming soon',
   },
   {
-    number: '02',
+    image: '/island-nights-book-one-mockup-fast.webp',
+    label: 'Episode 02',
     title: 'The Making of Amanah Books',
     summary:
-      'A short conversation-style note on writing across romance, mystery, and courage.',
+      'A short note on writing across romance, mystery, faith, and courage.',
     status: 'In planning',
   },
-];
-
-const notes = [
-  'Worldbuilding',
-  'Writing life',
-  'Reader questions',
-  'Behind the books',
+  {
+    image: '/island-nights-book-two-mockup-fast.webp',
+    label: 'Episode 03',
+    title: 'Reader Questions',
+    summary:
+      'A simple space for reflections, questions, and the small details readers keep returning to.',
+    status: 'Coming soon',
+  },
 ];
 
 export default function PodcastPage() {
@@ -65,76 +68,33 @@ export default function PodcastPage() {
           </div>
         </section>
 
-        <section className="about-intro-template podcast-intro-template">
-          <div className="container-nevo about-intro-grid">
-            <div className="about-photo-stack podcast-photo-stack" aria-hidden="true">
-              <figure>
-                <img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" />
-              </figure>
-              <figure>
-                <img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" />
-              </figure>
-              <figure>
-                <img src="/amanah-saais-author-fast.webp" alt="" loading="eager" fetchPriority="high" />
-              </figure>
-            </div>
-            <div className="about-intro-copy podcast-hero-copy reveal-up">
-              <span className="eyebrow">Coming Soon</span>
-              <h2>Stories behind the stories.</h2>
-              <p>
-                A minimal audio space for Amanah Saais to share book notes,
-                creative reflections, and the worlds behind the page.
-              </p>
-              <div className="podcast-mark" aria-hidden="true">
-                <span>AS</span>
-                <strong>Listen soon</strong>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="podcast-episodes section-size-2">
+        <section className="podcast-blog-template">
           <div className="container-nevo">
-            <div className="section-row">
-              <h2>Episodes</h2>
-              <p>Short, thoughtful conversations are in preparation.</p>
+            <div className="podcast-blog-intro">
+              <span>Podcast</span>
+              <h2>Stories behind the stories</h2>
+              <p>Short, thoughtful audio notes from Amanah Saais are in preparation.</p>
             </div>
 
-            <div className="episode-list">
+            <div className="podcast-card-grid">
               {episodes.map((episode) => (
-                <article className="episode-item" key={episode.number}>
-                  <span>{episode.number}</span>
-                  <div>
-                    <p>{episode.status}</p>
-                    <h3>{episode.title}</h3>
+                <article className="podcast-card init-delay" key={episode.title}>
+                  <div className="podcast-card-image">
+                    <img src={episode.image} alt="" loading="lazy" />
                   </div>
-                  <p>{episode.summary}</p>
+                  <div className="podcast-card-copy">
+                    <span>{episode.label}</span>
+                    <h3>{episode.title}</h3>
+                    <p>{episode.summary}</p>
+                    <strong>{episode.status}</strong>
+                  </div>
                 </article>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section className="podcast-note-section lighter-bg">
-          <div className="container-nevo podcast-note-grid">
-            <div>
-              <p className="eyebrow">Format</p>
-              <h2>Simple, intimate, and book-led.</h2>
+            <div className="shop-pagination">
+              <span>1</span>
             </div>
-            <div className="podcast-note-list">
-              {notes.map((note) => (
-                <span key={note}>{note}</span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="podcast-closing section-size-2">
-          <div className="container-nevo">
-            <blockquote>
-              <span>For the readers who want to linger a little longer in the world.</span>
-              <cite>Amanah Books Podcast</cite>
-            </blockquote>
           </div>
         </section>
       </div>
