@@ -7706,6 +7706,158 @@ body,
   transform: translate3d(0, 0, 0);
 }
 
+.aver-home .landing-books {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.018), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent 42%),
+    url('/images/noise.webp') repeat,
+    #121315;
+  color: #fff;
+  overflow: hidden;
+  padding: clamp(112px, 9vw, 152px) 0 clamp(96px, 9vw, 150px);
+  position: relative;
+}
+
+.aver-home .landing-books::before {
+  animation: workBgDrift 18s ease-in-out infinite alternate;
+  color: rgba(255, 255, 255, 0.018);
+  content: 'Amanah';
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(220px, 28vw, 520px);
+  font-weight: 520;
+  left: 50%;
+  letter-spacing: -0.075em;
+  line-height: 0.8;
+  pointer-events: none;
+  position: absolute;
+  top: 48%;
+  transform: translate3d(-50%, -50%, 0);
+  white-space: nowrap;
+}
+
+.aver-home .landing-books > * {
+  position: relative;
+  z-index: 1;
+}
+
+.aver-home .landing-books .container-nevo {
+  max-width: 1200px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.aver-home .landing-books .landing-section-head {
+  align-items: start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: clamp(48px, 5vw, 72px);
+}
+
+.aver-home .landing-books .landing-section-head h2 {
+  color: #fff;
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.aver-home .landing-books .landing-section-head span {
+  color: rgba(255, 255, 255, 0.64);
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  padding-top: 10px;
+}
+
+.aver-home .project-grid {
+  display: grid;
+  gap: clamp(22px, 1.85vw, 32px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.aver-home .project-book-card,
+.aver-home .project-book-card.portrait,
+.aver-home .project-book-card.landscape {
+  aspect-ratio: auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  grid-column: span 4;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.aver-home .project-book-card:nth-child(n + 4) {
+  grid-column: span 6;
+}
+
+.aver-home .project-book-card.portrait .project-cover {
+  aspect-ratio: 0.803 / 1;
+}
+
+.aver-home .project-book-card.landscape .project-cover {
+  aspect-ratio: 1.575 / 1;
+}
+
+.aver-home .project-cover {
+  background: transparent;
+  border-radius: 8px;
+  height: auto;
+  inset: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.aver-home .project-cover img,
+.aver-home .project-book-card .project-cover img,
+.aver-home .project-book-card:nth-child(2) .project-cover img,
+.aver-home .project-book-card:nth-child(3) .project-cover img,
+.aver-home .project-book-card:nth-child(4) .project-cover img,
+.aver-home .project-book-card:nth-child(5) .project-cover img,
+.aver-home .project-book-card.landscape .project-cover img {
+  border-radius: 8px;
+  display: block;
+  filter: none;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
+  width: 100%;
+}
+
+.aver-home .project-book-card:hover .project-cover img {
+  filter: none;
+  transform: scale(1.04);
+}
+
+.aver-home .project-book-card::after,
+.aver-home .project-book-card .card-reveal {
+  display: none;
+}
+
+.aver-home .landing-books .landing-center-action {
+  margin-top: clamp(42px, 5vw, 72px);
+}
+
+@keyframes workBgDrift {
+  from {
+    transform: translate3d(-52%, -48%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-48%, -52%, 0) scale(1.04);
+  }
+}
+
 @media (max-width: 1120px) {
   .aver-home .site-header {
     grid-template-columns: 1fr;
@@ -7719,6 +7871,13 @@ body,
 
   .aver-home .social-links-mini {
     display: none;
+  }
+
+  .aver-home .project-book-card,
+  .aver-home .project-book-card.portrait,
+  .aver-home .project-book-card.landscape,
+  .aver-home .project-book-card:nth-child(n + 4) {
+    grid-column: span 6;
   }
 }
 
@@ -7811,5 +7970,31 @@ body,
 
   .about-photo-stack.single-author-photo {
     min-height: 0;
+  }
+
+  .aver-home .landing-books {
+    padding-top: 136px;
+  }
+
+  .aver-home .landing-books .landing-section-head {
+    gap: 18px;
+    grid-template-columns: 1fr;
+    margin-bottom: 34px;
+  }
+
+  .aver-home .landing-books .landing-section-head span {
+    padding-top: 0;
+  }
+
+  .aver-home .project-grid {
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .aver-home .project-book-card,
+  .aver-home .project-book-card.portrait,
+  .aver-home .project-book-card.landscape,
+  .aver-home .project-book-card:nth-child(n + 4) {
+    grid-column: 1;
   }
 }

@@ -227,10 +227,9 @@ export default function Home() {
           <div className="container-nevo">
             <div className="landing-section-head">
               <div>
-                <p className="eyebrow">Books</p>
-                <h2>Selected work</h2>
+                <h2>Recent Works</h2>
               </div>
-              <span>Books / Covers / Movie Concepts</span>
+              <span>18 – Present</span>
             </div>
 
             <div className="project-grid">

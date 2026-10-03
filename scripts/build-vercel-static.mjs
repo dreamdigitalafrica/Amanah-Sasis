@@ -234,8 +234,8 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
       <section id="books" class="landing-books section-size-2">
         <div class="container-nevo">
           <div class="landing-section-head">
-            <div><p class="eyebrow">Books</p><h2>Selected work</h2></div>
-            <span>Books / Covers / Movie Concepts</span>
+            <div><h2>Recent Works</h2></div>
+            <span>18 – Present</span>
           </div>
           <div class="project-grid">
             <article class="project-book-card portrait" style="--card-tone:#0b5c79">
