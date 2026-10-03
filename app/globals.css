@@ -9499,3 +9499,140 @@ body,
     width: min(100%, 330px) !important;
   }
 }
+
+/* Landing hero: closer to the Aver reference composition, with visible background motion and quieter genres. */
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner {
+  align-items: center !important;
+  display: flex !important;
+  min-height: 100svh !important;
+  padding: clamp(108px, 9vw, 156px) 0 clamp(38px, 4.2vw, 68px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner .container-nevo {
+  width: 100% !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-title {
+  max-width: min(92vw, 1500px) !important;
+  transform: translateY(clamp(8px, 2vw, 34px)) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-title .eyebrow {
+  color: rgba(255, 255, 255, 0.66) !important;
+  font-size: clamp(11px, 0.78vw, 14px) !important;
+  letter-spacing: 0.14em !important;
+  margin-bottom: clamp(18px, 2.2vw, 34px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-title h1 {
+  column-gap: clamp(16px, 2vw, 36px) !important;
+  display: grid !important;
+  font-size: clamp(70px, 10.2vw, 178px) !important;
+  font-weight: 500 !important;
+  grid-template-columns: minmax(0, auto) auto minmax(0, auto) !important;
+  letter-spacing: -0.06em !important;
+  line-height: 0.86 !important;
+  place-content: center !important;
+  white-space: nowrap !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .author-orb {
+  align-self: center !important;
+  height: clamp(96px, 10.8vw, 184px) !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  width: clamp(96px, 10.8vw, 184px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .author-orb img {
+  border: 0 !important;
+  box-shadow: none !important;
+  object-fit: cover !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .author-orb i {
+  color: #ff9e2f !important;
+  font-size: clamp(46px, 4.2vw, 78px) !important;
+  right: -24px !important;
+  top: -20px !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-title > p:last-child {
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-size: clamp(18px, 1.85vw, 31px) !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+  margin-top: clamp(34px, 4vw, 58px) !important;
+  max-width: min(760px, 84vw) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-watermark {
+  bottom: auto !important;
+  color: rgba(255, 255, 255, 0.06) !important;
+  font-size: clamp(340px, 56vw, 960px) !important;
+  left: -8vw !important;
+  line-height: 0.72 !important;
+  top: -10% !important;
+  transform: translate3d(-1.5%, 0, 0) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-watermark span {
+  animation: move-horizontal-forward 34s linear infinite !important;
+  display: inline-block !important;
+  padding-right: 0.14em !important;
+  will-change: transform !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .hero-featured {
+  margin-top: clamp(74px, 8.5vw, 132px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .hero-featured h2 {
+  font-size: clamp(24px, 2.2vw, 42px) !important;
+  margin-bottom: clamp(28px, 3.4vw, 48px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .featured-list {
+  gap: clamp(16px, 2.6vw, 42px) !important;
+  row-gap: 18px !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .featured-list span {
+  font-size: clamp(20px, 2.7vw, 44px) !important;
+  letter-spacing: -0.045em !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 760px) {
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner {
+    padding-top: 170px !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-title h1 {
+    font-size: clamp(46px, 17vw, 78px) !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 8px !important;
+    white-space: normal !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .author-orb {
+    order: 2 !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-title h1 > span:first-child {
+    order: 1 !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-title h1 > span:last-child {
+    order: 3 !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .featured-list {
+    align-items: center !important;
+    flex-direction: row !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .featured-list span {
+    font-size: clamp(19px, 7vw, 30px) !important;
+  }
+}
