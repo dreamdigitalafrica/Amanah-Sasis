@@ -46,21 +46,54 @@ const initAverMotion = () => {
 
   if (nav) {
     const links = [...nav.querySelectorAll('a')];
-    const active = links[0];
+    let active = links[0];
     const moveIndicator = (link) => {
       if (!link) return;
       nav.style.setProperty('--indicator-left', link.offsetLeft + 'px');
       nav.style.setProperty('--indicator-width', link.offsetWidth + 'px');
     };
 
-    requestAnimationFrame(() => moveIndicator(active));
+    const linkMatching = (matcher) =>
+      links.find((link) => matcher(new URL(link.href, window.location.href)));
+
+    const getActiveLink = () => {
+      const path = window.location.pathname.replace(/\/$/, '') || '/';
+      if (path.startsWith('/about')) return linkMatching((url) => url.pathname.startsWith('/about'));
+      if (path.startsWith('/shop')) return linkMatching((url) => url.pathname.startsWith('/shop'));
+      if (path.startsWith('/podcast')) return linkMatching((url) => url.pathname.startsWith('/podcast'));
+
+      const contact = document.querySelector('#contact');
+      const books = document.querySelector('#books');
+      const probeLine = window.innerHeight * 0.4;
+      if (contact && contact.getBoundingClientRect().top <= probeLine) {
+        return linkMatching((url) => url.hash === '#contact');
+      }
+      if (books && books.getBoundingClientRect().top <= probeLine) {
+        return linkMatching((url) => url.hash === '#books');
+      }
+      if (window.location.hash === '#contact') return linkMatching((url) => url.hash === '#contact');
+      if (window.location.hash === '#books') return linkMatching((url) => url.hash === '#books');
+      return links[0];
+    };
+
+    const setActive = (link) => {
+      active = link || links[0];
+      links.forEach((item) => item.classList.toggle('is-active', item === active));
+      moveIndicator(active);
+    };
+
+    const syncActive = () => setActive(getActiveLink());
+    requestAnimationFrame(syncActive);
     links.forEach((link) => {
       link.addEventListener('mouseenter', () => moveIndicator(link));
       link.addEventListener('focus', () => moveIndicator(link));
       link.addEventListener('mouseleave', () => moveIndicator(active));
       link.addEventListener('blur', () => moveIndicator(active));
+      link.addEventListener('click', () => requestAnimationFrame(() => setActive(link)));
     });
-    window.addEventListener('resize', () => moveIndicator(active));
+    window.addEventListener('resize', syncActive);
+    window.addEventListener('hashchange', syncActive);
+    window.addEventListener('scroll', syncActive, { passive: true });
   }
 
   if (header) {

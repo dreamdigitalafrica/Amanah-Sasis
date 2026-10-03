@@ -9185,3 +9185,317 @@ body,
     display: none;
   }
 }
+
+/* Final template polish: remove landing noise, smooth the Aver purple-to-black blend, and let the nav pill follow the active page. */
+.aver-home .site-header {
+  grid-template-columns: minmax(120px, 0.75fr) auto minmax(150px, 0.75fr) !important;
+  padding: clamp(24px, 3vw, 46px) clamp(24px, 8vw, 112px) !important;
+}
+
+.aver-home .brand-mark {
+  font-size: clamp(38px, 2.7vw, 58px) !important;
+  letter-spacing: -0.055em !important;
+}
+
+.aver-home .brand-mark .brand-seal {
+  font-size: 0.55em !important;
+  height: 0.95em !important;
+  margin-right: 0.18em !important;
+  width: 0.95em !important;
+}
+
+.aver-home .main-menu {
+  background: rgba(25, 25, 28, 0.56) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  padding: 7px !important;
+}
+
+.aver-home .main-menu::before,
+.aver-home .main-menu:has(a:nth-child(2):hover)::before,
+.aver-home .main-menu:has(a:nth-child(3):hover)::before,
+.aver-home .main-menu:has(a:nth-child(4):hover)::before,
+.aver-home .main-menu:has(a:nth-child(5):hover)::before,
+.aver-home .main-menu:has(a:nth-child(6):hover)::before {
+  background: rgba(255, 255, 255, 0.105) !important;
+  border-radius: 999px !important;
+  height: calc(100% - 14px) !important;
+  left: var(--indicator-left, 7px) !important;
+  top: 7px !important;
+  transform: none !important;
+  width: var(--indicator-width, 82px) !important;
+}
+
+.aver-home .main-menu a,
+.aver-home .main-menu a:first-child {
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: clamp(13px, 0.9vw, 16px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  padding: 13px 21px !important;
+}
+
+.aver-home .main-menu a:hover,
+.aver-home .main-menu a:focus-visible,
+.aver-home .main-menu a.is-active {
+  color: #fff !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .content-frame {
+  background:
+    linear-gradient(
+      180deg,
+      #19191c 0%,
+      #211d38 14%,
+      #332562 31%,
+      #8952ee 47%,
+      #3c2b70 60%,
+      #211d34 74%,
+      #19191c 100%
+    ) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .content-frame::after,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner::after,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .landing-books::after,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .work-process-section::after,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section::after {
+  background-image: none !important;
+  display: none !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner {
+  background: transparent !important;
+  min-height: 100vh !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner::before {
+  animation: averGradientFloat 18s ease-in-out infinite alternate !important;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(137, 82, 238, 0.92) 0%, rgba(98, 71, 226, 0.62) 29%, rgba(50, 69, 255, 0.28) 48%, rgba(25, 25, 28, 0) 70%),
+    linear-gradient(180deg, rgba(25, 25, 28, 0) 0%, rgba(137, 82, 238, 0.48) 45%, rgba(25, 25, 28, 0.02) 100%) !important;
+  background-blend-mode: normal !important;
+  height: 145% !important;
+  left: -18% !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  opacity: 1 !important;
+  top: -18% !important;
+  width: 136% !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .banner-watermark {
+  animation: averWatermarkDrift 24s ease-in-out infinite alternate !important;
+  color: rgba(255, 255, 255, 0.038) !important;
+  opacity: 1 !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .landing-books {
+  background: transparent !important;
+  margin-top: -1px !important;
+  padding-top: clamp(86px, 7vw, 126px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .landing-books::before {
+  animation: averWatermarkDrift 24s ease-in-out infinite alternate-reverse !important;
+  color: rgba(255, 255, 255, 0.034) !important;
+}
+
+.aver-home .page-banner,
+.aver-home.shop-template-page .shop-page-banner,
+.aver-home.podcast-template-page .podcast-page-banner {
+  background: #19191c !important;
+}
+
+.aver-home .page-banner::before,
+.aver-home .page-banner::after,
+.aver-home.shop-template-page .shop-page-banner::before,
+.aver-home.shop-template-page .shop-page-banner::after,
+.aver-home.podcast-template-page .podcast-page-banner::before,
+.aver-home.podcast-template-page .podcast-page-banner::after {
+  background-image: none !important;
+  display: none !important;
+}
+
+@media (max-width: 1180px) {
+  .aver-home .site-header {
+    grid-template-columns: 1fr !important;
+    padding-top: 22px !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .aver-home .main-menu {
+    padding: 6px !important;
+  }
+
+  .aver-home .main-menu a,
+  .aver-home .main-menu a:first-child {
+    font-size: 12px !important;
+    padding: 11px 8px !important;
+  }
+}
+
+/* About/page hero correction: match the Aver page-header rhythm and keep the author portrait simple. */
+.aver-home .page-banner,
+.aver-home.shop-template-page .shop-page-banner,
+.aver-home.podcast-template-page .podcast-page-banner {
+  background: #19191c !important;
+  border-radius: 0 0 18px 18px !important;
+  min-height: clamp(430px, 33vw, 520px) !important;
+  padding: clamp(168px, 14vw, 224px) 0 clamp(70px, 6vw, 94px) !important;
+}
+
+.aver-home .page-banner-split {
+  align-items: end !important;
+  display: grid !important;
+  gap: 32px !important;
+  grid-template-columns: minmax(0, 2fr) minmax(170px, 1fr) !important;
+}
+
+.aver-home .page-banner-split h1,
+.about-template-page .page-banner-split h1,
+.shop-template-page .page-banner-split h1,
+.podcast-template-page .page-banner-split h1 {
+  font-size: clamp(42px, 3.6vw, 64px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.98 !important;
+  margin: 0 0 clamp(28px, 3.2vw, 44px) !important;
+}
+
+.aver-home .page-banner-split > p,
+.about-template-page .page-banner-split > p,
+.shop-template-page .page-banner-split > p,
+.podcast-template-page .page-banner-split > p {
+  color: rgba(255, 255, 255, 0.62) !important;
+  font-size: clamp(24px, 1.8vw, 34px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1 !important;
+  padding-bottom: 0 !important;
+}
+
+.aver-home .page-breadcrumb {
+  color: rgba(255, 255, 255, 0.68) !important;
+  font-size: clamp(13px, 0.95vw, 16px) !important;
+  font-weight: 700 !important;
+  gap: 16px !important;
+}
+
+.about-template-page .about-intro-template {
+  background: #fff !important;
+  color: #18181a !important;
+  padding: clamp(92px, 8vw, 138px) 0 clamp(96px, 8vw, 138px) !important;
+}
+
+.about-template-page .about-intro-grid,
+.aver-home .about-intro-grid {
+  align-items: center !important;
+  display: grid !important;
+  gap: clamp(56px, 7vw, 112px) !important;
+  grid-template-columns: minmax(300px, 470px) minmax(360px, 620px) !important;
+  justify-content: center !important;
+  max-width: 1180px !important;
+}
+
+.about-template-page .about-photo-stack.single-author-photo,
+.aver-home .about-photo-stack.single-author-photo {
+  align-items: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  min-height: 0 !important;
+  perspective: none !important;
+}
+
+.about-template-page .about-photo-stack.single-author-photo figure,
+.aver-home .about-photo-stack.single-author-photo figure {
+  border: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  inset: auto !important;
+  margin: 0 !important;
+  max-width: 420px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  transform: none !important;
+  width: min(100%, 420px) !important;
+}
+
+.about-template-page .about-photo-stack.single-author-photo figure::before,
+.about-template-page .about-photo-stack.single-author-photo figure::after,
+.aver-home .about-photo-stack.single-author-photo figure::before,
+.aver-home .about-photo-stack.single-author-photo figure::after {
+  content: none !important;
+  display: none !important;
+}
+
+.about-template-page .about-photo-stack.single-author-photo img,
+.aver-home .about-photo-stack.single-author-photo img {
+  aspect-ratio: 0.78 !important;
+  border-radius: 12px !important;
+  display: block !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+.about-template-page .about-intro-copy,
+.aver-home .about-intro-copy {
+  max-width: 620px !important;
+}
+
+.about-template-page .about-intro-copy h2,
+.aver-home .about-intro-copy h2 {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif !important;
+  font-size: clamp(28px, 2.05vw, 38px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.28 !important;
+}
+
+.about-template-page .about-intro-copy p,
+.aver-home .about-intro-copy p {
+  color: rgba(24, 24, 26, 0.68) !important;
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif !important;
+  font-size: clamp(16px, 1.05vw, 18px) !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 900px) {
+  .aver-home .page-banner,
+  .aver-home.shop-template-page .shop-page-banner,
+  .aver-home.podcast-template-page .podcast-page-banner {
+    min-height: 390px !important;
+    padding: 178px 0 64px !important;
+  }
+
+  .aver-home .page-banner-split {
+    gap: 24px !important;
+    grid-template-columns: 1fr !important;
+    text-align: left !important;
+  }
+
+  .aver-home .page-banner-split > p {
+    justify-self: start !important;
+  }
+
+  .about-template-page .about-intro-grid,
+  .aver-home .about-intro-grid {
+    gap: 42px !important;
+    grid-template-columns: 1fr !important;
+    text-align: left !important;
+  }
+
+  .about-template-page .about-photo-stack.single-author-photo figure,
+  .aver-home .about-photo-stack.single-author-photo figure {
+    max-width: 330px !important;
+    width: min(100%, 330px) !important;
+  }
+}
