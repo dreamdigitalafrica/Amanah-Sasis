@@ -82,13 +82,7 @@ export default function AboutPage() {
 
         <section className="about-intro-template">
           <div className="container-nevo about-intro-grid">
-            <div className="about-photo-stack" aria-label="Amanah Saais and featured books">
-              <figure>
-                <img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" />
-              </figure>
-              <figure>
-                <img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" />
-              </figure>
+            <div className="about-photo-stack single-author-photo" aria-label="Amanah Saais">
               <figure>
                 <img src="/amanah-saais-author-fast.webp" alt="Amanah Saais" loading="eager" fetchPriority="high" />
               </figure>

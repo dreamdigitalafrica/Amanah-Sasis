@@ -7255,3 +7255,561 @@ html {
     aspect-ratio: 1 / 1;
   }
 }
+
+/* Final Aver theme alignment: quieter type, fixed holders, and matching page proportions. */
+body,
+.aver-home {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, Helvetica, sans-serif;
+}
+
+.aver-home .site-header {
+  align-items: start;
+  background: transparent;
+  backdrop-filter: none;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(116px, 220px) minmax(420px, 1fr) minmax(176px, 260px);
+  padding: clamp(24px, 3vw, 48px) clamp(22px, 7vw, 142px) 0;
+  pointer-events: none;
+}
+
+.aver-home .site-header > * {
+  pointer-events: auto;
+}
+
+.aver-home .brand-mark {
+  color: #fff;
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.4vw, 55px);
+  font-style: normal;
+  font-weight: 540;
+  gap: 0;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.aver-home .brand-seal {
+  display: none;
+}
+
+.aver-home .main-menu {
+  align-items: center;
+  align-self: start;
+  backdrop-filter: blur(18px);
+  background: rgba(21, 21, 27, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  justify-content: center;
+  justify-self: center;
+  margin: 0;
+  padding: 9px;
+  position: relative;
+  text-transform: none;
+}
+
+.aver-home .main-menu a {
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: clamp(14px, 1.05vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+  padding: 14px clamp(15px, 1.45vw, 24px);
+}
+
+.aver-home .main-menu a:first-child,
+.aver-home .main-menu a:hover {
+  background: rgba(255, 255, 255, 0.13);
+  color: #fff;
+}
+
+.aver-home .social-links-mini {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  justify-self: end;
+}
+
+.aver-home .social-links-mini > span {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.aver-home .content-frame {
+  padding-top: 0;
+}
+
+.aver-home .container-nevo {
+  max-width: 1450px;
+  padding-left: clamp(22px, 7vw, 142px);
+  padding-right: clamp(22px, 7vw, 142px);
+}
+
+.aver-home .amanah-banner {
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(20, 20, 24, 0.2), rgba(20, 20, 24, 0.78)),
+    radial-gradient(circle at 58% 44%, rgba(102, 82, 191, 0.56), rgba(39, 34, 88, 0.64) 34%, transparent 57%),
+    url('/images/noise.webp') repeat,
+    #18181c;
+  border-radius: 0;
+  display: flex;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(130px, 12vw, 190px) 0 clamp(46px, 5vw, 84px);
+  position: relative;
+}
+
+.aver-home .banner-title h1 {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(58px, 8vw, 132px);
+  font-weight: 540;
+  gap: clamp(10px, 1.4vw, 20px);
+  justify-content: center;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  margin: 0 auto;
+}
+
+.aver-home .banner-title > p:last-child {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: clamp(17px, 1.55vw, 26px);
+  font-weight: 400;
+  line-height: 1.55;
+  margin: clamp(18px, 2.4vw, 34px) auto 0;
+  max-width: 720px;
+}
+
+.aver-home .author-orb {
+  height: clamp(84px, 10vw, 150px);
+  width: clamp(84px, 10vw, 150px);
+}
+
+.aver-home .author-orb i {
+  color: #ffa125;
+  font-size: clamp(34px, 4vw, 64px);
+}
+
+.aver-home .banner-feature {
+  margin-top: clamp(72px, 13vw, 175px);
+}
+
+.aver-home .banner-feature h2 {
+  color: rgba(255, 255, 255, 0.86);
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(34px, 4vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  text-align: center;
+}
+
+.aver-home .featured-list {
+  gap: clamp(22px, 5vw, 88px);
+  margin-top: clamp(28px, 4vw, 52px);
+}
+
+.aver-home .featured-list span {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.page-banner,
+.shop-template-page .shop-page-banner {
+  background:
+    url('/images/noise.webp') repeat,
+    #19191c;
+  border-radius: 0 0 18px 18px;
+  min-height: clamp(360px, 34vw, 500px);
+  padding: clamp(118px, 11vw, 172px) 0 clamp(58px, 7vw, 94px);
+}
+
+.page-banner-inner h1,
+.shop-template-page .shop-page-banner .page-banner-inner h1 {
+  color: #fff;
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(40px, 4vw, 64px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin-bottom: clamp(24px, 3vw, 44px);
+}
+
+.page-banner-inner p {
+  color: rgba(255, 255, 255, 0.64);
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 2.1vw, 36px);
+  font-weight: 500;
+}
+
+.page-breadcrumb {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: clamp(14px, 1.05vw, 17px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.landing-section-head h2,
+.about-intro-copy h2,
+.shop-detail-copy h2,
+.quick-read-panel h3,
+.podcast-blog-intro h2,
+.podcast-card-copy h3,
+.journal-grid h3 {
+  letter-spacing: -0.025em;
+}
+
+.landing-section-head h2,
+.about-services-template .landing-section-head h2 {
+  font-family: Melodrama, Georgia, 'Times New Roman', serif;
+  font-size: clamp(40px, 4vw, 70px);
+  font-weight: 500;
+}
+
+.about-intro-template {
+  padding: clamp(70px, 8vw, 126px) 0;
+}
+
+.about-photo-stack.single-author-photo {
+  display: block;
+  height: auto;
+  max-width: min(440px, 86vw);
+  min-height: 0;
+  position: relative;
+  width: 100%;
+}
+
+.about-photo-stack.single-author-photo figure {
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  inset: auto;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  transform: none !important;
+  width: 100%;
+}
+
+.about-photo-stack.single-author-photo img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.about-intro-copy {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+}
+
+.about-intro-copy h2 {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: clamp(25px, 2.25vw, 40px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.about-intro-copy p,
+.about-service-grid p,
+.reader-review-template p,
+.shop-blog-card p,
+.shop-detail-copy p,
+.quick-read-panel p,
+.podcast-card-copy p {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-weight: 400;
+}
+
+.about-services-template {
+  background:
+    url('/images/noise.webp') repeat,
+    #19191c;
+  color: #fff;
+}
+
+.about-service-grid article {
+  border-color: rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+}
+
+.about-service-grid h3 {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 700;
+}
+
+.shop-listing-template {
+  background: #fff;
+  padding: clamp(70px, 8vw, 126px) 0;
+}
+
+.shop-blog-grid {
+  gap: clamp(32px, 3vw, 50px);
+}
+
+.shop-blog-card {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+}
+
+.shop-blog-image {
+  aspect-ratio: 1.06 / 1;
+  border-radius: 10px;
+  padding: clamp(18px, 2.2vw, 30px);
+}
+
+.shop-blog-image img {
+  height: 91%;
+  max-width: 72%;
+}
+
+.shop-blog-meta {
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.shop-blog-meta span {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 13px;
+}
+
+.shop-blog-meta time {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.shop-blog-card h2 {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: clamp(22px, 1.75vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+  margin-top: 18px;
+  max-width: 390px;
+}
+
+.shop-blog-card p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.shop-template-page .shop-price-row {
+  gap: 8px 12px;
+  margin-top: 14px;
+}
+
+.shop-template-page .shop-price-row strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.shop-template-page .shop-price-row em {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.shop-mini-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.shop-mini-actions a {
+  border: 1px solid rgba(24, 24, 26, 0.18);
+  border-radius: 999px;
+  color: #18181a;
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 9px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.shop-mini-actions a:first-child,
+.shop-mini-actions a:hover {
+  background: #18181a;
+  border-color: #18181a;
+  color: #fff;
+}
+
+.shop-detail-template {
+  padding: clamp(70px, 8vw, 118px) 0;
+}
+
+.shop-detail-copy h2 {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-size: clamp(34px, 4vw, 62px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.shop-detail-copy p {
+  font-size: clamp(16px, 1.1vw, 19px);
+  line-height: 1.75;
+}
+
+.button,
+.button-dark,
+.button-outline,
+.about-intro-button,
+.inline-button {
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.motion-ready .reveal-up,
+.motion-ready .landing-section-head,
+.motion-ready .work-process-item,
+.motion-ready .journal-grid article,
+.motion-ready .quote-grid > *,
+.motion-ready .about-intro-grid > *,
+.motion-ready .about-service-grid article,
+.motion-ready .shop-blog-card,
+.motion-ready .episode-item,
+.motion-ready .podcast-note-grid > *,
+.motion-ready .podcast-card,
+.motion-ready .project-book-card {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-ready .is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 1120px) {
+  .aver-home .site-header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-inline: 22px;
+  }
+
+  .aver-home .brand-mark {
+    justify-self: center;
+  }
+
+  .aver-home .social-links-mini {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .aver-home .main-menu {
+    border-radius: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .aver-home .main-menu a {
+    padding: 11px 8px;
+    text-align: center;
+  }
+
+  .aver-home .amanah-banner {
+    min-height: 100svh;
+    padding-top: 172px;
+  }
+
+  .aver-home .banner-title h1 {
+    display: grid;
+    justify-items: center;
+  }
+
+  .aver-home .featured-list {
+    align-items: center;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .page-banner,
+  .shop-template-page .shop-page-banner {
+    min-height: 420px;
+    padding-top: 214px;
+  }
+
+  .page-banner-split {
+    gap: 24px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .page-breadcrumb {
+    justify-content: center;
+  }
+
+  .shop-blog-image {
+    aspect-ratio: 1.06 / 1;
+  }
+
+  .shop-mini-actions {
+    flex-wrap: wrap;
+  }
+
+  .about-template-page .page-banner-split,
+  .shop-template-page .page-banner-split,
+  .podcast-template-page .page-banner-split {
+    align-items: center;
+    display: grid;
+    gap: 22px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .about-template-page .page-banner-split > div,
+  .shop-template-page .page-banner-split > div,
+  .podcast-template-page .page-banner-split > div {
+    width: 100%;
+  }
+
+  .about-template-page .page-banner-split h1,
+  .shop-template-page .page-banner-split h1,
+  .podcast-template-page .page-banner-split h1 {
+    font-size: clamp(40px, 13vw, 58px);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .about-template-page .page-banner-split > p,
+  .shop-template-page .page-banner-split > p,
+  .podcast-template-page .page-banner-split > p {
+    align-self: center;
+    font-size: clamp(24px, 8vw, 32px);
+    text-align: center;
+  }
+
+  .about-photo-stack.single-author-photo {
+    min-height: 0;
+  }
+}

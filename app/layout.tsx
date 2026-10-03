@@ -1,11 +1,17 @@
 import type { Metadata } from 'next';
-import { Geist_Mono, Outfit } from 'next/font/google';
+import { Geist_Mono, Lato, Outfit } from 'next/font/google';
 import './globals.css';
 
 const outfit = Outfit({
   variable: '--font-outfit',
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
+
+const lato = Lato({
+  variable: '--font-lato',
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
 });
 
 const geistMono = Geist_Mono({
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${geistMono.variable} antialiased`}
+        className={`${lato.variable} ${outfit.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

@@ -15,7 +15,7 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
   <link rel="preload" as="image" href="/island-nights-book-two-mockup-fast.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>`;
 
@@ -76,7 +76,7 @@ const initAverMotion = () => {
   }
 
   const revealItems = [
-    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .episode-item, .podcast-note-grid > *, .podcast-card'),
+    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .shop-blog-card, .episode-item, .podcast-note-grid > *, .podcast-card'),
   ];
   const projectCards = [...document.querySelectorAll('.project-book-card')];
 
@@ -176,6 +176,7 @@ const shopCard = (book, index) => String.raw`<article class="shop-blog-card init
   <h2><a href="${book.href}">${book.title}</a></h2>
   <p>${book.subtitle}</p>
   <div class="shop-price-row"><strong>${bookPrice}</strong><em>${bookUsdPrice}</em></div>
+  <div class="shop-mini-actions"><a href="${book.paystackUrl}" target="_blank" rel="noreferrer">Buy now</a><a href="${book.href}">Read excerpt</a></div>
 </article>`;
 
 const shopDetailHtml = (book) => String.raw`<!doctype html>
@@ -308,7 +309,7 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
       </section>
       <section class="about-intro-template">
         <div class="container-nevo about-intro-grid">
-          <div class="about-photo-stack" aria-label="Amanah Saais and featured books"><figure><img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/island-nights-book-one-mockup-fast.webp" alt="" loading="lazy" /></figure><figure><img src="/amanah-saais-author-fast.webp" alt="Amanah Saais" loading="eager" fetchpriority="high" /></figure></div>
+          <div class="about-photo-stack single-author-photo" aria-label="Amanah Saais"><figure><img src="/amanah-saais-author-fast.webp" alt="Amanah Saais" loading="eager" fetchpriority="high" /></figure></div>
           <div class="about-intro-copy">
             <span class="eyebrow">Bio</span>
             <h2>A novelist, writer, and poet creating worlds that feel close enough to touch.</h2>
@@ -395,7 +396,7 @@ ${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featu
 
 const globalCss = await readFile('app/globals.css', 'utf8');
 const customCss = globalCss.slice(globalCss.indexOf('.site-shell'));
-const css = `*{box-sizing:border-box}:root{--font-outfit:Outfit,Arial,Helvetica,sans-serif;--font-geist-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}html{scroll-behavior:smooth}body{margin:0;background:#f8f7f4;color:#171717;font-family:Outfit,Arial,Helvetica,sans-serif}p,h1,h2,h3{margin:0}a{color:inherit}${customCss}`;
+const css = `*{box-sizing:border-box}:root{--font-lato:Lato,Arial,Helvetica,sans-serif;--font-outfit:Outfit,Arial,Helvetica,sans-serif;--font-geist-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}html{scroll-behavior:smooth}body{margin:0;background:#f8f7f4;color:#171717;font-family:Lato,Outfit,Arial,Helvetica,sans-serif}p,h1,h2,h3{margin:0}a{color:inherit}${customCss}`;
 
 await mkdir('vercel-static/about', { recursive: true });
 await mkdir('vercel-static/shop', { recursive: true });

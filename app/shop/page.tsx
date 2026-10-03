@@ -73,6 +73,12 @@ export default function ShopPage() {
                     <strong>{price}</strong>
                     <em>{usdPrice}</em>
                   </div>
+                  <div className="shop-mini-actions">
+                    <a href={book.paystackUrl} target="_blank" rel="noreferrer">
+                      Buy now
+                    </a>
+                    <a href={book.href}>Read excerpt</a>
+                  </div>
                 </article>
               ))}
             </div>

@@ -84,7 +84,7 @@ const initAverMotion = () => {
   }
 
   const revealItems = [
-    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .episode-item, .podcast-note-grid > *, .podcast-card'),
+    ...document.querySelectorAll('.reveal-up, .landing-section-head, .work-process-item, .journal-grid article, .quote-grid > *, .about-intro-grid > *, .about-service-grid article, .shop-listing-card, .shop-blog-card, .episode-item, .podcast-note-grid > *, .podcast-card'),
   ];
   const projectCards = [...document.querySelectorAll('.project-book-card')];
 
