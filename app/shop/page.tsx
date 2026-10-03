@@ -1,28 +1,4 @@
-const products = [
-  {
-    id: 'book-one',
-    volume: 'Book One',
-    image: '/island-nights-book-one-mockup-fast.webp',
-    title: 'Arcane du Beltah: Island Nights',
-    note: 'Part One begins an island journey where courage, destiny, and hidden power meet beneath the night sky.',
-    amazonUrl:
-      'https://www.amazon.com/Arcane-Du-Beltah-Island-Nights-ebook/dp/B0HJ7719YF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-1',
-    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
-  },
-  {
-    id: 'book-two',
-    volume: 'Book Two',
-    image: '/island-nights-book-two-mockup-fast.webp',
-    title: 'Arcane du Beltah: Island Nights',
-    note: 'Part Two expands the world with deeper mystery, romance, and a fate balanced between courage and risk.',
-    amazonUrl:
-      'https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3',
-    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
-  },
-];
-
-const price = '₦15,000';
-const usdPrice = 'approx. $11.34';
+import { books, price, usdPrice } from './books';
 
 export default function ShopPage() {
   return (
@@ -47,14 +23,7 @@ export default function ShopPage() {
             <a href="/#contact">X</a>
             <a href="/#contact">IN</a>
             <a href="/#contact">MAIL</a>
-            <a
-              className="substack-social-link"
-              href="https://open.substack.com/pub/amanahsaais"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Amanah Saais on Substack"
-              title="Substack"
-            >
+            <a className="substack-social-link" href="https://open.substack.com/pub/amanahsaais" target="_blank" rel="noreferrer" aria-label="Amanah Saais on Substack" title="Substack">
               <span className="substack-icon" aria-hidden="true" />
             </a>
           </div>
@@ -62,66 +31,47 @@ export default function ShopPage() {
       </header>
 
       <div className="content-frame">
-        <section className="page-banner">
+        <section className="page-banner shop-page-banner">
           <div className="banner-watermark" aria-hidden="true">
             <span>Shop</span>
           </div>
-          <div className="container-nevo page-banner-inner">
-            <span className="eyebrow">Amanah Books</span>
-            <h1>Shop</h1>
-            <p>Island Nights editions available through Paystack and Amazon.</p>
+          <div className="container-nevo page-banner-inner page-banner-split">
+            <div>
+              <h1>Shop</h1>
+              <nav className="page-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span>•</span>
+                <span>Shop</span>
+              </nav>
+            </div>
+            <p>Amanah Books</p>
           </div>
         </section>
 
         <section className="shop-listing-template">
           <div className="container-nevo">
-            <div className="shop-listing-grid">
-              {products.map((product, index) => (
-                <article
-                  className="shop-listing-card init-delay"
-                  key={product.id}
-                  style={
-                    {
-                      '--lg-delay': `${(index % 3) * 75}ms`,
-                      '--md-delay': `${(index % 2) * 75}ms`,
-                      '--sm-delay': `${(index % 2) * 75}ms`,
-                    } as any
-                  }
-                >
-                  <div className="shop-listing-image">
+            <div className="shop-blog-grid">
+              {books.map((book, index) => (
+                <article className="shop-blog-card init-delay" key={book.id}>
+                  <a className="shop-blog-image" href={book.href} aria-label={`Read more about ${book.title} ${book.subtitle}`}>
                     <img
-                      src={product.image}
-                      alt={`${product.title} ${product.volume}`}
+                      src={book.image}
+                      alt={`${book.title} ${book.subtitle}`}
                       loading={index === 0 ? 'eager' : 'lazy'}
                       fetchPriority={index === 0 ? 'high' : 'auto'}
                     />
+                  </a>
+                  <div className="shop-blog-meta">
+                    <span>{book.category}</span>
+                    <time>{book.date}</time>
                   </div>
-                  <div className="shop-listing-copy">
-                    <span>{product.volume}</span>
-                    <h2>{product.title}</h2>
-                    <p>{product.note}</p>
-                    <div className="shop-price-row">
-                      <strong>{price}</strong>
-                      <em>{usdPrice}</em>
-                    </div>
-                    <div className="shop-listing-actions">
-                      <a
-                        className="button-dark"
-                        href={product.paystackUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Buy with Paystack</span>
-                      </a>
-                      <a
-                        className="button-outline"
-                        href={product.amazonUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Buy from Amazon
-                      </a>
-                    </div>
+                  <h2>
+                    <a href={book.href}>{book.title}</a>
+                  </h2>
+                  <p>{book.subtitle}</p>
+                  <div className="shop-price-row">
+                    <strong>{price}</strong>
+                    <em>{usdPrice}</em>
                   </div>
                 </article>
               ))}

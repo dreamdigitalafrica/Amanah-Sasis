@@ -134,6 +134,80 @@ const contactSection = String.raw`<section id="contact" class="quote-section lig
   </div>
 </section>`;
 
+const shopBooks = [
+  {
+    id: 'book-one',
+    href: '/shop/book-one/',
+    volume: 'Book One',
+    category: 'Novel',
+    date: 'May 25, 2025',
+    image: '/island-nights-book-one-mockup-fast.webp',
+    title: 'Arcane du Beltah: Island Nights',
+    subtitle: 'Part One',
+    description: 'Part One opens the Arcane du Beltah series with a luminous island world, two lives pulled toward mystery, and a destiny that asks for courage before it gives answers.',
+    excerpt: 'Night settled over the island like a secret being kept by the sea. Every light along the shore looked ordinary until Amanah looked twice; then each one became a sign, a quiet promise that the world she knew was only the first layer of the story.',
+    pdf: '/excerpts/arcane-du-beltah-book-one-excerpt.pdf',
+    amazonUrl: 'https://www.amazon.com/Arcane-Du-Beltah-Island-Nights-ebook/dp/B0HJ7719YF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-1',
+    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
+  },
+  {
+    id: 'book-two',
+    href: '/shop/book-two/',
+    volume: 'Book Two',
+    category: 'Novel',
+    date: 'May 23, 2025',
+    image: '/island-nights-book-two-mockup-fast.webp',
+    title: 'Arcane du Beltah: Island Nights',
+    subtitle: 'Part Two',
+    description: 'Part Two carries the story into a more dangerous and intimate chapter, where every answer opens another door and every bond is tested by what the island refuses to reveal.',
+    excerpt: 'Above the bridge, the sky was split between storm and gold. She could feel the island below her, breathing through towers, water, and prayer. Somewhere ahead, the next truth waited, but it would not come gently.',
+    pdf: '/excerpts/arcane-du-beltah-book-two-excerpt.pdf',
+    amazonUrl: 'https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3',
+    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
+  },
+];
+
+const bookPrice = '₦15,000';
+const bookUsdPrice = 'approx. $11.34';
+
+const shopCard = (book, index) => String.raw`<article class="shop-blog-card init-delay">
+  <a class="shop-blog-image" href="${book.href}" aria-label="Read more about ${book.title} ${book.subtitle}"><img src="${book.image}" alt="${book.title} ${book.subtitle}" loading="${index === 0 ? 'eager' : 'lazy'}" ${index === 0 ? 'fetchpriority="high"' : ''} /></a>
+  <div class="shop-blog-meta"><span>${book.category}</span><time>${book.date}</time></div>
+  <h2><a href="${book.href}">${book.title}</a></h2>
+  <p>${book.subtitle}</p>
+  <div class="shop-price-row"><strong>${bookPrice}</strong><em>${bookUsdPrice}</em></div>
+</article>`;
+
+const shopDetailHtml = (book) => String.raw`<!doctype html>
+<html lang="en">
+${head(`${book.subtitle} | Amanah Saais Shop`, `${book.title} ${book.subtitle} by Amanah Saais. Read an excerpt, download a PDF, or buy the book.`, book.image)}
+<body>
+  <main class="site-shell aver-home shop-template-page shop-detail-page">
+    ${header(false)}
+    ${motionScript}
+    <div class="content-frame">
+      <section class="page-banner shop-page-banner">
+        <div class="banner-watermark" aria-hidden="true"><span>${book.volume}</span></div>
+        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>${book.title}</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><a href="/shop/">Shop</a><span>•</span><span>${book.subtitle}</span></nav></div><p>${book.volume}</p></div>
+      </section>
+      <section class="shop-detail-template">
+        <div class="container-nevo shop-detail-grid">
+          <figure class="shop-detail-cover"><img src="${book.image}" alt="${book.title} ${book.subtitle}" loading="eager" fetchpriority="high" /></figure>
+          <article class="shop-detail-copy">
+            <div class="shop-blog-meta"><span>${book.category}</span><time>${book.date}</time></div>
+            <h2>${book.subtitle}</h2>
+            <p>${book.description}</p>
+            <div class="shop-price-row"><strong>${bookPrice}</strong><em>${bookUsdPrice}</em></div>
+            <div class="shop-listing-actions"><a class="button-dark" href="${book.paystackUrl}" target="_blank" rel="noreferrer"><span>Buy with Paystack</span></a><a class="button-outline" href="${book.amazonUrl}" target="_blank" rel="noreferrer">Buy from Amazon</a></div>
+          </article>
+        </div>
+        <div class="container-nevo quick-read-panel"><div><span>Quick Read</span><h3>Read an excerpt</h3></div><p>${book.excerpt}</p><a class="button-dark" href="${book.pdf}" download><span>Download PDF</span></a></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>`;
+
 const homeHtml = String.raw`<!doctype html>
 <html lang="en">
 ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, storyteller, and author of Arcane du Beltah: Island Nights.')}
@@ -272,34 +346,13 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
     ${header(false)}
     ${motionScript}
     <div class="content-frame">
-      <section class="page-banner">
+      <section class="page-banner shop-page-banner">
         <div class="banner-watermark" aria-hidden="true"><span>Shop</span></div>
-        <div class="container-nevo page-banner-inner"><span class="eyebrow">Amanah Books</span><h1>Shop</h1><p>Island Nights editions available through Paystack and Amazon.</p></div>
+        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>Shop</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>Shop</span></nav></div><p>Amanah Books</p></div>
       </section>
       <section class="shop-listing-template">
         <div class="container-nevo">
-          <div class="shop-listing-grid">
-            <article class="shop-listing-card">
-              <div class="shop-listing-image"><img src="/island-nights-book-one-mockup-fast.webp" alt="Arcane du Beltah Island Nights Book One" loading="eager" fetchpriority="high" /></div>
-              <div class="shop-listing-copy">
-                <span>Book One</span>
-                <h3>Arcane du Beltah: Island Nights</h3>
-                <p>Part One begins an island journey where courage, destiny, and hidden power meet beneath the night sky.</p>
-                <div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div>
-                <div class="shop-listing-actions"><a class="button-dark" href="https://paystack.shop/pay/jeqoqeorm8" target="_blank" rel="noreferrer"><span>Buy with Paystack</span></a><a class="button-outline" href="https://www.amazon.com/Arcane-Du-Beltah-Island-Nights-ebook/dp/B0HJ7719YF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-1" target="_blank" rel="noreferrer">Buy from Amazon</a></div>
-              </div>
-            </article>
-            <article class="shop-listing-card">
-              <div class="shop-listing-image"><img src="/island-nights-book-two-mockup-fast.webp" alt="Arcane du Beltah Island Nights Book Two" loading="lazy" /></div>
-              <div class="shop-listing-copy">
-                <span>Book Two</span>
-                <h3>Arcane du Beltah: Island Nights</h3>
-                <p>Part Two expands the world with deeper mystery, romance, and a fate balanced between courage and risk.</p>
-                <div class="shop-price-row"><strong>₦15,000</strong><em>approx. $11.34</em></div>
-                <div class="shop-listing-actions"><a class="button-dark" href="https://paystack.shop/pay/jeqoqeorm8" target="_blank" rel="noreferrer"><span>Buy with Paystack</span></a><a class="button-outline" href="https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3" target="_blank" rel="noreferrer">Buy from Amazon</a></div>
-              </div>
-            </article>
-          </div>
+          <div class="shop-blog-grid">${shopBooks.map(shopCard).join('')}</div>
           <div class="shop-pagination"><span>1</span></div>
         </div>
       </section>
@@ -346,10 +399,14 @@ const css = `*{box-sizing:border-box}:root{--font-outfit:Outfit,Arial,Helvetica,
 
 await mkdir('vercel-static/about', { recursive: true });
 await mkdir('vercel-static/shop', { recursive: true });
+await mkdir('vercel-static/shop/book-one', { recursive: true });
+await mkdir('vercel-static/shop/book-two', { recursive: true });
 await mkdir('vercel-static/podcast', { recursive: true });
 await writeFile('vercel-static/index.html', homeHtml);
 await writeFile('vercel-static/about/index.html', aboutHtml);
 await writeFile('vercel-static/shop/index.html', shopHtml);
+await writeFile('vercel-static/shop/book-one/index.html', shopDetailHtml(shopBooks[0]));
+await writeFile('vercel-static/shop/book-two/index.html', shopDetailHtml(shopBooks[1]));
 await writeFile('vercel-static/podcast/index.html', podcastHtml);
 await writeFile('vercel-static/style.css', css);
 await cp('public/island-nights-cover.jpg', 'vercel-static/island-nights-cover.jpg');
@@ -372,6 +429,9 @@ await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.pn
 await cp('public/amanah-saais-author-fast.webp', 'vercel-static/amanah-saais-author-fast.webp');
 await cp('public/favicon.svg', 'vercel-static/favicon.svg');
 await cp('public/favicon.png', 'vercel-static/favicon.png');
+await mkdir('vercel-static/excerpts', { recursive: true });
+await cp('public/excerpts/arcane-du-beltah-book-one-excerpt.pdf', 'vercel-static/excerpts/arcane-du-beltah-book-one-excerpt.pdf');
+await cp('public/excerpts/arcane-du-beltah-book-two-excerpt.pdf', 'vercel-static/excerpts/arcane-du-beltah-book-two-excerpt.pdf');
 await mkdir('vercel-static/images', { recursive: true });
 await cp('public/images/noise.webp', 'vercel-static/images/noise.webp');
 await mkdir('vercel-static/fonts/melodrama', { recursive: true });
