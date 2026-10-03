@@ -168,21 +168,27 @@ const process = [
 const notes = [
   {
     label: 'Podcast',
+    date: 'Coming Soon',
     title: 'Behind Island Nights',
     text: 'A quiet audio space for the ideas, worldbuilding, and emotional notes behind the books.',
     href: '/podcast',
+    image: '/island-nights-movie-part-one-wide-fast.webp',
   },
   {
-    label: 'About',
+    label: 'Bio',
+    date: 'Amanah Saais',
     title: 'Meet Amanah',
     text: 'A novelist, writer, and poet crafting immersive stories filled with hope and courage.',
     href: '/about',
+    image: '/amanah-saais-author-fast.webp',
   },
   {
-    label: 'Shop',
+    label: 'Books',
+    date: 'Available',
     title: 'Amanah Books',
     text: 'Buy through Paystack or Amazon and begin the Arcane du Beltah series.',
     href: '/shop',
+    image: '/island-nights-book-two-mockup-fast.webp',
   },
 ];
 
@@ -321,21 +327,24 @@ export default function Home() {
           <div className="container-nevo">
             <div className="landing-section-head">
               <div>
-                <p className="eyebrow">Notes</p>
                 <h2>My weekly thoughts</h2>
               </div>
-              <span>Podcast / Bio / Shop</span>
+              <span>Blog</span>
             </div>
 
             <div className="journal-grid">
-              {notes.map((item) => (
-                <article key={item.title}>
-                  <span>{item.label}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                  <a className="inline-button" href={item.href}>
-                    Open
+              {notes.map((item, index) => (
+                <article className="journal-card" key={item.title}>
+                  <a className="journal-image" href={item.href} aria-label={item.title}>
+                    <img src={item.image} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
                   </a>
+                  <div className="journal-meta">
+                    <span>{item.label}</span>
+                    <time>{item.date}</time>
+                  </div>
+                  <h3>
+                    <a href={item.href}>{item.title}</a>
+                  </h3>
                 </article>
               ))}
             </div>

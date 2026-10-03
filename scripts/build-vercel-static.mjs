@@ -311,13 +311,13 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
       <section id="podcast" class="journal-section">
         <div class="container-nevo">
           <div class="landing-section-head">
-            <div><p class="eyebrow">Notes</p><h2>My weekly thoughts</h2></div>
-            <span>Podcast / Bio / Shop</span>
+            <div><h2>My weekly thoughts</h2></div>
+            <span>Blog</span>
           </div>
           <div class="journal-grid">
-            <article><span>Podcast</span><h3>Behind Island Nights</h3><p>A quiet audio space for the ideas, worldbuilding, and emotional notes behind the books.</p><a class="inline-button" href="/podcast/">Open</a></article>
-            <article><span>About</span><h3>Meet Amanah</h3><p>A novelist, writer, and poet crafting immersive stories filled with hope and courage.</p><a class="inline-button" href="/about/">Open</a></article>
-            <article><span>Shop</span><h3>Amanah Books</h3><p>Buy through Paystack or Amazon and begin the Arcane du Beltah series.</p><a class="inline-button" href="/shop/">Open</a></article>
+            <article class="journal-card"><a class="journal-image" href="/podcast/" aria-label="Behind Island Nights"><img src="/island-nights-movie-part-one-wide-fast.webp" alt="" loading="eager" /></a><div class="journal-meta"><span>Podcast</span><time>Coming Soon</time></div><h3><a href="/podcast/">Behind Island Nights</a></h3></article>
+            <article class="journal-card"><a class="journal-image" href="/about/" aria-label="Meet Amanah"><img src="/amanah-saais-author-fast.webp" alt="" loading="lazy" /></a><div class="journal-meta"><span>Bio</span><time>Amanah Saais</time></div><h3><a href="/about/">Meet Amanah</a></h3></article>
+            <article class="journal-card"><a class="journal-image" href="/shop/" aria-label="Amanah Books"><img src="/island-nights-book-two-mockup-fast.webp" alt="" loading="lazy" /></a><div class="journal-meta"><span>Books</span><time>Available</time></div><h3><a href="/shop/">Amanah Books</a></h3></article>
           </div>
         </div>
       </section>

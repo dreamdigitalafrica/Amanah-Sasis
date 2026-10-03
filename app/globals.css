@@ -9636,3 +9636,184 @@ body,
     font-size: clamp(19px, 7vw, 30px) !important;
   }
 }
+
+/* Final landing flow: one continuous dark canvas until the white content begins. */
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .content-frame {
+  background:
+    radial-gradient(circle at 50% 22%, rgba(88, 70, 185, 0.26) 0%, rgba(50, 42, 92, 0.18) 28%, rgba(25, 25, 28, 0) 58%),
+    linear-gradient(
+      180deg,
+      #171719 0%,
+      #191820 22%,
+      #1d1a2a 42%,
+      #1a1920 66%,
+      #171719 100%
+    ) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .landing-books,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .work-process-section,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section {
+  background: transparent !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner::before {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(86, 68, 182, 0.34) 0%, rgba(54, 45, 112, 0.2) 30%, rgba(25, 25, 28, 0) 66%) !important;
+  height: 130% !important;
+  left: -12% !important;
+  top: -14% !important;
+  width: 124% !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .amanah-banner::after,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .landing-books::after,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .work-process-section::after,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section::after {
+  content: none !important;
+  display: none !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .landing-books {
+  margin-top: 0 !important;
+}
+
+/* Template-style weekly thoughts section: the first clean white break after the dark landing flow. */
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section {
+  background: #fff !important;
+  border-radius: 0 !important;
+  color: #171717 !important;
+  padding: clamp(90px, 8vw, 132px) 0 clamp(86px, 8vw, 128px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section .landing-section-head {
+  align-items: end !important;
+  display: grid !important;
+  gap: 28px !important;
+  grid-template-columns: minmax(0, 2fr) minmax(150px, 0.7fr) !important;
+  margin-bottom: clamp(52px, 6vw, 80px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section .landing-section-head h2 {
+  color: #171717 !important;
+  font-family: Melodrama, Georgia, 'Times New Roman', serif !important;
+  font-size: clamp(46px, 5vw, 76px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.95 !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section .landing-section-head span {
+  color: rgba(23, 23, 23, 0.68) !important;
+  font-family: Melodrama, Georgia, 'Times New Roman', serif !important;
+  font-size: clamp(24px, 2vw, 34px) !important;
+  font-weight: 500 !important;
+  justify-self: end !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1 !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-grid {
+  display: grid !important;
+  gap: clamp(28px, 2.6vw, 44px) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-grid article,
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-card {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-image {
+  border-radius: 8px !important;
+  display: block !important;
+  margin-bottom: clamp(24px, 2.2vw, 32px) !important;
+  overflow: hidden !important;
+  position: relative !important;
+  text-decoration: none !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-image img {
+  aspect-ratio: 1.24 / 1 !important;
+  background: #efefef !important;
+  border-radius: 8px !important;
+  display: block !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition:
+    filter 700ms ease,
+    transform 700ms ease !important;
+  width: 100% !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-card:hover .journal-image img {
+  filter: brightness(0.86) !important;
+  transform: scale(1.06) rotate(-0.6deg) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-meta {
+  align-items: center !important;
+  color: rgba(23, 23, 23, 0.68) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif !important;
+  font-size: clamp(13px, 1vw, 16px) !important;
+  font-weight: 700 !important;
+  gap: clamp(18px, 2vw, 28px) !important;
+  justify-content: center !important;
+  margin-bottom: clamp(18px, 1.8vw, 26px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-meta span {
+  background: #f1f1f1 !important;
+  border-radius: 999px !important;
+  color: #171717 !important;
+  display: inline-flex !important;
+  font-size: inherit !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+  padding: 8px 18px !important;
+  text-transform: none !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-meta time {
+  color: rgba(23, 23, 23, 0.62) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-card h3 {
+  color: #171717 !important;
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif !important;
+  font-size: clamp(23px, 2vw, 34px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.18 !important;
+  margin: 0 auto !important;
+  max-width: 430px !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-card h3 a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 980px) {
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section .landing-section-head {
+    grid-template-columns: 1fr !important;
+    text-align: left !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .journal-section .landing-section-head span {
+    justify-self: start !important;
+  }
+}
