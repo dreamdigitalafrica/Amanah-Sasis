@@ -349,7 +349,7 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
     <div class="content-frame">
       <section class="page-banner shop-page-banner">
         <div class="banner-watermark" aria-hidden="true"><span>Shop</span></div>
-        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>Shop</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>Shop</span></nav></div><p>Amanah Books</p></div>
+        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>Amanah Books</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>Shop</span></nav></div><p>Shop</p></div>
       </section>
       <section class="shop-listing-template">
         <div class="container-nevo">

@@ -37,14 +37,14 @@ export default function ShopPage() {
           </div>
           <div className="container-nevo page-banner-inner page-banner-split">
             <div>
-              <h1>Shop</h1>
+              <h1>Amanah Books</h1>
               <nav className="page-breadcrumb" aria-label="Breadcrumb">
                 <a href="/">Home</a>
                 <span>•</span>
                 <span>Shop</span>
               </nav>
             </div>
-            <p>Amanah Books</p>
+            <p>Shop</p>
           </div>
         </section>
 
