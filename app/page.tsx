@@ -232,22 +232,15 @@ export default function Home() {
 
       <div className="content-frame">
         <section id="home" className="amanah-banner">
-          <div className="banner-watermark" aria-hidden="true">
-            <span>Amanah</span>
-          </div>
           <div className="container-nevo">
-            <div className="banner-title reveal-up">
+            <div className="banner-title hero-typewriter reveal-up">
               <p className="eyebrow">Novelist / Writer / Poet</p>
               <h1>
-                <span>Amanah</span>
-                <span className="author-orb">
-                  <img src="/amanah-saais-author-fast.webp" alt="" loading="eager" fetchPriority="high" />
-                  <i aria-hidden="true">✦</i>
-                </span>
-                <span>Saais</span>
+                <span className="hero-script">Amanah Saais</span>
+                <span className="hero-main-line">Writer of faith-led romance, mystery, and courage.</span>
               </h1>
               <p>
-                Amanah Saais is a novelist, poet, and storyteller writing faith-led stories of romance, mystery, and courage.
+                Amanah Saais is a novelist, poet, and storyteller creating immersive worlds where love, destiny, and the unseen meet.
               </p>
             </div>
 
