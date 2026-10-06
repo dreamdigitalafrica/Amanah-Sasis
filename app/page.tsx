@@ -235,22 +235,15 @@ export default function Home() {
           <div className="container-nevo">
             <div className="banner-title hero-typewriter reveal-up">
               <p className="eyebrow">Novelist / Writer / Poet</p>
-              <h1>
-                <span className="hero-script">Amanah Saais</span>
-                <span className="hero-main-line">Writer of faith-led romance, mystery, and courage.</span>
+              <h1 aria-label="Stories that awaken faith, carry romance, hold mystery, and choose courage.">
+                <span className="typewriter-prefix">Stories that</span>
+                <span className="typewriter-words" aria-hidden="true">
+                  <span>awaken faith</span>
+                  <span>carry romance</span>
+                  <span>hold mystery</span>
+                  <span>choose courage</span>
+                </span>
               </h1>
-              <p>
-                Amanah Saais is a novelist, poet, and storyteller creating immersive worlds where love, destiny, and the unseen meet.
-              </p>
-            </div>
-
-            <div className="banner-feature hero-featured reveal-up delay-1">
-              <h2>Genres</h2>
-              <div className="featured-list" aria-label="Genres">
-                {featuredBy.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
             </div>
           </div>
         </section>

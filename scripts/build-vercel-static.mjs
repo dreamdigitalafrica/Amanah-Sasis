@@ -254,12 +254,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
         <div class="container-nevo">
           <div class="banner-title hero-typewriter reveal-up">
             <p class="eyebrow">Novelist / Writer / Poet</p>
-            <h1><span class="hero-script">Amanah Saais</span><span class="hero-main-line">Writer of faith-led romance, mystery, and courage.</span></h1>
-            <p>Amanah Saais is a novelist, poet, and storyteller creating immersive worlds where love, destiny, and the unseen meet.</p>
-          </div>
-          <div class="banner-feature hero-featured reveal-up delay-1">
-            <h2>Genres</h2>
-            <div class="featured-list" aria-label="Genres"><span>Inspirational</span><span>Fantasy</span><span>Romance</span><span>Mystery</span><span>Destiny</span><span>Faith Based</span></div>
+            <h1 aria-label="Stories that awaken faith, carry romance, hold mystery, and choose courage."><span class="typewriter-prefix">Stories that</span><span class="typewriter-words" aria-hidden="true"><span>awaken faith</span><span>carry romance</span><span>hold mystery</span><span>choose courage</span></span></h1>
           </div>
         </div>
       </section>

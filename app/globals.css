@@ -9927,3 +9927,154 @@ body,
     font-size: clamp(28px, 10vw, 44px) !important;
   }
 }
+
+/* Typewriter-only hero: action words are the hierarchy. */
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .hero-typewriter {
+  max-width: min(1120px, 90vw) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .hero-typewriter h1 {
+  color: #fff !important;
+  display: grid !important;
+  gap: clamp(18px, 2.6vw, 34px) !important;
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+  margin: 0 !important;
+  min-height: clamp(230px, 28vw, 390px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-prefix {
+  display: block !important;
+  font-family: var(--font-lato), Lato, var(--font-outfit), Arial, sans-serif !important;
+  font-size: 5.5rem !important;
+  font-weight: 300 !important;
+  letter-spacing: 0 !important;
+  line-height: 0.96 !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words {
+  display: grid !important;
+  font-family: Melodrama, Georgia, 'Times New Roman', serif !important;
+  font-size: 10.75rem !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  line-height: 0.86 !important;
+  min-height: 0.95em !important;
+  place-items: center !important;
+  position: relative !important;
+  width: min(100%, 980px) !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words > span {
+  animation: amanahTypewriter 16s steps(18, end) infinite !important;
+  display: inline-block !important;
+  grid-area: 1 / 1 !important;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden !important;
+  padding-right: 0.08em !important;
+  position: relative !important;
+  white-space: nowrap !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words > span::after {
+  animation: amanahCaret 850ms steps(1, end) infinite !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  content: '' !important;
+  height: 0.68em !important;
+  margin-left: 0.06em !important;
+  position: absolute !important;
+  top: 0.13em !important;
+  width: 2px !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words > span:nth-child(2) {
+  animation-delay: 4s !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words > span:nth-child(3) {
+  animation-delay: 8s !important;
+}
+
+.aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words > span:nth-child(4) {
+  animation-delay: 12s !important;
+}
+
+@keyframes amanahTypewriter {
+  0% {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  4% {
+    opacity: 1;
+  }
+
+  18% {
+    max-width: 12em;
+    opacity: 1;
+  }
+
+  24% {
+    max-width: 12em;
+    opacity: 1;
+  }
+
+  31% {
+    max-width: 0;
+    opacity: 1;
+  }
+
+  33%,
+  100% {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes amanahCaret {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1180px) {
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-prefix {
+    font-size: 4.6rem !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words {
+    font-size: 8.8rem !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .hero-typewriter h1 {
+    min-height: clamp(190px, 58vw, 270px) !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-prefix {
+    font-size: 2.9rem !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words {
+    font-size: 5.2rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-prefix {
+    font-size: 2.35rem !important;
+  }
+
+  .aver-home:not(.about-template-page):not(.shop-template-page):not(.podcast-template-page) .typewriter-words {
+    font-size: 4.15rem !important;
+  }
+}
