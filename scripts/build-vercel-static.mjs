@@ -1,3 +1,4 @@
+import { books } from '../app/shop/catalogue.mjs';
 import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
 
 const head = (title, description, image = '/island-nights-cover.jpg') => String.raw`<head>
@@ -167,54 +168,23 @@ const contactSection = String.raw`<section id="contact" class="quote-section lig
   </div>
 </section>`;
 
-const shopBooks = [
-  {
-    id: 'book-one',
-    href: '/shop/book-one/',
-    volume: 'Book One',
-    category: 'Novel',
-    date: 'May 25, 2025',
-    image: '/island-nights-book-one-mockup-fast.webp',
-    title: 'Arcane du Beltah: Island Nights',
-    subtitle: 'Part One',
-    description: 'Part One opens the Arcane du Beltah series with a luminous island world, two lives pulled toward mystery, and a destiny that asks for courage before it gives answers.',
-    excerpt: 'Night settled over the island like a secret being kept by the sea. Every light along the shore looked ordinary until Amanah looked twice; then each one became a sign, a quiet promise that the world she knew was only the first layer of the story.',
-    pdf: '/excerpts/arcane-du-beltah-book-one-excerpt.pdf',
-    amazonUrl: 'https://www.amazon.com/Arcane-Du-Beltah-Island-Nights-ebook/dp/B0HJ7719YF/ref=sr_1_1?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-1',
-    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
-  },
-  {
-    id: 'book-two',
-    href: '/shop/book-two/',
-    volume: 'Book Two',
-    category: 'Novel',
-    date: 'May 23, 2025',
-    image: '/island-nights-book-two-mockup-fast.webp',
-    title: 'Arcane du Beltah: Island Nights',
-    subtitle: 'Part Two',
-    description: 'Part Two carries the story into a more dangerous and intimate chapter, where every answer opens another door and every bond is tested by what the island refuses to reveal.',
-    excerpt: 'Above the bridge, the sky was split between storm and gold. She could feel the island below her, breathing through towers, water, and prayer. Somewhere ahead, the next truth waited, but it would not come gently.',
-    pdf: '/excerpts/arcane-du-beltah-book-two-excerpt.pdf',
-    amazonUrl: 'https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3',
-    paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
-  },
-];
+const shopBooks = books;
 
 const bookPrice = '₦15,000';
 const bookUsdPrice = 'approx. $11.34';
 
-const shopCard = (book, index) => String.raw`<article class="shop-blog-card init-delay">
-  <a class="shop-blog-image" href="${book.href}" aria-label="Read more about ${book.title} ${book.subtitle}"><img src="${book.image}" alt="${book.title} ${book.subtitle}" loading="${index === 0 ? 'eager' : 'lazy'}" ${index === 0 ? 'fetchpriority="high"' : ''} /></a>
-  <div class="shop-blog-meta"><span>${book.category}</span><time>${book.date}</time></div>
-  <h2><a href="${book.href}">${book.title}</a></h2>
-  <p>${book.subtitle}</p>
+const shopCard = (book, index) => String.raw`<article class="shop-blog-card catalogue-card init-delay">
+  <div class="catalogue-frame">
+    <a class="catalogue-cover" href="${book.href}" aria-label="View ${book.title} ${book.subtitle}"><img src="${book.image}" alt="${book.title} ${book.subtitle}" loading="${index === 0 ? 'eager' : 'lazy'}" /></a>
+    ${book.comingSoon ? '<span class="coming-soon-badge">Coming soon</span>' : `<a class="sample-hover" href="${book.href}#sample">Read sample</a>`}
+  </div>
   <div class="shop-price-row"><strong>${bookPrice}</strong><em>${bookUsdPrice}</em></div>
-  <div class="shop-mini-actions"><a href="${book.paystackUrl}" target="_blank" rel="noreferrer">Buy now</a><a href="${book.href}">Read excerpt</a></div>
+  <div class="shop-mini-actions"><a href="${book.href}">${book.comingSoon ? 'Preorder' : 'Buy now'}</a></div>
 </article>`;
 
 const shopDetailHtml = (book) => String.raw`<!doctype html>
 <html lang="en">
-${head(`${book.subtitle} | Amanah Saais Shop`, `${book.title} ${book.subtitle} by Amanah Saais. Read an excerpt, download a PDF, or buy the book.`, book.image)}
+${head(`${book.title} ${book.subtitle} | Amanah Saais Shop`, `${book.title} by Amanah Saais. Ebook. ${book.comingSoon ? "Coming soon." : "Read a sample or buy the Ebook."}`, book.image)}
 <body>
   <main class="site-shell aver-home shop-template-page shop-detail-page">
     ${header(false)}
@@ -228,14 +198,14 @@ ${head(`${book.subtitle} | Amanah Saais Shop`, `${book.title} ${book.subtitle} b
         <div class="container-nevo shop-detail-grid">
           <figure class="shop-detail-cover"><img src="${book.image}" alt="${book.title} ${book.subtitle}" loading="eager" fetchpriority="high" /></figure>
           <article class="shop-detail-copy">
-            <div class="shop-blog-meta"><span>${book.category}</span><time>${book.date}</time></div>
+            <div class="shop-blog-meta"><span>Ebook</span>${book.comingSoon ? '<span>Coming soon</span>' : ''}</div>
             <h2>${book.subtitle}</h2>
             <p>${book.description}</p>
             <div class="shop-price-row"><strong>${bookPrice}</strong><em>${bookUsdPrice}</em></div>
-            <div class="shop-listing-actions"><a class="button-dark" href="${book.paystackUrl}" target="_blank" rel="noreferrer"><span>Buy with Paystack</span></a><a class="button-outline" href="${book.amazonUrl}" target="_blank" rel="noreferrer">Buy from Amazon</a></div>
+            ${book.comingSoon ? '<div class="preorder-pending"><button class="button-dark" disabled>Preorder coming soon</button><p>Preorders are not open yet.</p></div>' : `<div class="shop-listing-actions"><a class="button-dark" href="${book.paystackUrl}" target="_blank" rel="noreferrer"><span>Buy with Paystack</span></a><a class="button-outline" href="${book.amazonUrl}" target="_blank" rel="noreferrer">Buy from Amazon</a></div>`}
           </article>
         </div>
-        <div class="container-nevo quick-read-panel"><div><span>Quick Read</span><h3>Read an excerpt</h3></div><p>${book.excerpt}</p><a class="button-dark" href="${book.pdf}" download><span>Download PDF</span></a></div>
+        ${book.pdf ? `<div id="sample" class="container-nevo quick-read-panel"><div><span>Ebook preview</span><h3>Read sample</h3></div><a class="button-dark" href="${book.pdf}" target="_blank" rel="noreferrer"><span>Read sample</span></a></div>` : ''}
       </section>
     </div>
   </main>
@@ -261,31 +231,9 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
       <section id="books" class="landing-books section-size-2">
         <div class="container-nevo">
           <div class="landing-section-head">
-            <div><h2>Recent Works</h2></div>
-            <span>18 – Present</span>
+            <div><h2>Books</h2></div>
           </div>
-          <div class="project-grid">
-            <article class="project-book-card portrait" style="--card-tone:#0b5c79">
-              <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-book-one-mockup-fast.webp" alt="Island Nights cover" loading="eager" fetchpriority="high" /></div>
-            </article>
-            <article class="project-book-card portrait" style="--card-tone:#432a70">
-              <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-book-two-mockup-fast.webp" alt="Island Nights Part Two cover" loading="eager" fetchpriority="high" /></div>
-            </article>
-            <article class="project-book-card portrait" style="--card-tone:#8f6b3d">
-              <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/behind-hind-sight-cover.svg" alt="Behind Hind Sight cover" /></div>
-            </article>
-            <article class="project-book-card landscape" style="--card-tone:#0b5c79">
-              <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-movie-part-one-wide-fast.webp" alt="Island Nights movie Part 1 cover" loading="lazy" /></div>
-            </article>
-            <article class="project-book-card landscape" style="--card-tone:#170f31">
-              <span class="card-reveal" aria-hidden="true"></span>
-              <div class="project-cover"><img src="/island-nights-movie-part-two-wide-fast.webp" alt="Island Nights movie Part 2 cover" loading="lazy" /></div>
-            </article>
-          </div>
+          <div class="shop-blog-grid">${shopBooks.map(shopCard).join('')}</div>
           <div class="landing-center-action"><a class="button" href="/shop/"><span>All Books</span></a></div>
         </div>
       </section>
@@ -433,8 +381,11 @@ await mkdir('vercel-static/podcast', { recursive: true });
 await writeFile('vercel-static/index.html', homeHtml);
 await writeFile('vercel-static/about/index.html', aboutHtml);
 await writeFile('vercel-static/shop/index.html', shopHtml);
-await writeFile('vercel-static/shop/book-one/index.html', shopDetailHtml(shopBooks[0]));
-await writeFile('vercel-static/shop/book-two/index.html', shopDetailHtml(shopBooks[1]));
+for (const book of shopBooks) {
+  await mkdir(`vercel-static/shop/${book.id}`, { recursive: true });
+  await writeFile(`vercel-static/shop/${book.id}/index.html`, shopDetailHtml(book));
+  await cp(`public${book.image}`, `vercel-static${book.image}`);
+}
 await writeFile('vercel-static/podcast/index.html', podcastHtml);
 await writeFile('vercel-static/style.css', css);
 await cp('public/island-nights-cover.jpg', 'vercel-static/island-nights-cover.jpg');

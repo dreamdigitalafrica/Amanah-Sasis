@@ -10078,3 +10078,24 @@ body,
     font-size: 4.15rem !important;
   }
 }
+
+/* Original cover catalogue: preserve artwork and reveal samples on interaction. */
+.aver-home .catalogue-frame { position:relative; aspect-ratio:1; background:radial-gradient(ellipse at 50% 35%,#faf5ed,#e5dbcd); border-radius:12px; overflow:hidden; }
+.aver-home .catalogue-cover { display:flex; align-items:center; justify-content:center; width:100%; height:100%; padding:30px; }
+.aver-home .catalogue-cover img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; border-radius:0; transform:none; filter:drop-shadow(0 12px 15px #30211635); }
+.aver-home .catalogue-card { text-align:center; }
+.aver-home .catalogue-card .shop-price-row { border:0; margin:20px 0 14px; padding:0; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+.aver-home .catalogue-card .shop-mini-actions { margin:0; display:flex; justify-content:center; }
+.aver-home .catalogue-card .shop-mini-actions a { background:#30231e; color:#fff; border:1px solid #30231e; padding:13px 30px; border-radius:30px; text-decoration:none; transition:background .2s,transform .2s; }
+.aver-home .catalogue-card .shop-mini-actions a:hover { background:#60473a; color:#fff; transform:translateY(-2px); }
+.aver-home .sample-hover { position:absolute; bottom:40px; left:50%; transform:translate(-50%,8px); opacity:0; pointer-events:none; background:#fff9ef; color:#30231e; padding:13px 24px; border-radius:30px; text-decoration:none; box-shadow:0 5px 20px #0003; transition:opacity .2s,transform .2s; white-space:nowrap; }
+.aver-home .catalogue-frame:hover .sample-hover,.aver-home .catalogue-frame:focus-within .sample-hover { opacity:1; transform:translate(-50%,0); pointer-events:auto; }
+.aver-home .coming-soon-badge { position:absolute; top:14px; right:14px; padding:8px 14px; background:#fff9ef; color:#30231e; border:1px solid #ddcbb7; border-radius:24px; font-size:13px; font-weight:700; }
+.aver-home .shop-detail-cover { background:radial-gradient(ellipse at 50% 35%,#faf5ed,#e5dbcd); padding:32px; }
+.aver-home .shop-detail-cover img { width:100%; height:600px; max-height:75vh; object-fit:contain; transform:none; border-radius:0; }
+.aver-home .preorder-pending p { margin-top:12px; font-size:15px; }
+.aver-home .preorder-pending button { opacity:.65; cursor:not-allowed; }
+.aver-home .catalogue-card a:focus-visible { outline:3px solid #b7874c; outline-offset:4px; }
+@media (hover:none) { .aver-home .sample-hover { opacity:1; transform:translate(-50%,0); pointer-events:auto; } }
+@media (max-width:600px) { .aver-home .catalogue-cover { padding:24px; } .aver-home .shop-detail-cover { padding:20px; } }
+@media (prefers-reduced-motion:reduce) { .aver-home .sample-hover,.aver-home .catalogue-card .shop-mini-actions a { transition:none; } }

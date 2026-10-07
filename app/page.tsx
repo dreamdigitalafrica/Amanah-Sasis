@@ -1,45 +1,5 @@
-const books = [
-  {
-    tag: 'Book',
-    title: 'Island Nights',
-    subtitle: 'Arcane du Beltah / Part One',
-    image: '/island-nights-book-one-mockup-fast.webp',
-    layout: 'portrait',
-    tone: '#0b5c79',
-  },
-  {
-    tag: 'Book',
-    title: 'Island Nights',
-    subtitle: 'Arcane du Beltah / Part Two',
-    image: '/island-nights-book-two-mockup-fast.webp',
-    layout: 'portrait',
-    tone: '#432a70',
-  },
-  {
-    tag: 'Coming Soon',
-    title: 'Behind Hind Sight',
-    subtitle: 'Amanah Saais',
-    image: '/behind-hind-sight-cover.svg',
-    layout: 'portrait',
-    tone: '#8f6b3d',
-  },
-  {
-    tag: 'Movie',
-    title: 'Island Nights',
-    subtitle: 'Arcane du Beltah / Part 1',
-    image: '/island-nights-movie-part-one-wide-fast.webp',
-    layout: 'landscape',
-    tone: '#0b5c79',
-  },
-  {
-    tag: 'Movie',
-    title: 'Island Nights',
-    subtitle: 'Arcane du Beltah / Part 2',
-    image: '/island-nights-movie-part-two-wide-fast.webp',
-    layout: 'landscape',
-    tone: '#170f31',
-  },
-];
+import { books } from './shop/books';
+import BookCard from './shop/BookCard';
 
 const featuredBy = ['Inspirational', 'Fantasy', 'Romance', 'Mystery', 'Destiny', 'Faith Based'];
 
@@ -252,30 +212,12 @@ export default function Home() {
           <div className="container-nevo">
             <div className="landing-section-head">
               <div>
-                <h2>Recent Works</h2>
+                <h2>Books</h2>
               </div>
-              <span>18 – Present</span>
+
             </div>
 
-            <div className="project-grid">
-              {books.map((book, index) => (
-                <article
-                  className={`project-book-card ${book.layout}`}
-                  key={`${book.title}-${book.subtitle}`}
-                  style={{ '--card-tone': book.tone } as any}
-                >
-                  <span className="card-reveal" aria-hidden="true" />
-                  <div className="project-cover">
-                    <img
-                      src={book.image}
-                      alt={`${book.title} cover`}
-                      loading={index < 2 ? 'eager' : 'lazy'}
-                      fetchPriority={index < 2 ? 'high' : 'auto'}
-                    />
-                  </div>
-                </article>
-              ))}
-            </div>
+            <div className="shop-blog-grid">{books.map((book, index) => <BookCard key={book.id} book={book} index={index} />)}</div>
 
             <div className="landing-center-action">
               <a className="button" href="/shop">

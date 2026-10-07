@@ -1,3 +1,4 @@
+import BookCard from './BookCard';
 import { books, price, usdPrice } from './books';
 
 export default function ShopPage() {
@@ -52,34 +53,7 @@ export default function ShopPage() {
           <div className="container-nevo">
             <div className="shop-blog-grid">
               {books.map((book, index) => (
-                <article className="shop-blog-card init-delay" key={book.id}>
-                  <a className="shop-blog-image" href={book.href} aria-label={`Read more about ${book.title} ${book.subtitle}`}>
-                    <img
-                      src={book.image}
-                      alt={`${book.title} ${book.subtitle}`}
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                      fetchPriority={index === 0 ? 'high' : 'auto'}
-                    />
-                  </a>
-                  <div className="shop-blog-meta">
-                    <span>{book.category}</span>
-                    <time>{book.date}</time>
-                  </div>
-                  <h2>
-                    <a href={book.href}>{book.title}</a>
-                  </h2>
-                  <p>{book.subtitle}</p>
-                  <div className="shop-price-row">
-                    <strong>{price}</strong>
-                    <em>{usdPrice}</em>
-                  </div>
-                  <div className="shop-mini-actions">
-                    <a href={book.paystackUrl} target="_blank" rel="noreferrer">
-                      Buy now
-                    </a>
-                    <a href={book.href}>Read excerpt</a>
-                  </div>
-                </article>
+                <BookCard book={book} index={index} key={book.id} />
               ))}
             </div>
             <div className="shop-pagination">

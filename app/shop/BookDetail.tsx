@@ -59,8 +59,8 @@ export default function BookDetail({ book }: { book: Book }) {
             </figure>
             <article className="shop-detail-copy">
               <div className="shop-blog-meta">
-                <span>{book.category}</span>
-                <time>{book.date}</time>
+                <span>Ebook</span>
+                {book.comingSoon && <span>Coming soon</span>}
               </div>
               <h2>{book.subtitle}</h2>
               <p>{book.description}</p>
@@ -69,25 +69,17 @@ export default function BookDetail({ book }: { book: Book }) {
                 <em>{usdPrice}</em>
               </div>
               <div className="shop-listing-actions">
+                {book.comingSoon ? <div className="preorder-pending"><button className="button-dark" disabled>Preorder coming soon</button><p>Preorders are not open yet.</p></div> : <>
                 <a className="button-dark" href={book.paystackUrl} target="_blank" rel="noreferrer">
                   <span>Buy with Paystack</span>
                 </a>
                 <a className="button-outline" href={book.amazonUrl} target="_blank" rel="noreferrer">
                   Buy from Amazon
-                </a>
+                </a></>}
               </div>
             </article>
           </div>
-          <div className="container-nevo quick-read-panel">
-            <div>
-              <span>Quick Read</span>
-              <h3>Read an excerpt</h3>
-            </div>
-            <p>{book.excerpt}</p>
-            <a className="button-dark" href={book.pdf} download>
-              <span>Download PDF</span>
-            </a>
-          </div>
+          {book.pdf && <div id="sample" className="container-nevo quick-read-panel"><div><span>Ebook preview</span><h3>Read sample</h3></div><a className="button-dark" href={book.pdf} target="_blank" rel="noreferrer"><span>Read sample</span></a></div>}
         </section>
       </div>
     </main>
