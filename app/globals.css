@@ -10099,3 +10099,7 @@ body,
 @media (hover:none) { .aver-home .sample-hover { opacity:1; transform:translate(-50%,0); pointer-events:auto; } }
 @media (max-width:600px) { .aver-home .catalogue-cover { padding:24px; } .aver-home .shop-detail-cover { padding:20px; } }
 @media (prefers-reduced-motion:reduce) { .aver-home .sample-hover,.aver-home .catalogue-card .shop-mini-actions a { transition:none; } }
+.aver-home .landing-books .catalogue-card .shop-price-row strong { color:#fff9ef; }
+.aver-home .landing-books .catalogue-card .shop-price-row em { color:#d3c7bc; }
+.aver-home .landing-books .catalogue-card .shop-mini-actions a { background:#f2e5d4; color:#30231e; border-color:#f2e5d4; }
+.aver-home .landing-books .catalogue-card .shop-mini-actions a:hover { background:#dac3a6; color:#30231e; }
