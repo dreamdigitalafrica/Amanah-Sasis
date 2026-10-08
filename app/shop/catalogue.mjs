@@ -6,7 +6,7 @@ export const books = [
     volume: 'Book One',
     category: 'Novel',
     date: 'May 25, 2025',
-    image: '/book-one-original.png',
+    image: '/book-one-original.webp',
     title: 'Arcane du Beltah: Island Nights',
     subtitle: 'Part One',
     description: 'Part One opens the Arcane du Beltah series with a luminous island world, two lives pulled toward mystery, and a destiny that asks for courage before it gives answers.',
@@ -22,7 +22,7 @@ export const books = [
     volume: 'Book Two',
     category: 'Novel',
     date: 'May 23, 2025',
-    image: '/book-two-original.png',
+    image: '/book-two-original.webp',
     title: 'Arcane du Beltah: Island Nights',
     subtitle: 'Part Two',
     description: 'Part Two carries the story into a more dangerous and intimate chapter, where every answer opens another door and every bond is tested by what the island refuses to reveal.',
@@ -30,7 +30,7 @@ export const books = [
     pdf: '/excerpts/arcane-du-beltah-book-two-excerpt.pdf',
     amazonUrl: 'https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3',
     paystackUrl: 'https://paystack.shop/pay/jeqoqeorm8',
-  },{"id": "the-she-wolf-breathes", "href": "/shop/the-she-wolf-breathes/", "volume": "The She-Wolf Breathes", "category": "Ebook", "date": "", "image": "/the-she-wolf-breathes-original.png", "title": "The She-Wolf Breathes", "subtitle": "Ebook", "description": "The She-Wolf Breathes by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true},
-{"id": "storm-kissed", "href": "/shop/storm-kissed/", "volume": "Storm Kissed", "category": "Ebook", "date": "", "image": "/storm-kissed-original.png", "title": "Storm Kissed", "subtitle": "Ebook", "description": "Storm Kissed by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true},
-{"id": "hellflames", "href": "/shop/hellflames/", "volume": "Hellflames", "category": "Ebook", "date": "", "image": "/hellflames-original.png", "title": "Hellflames", "subtitle": "Ebook", "description": "Hellflames by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true}
+  },{"id": "the-she-wolf-breathes", "href": "/shop/the-she-wolf-breathes/", "volume": "The She-Wolf Breathes", "category": "Ebook", "date": "", "image": "/the-she-wolf-breathes-original.webp", "title": "The She-Wolf Breathes", "subtitle": "Ebook", "description": "The She-Wolf Breathes by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true},
+{"id": "storm-kissed", "href": "/shop/storm-kissed/", "volume": "Storm Kissed", "category": "Ebook", "date": "", "image": "/storm-kissed-original.webp", "title": "Storm Kissed", "subtitle": "Ebook", "description": "Storm Kissed by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true},
+{"id": "hellflames", "href": "/shop/hellflames/", "volume": "Hellflames", "category": "Ebook", "date": "", "image": "/hellflames-original.webp", "title": "Hellflames", "subtitle": "Ebook", "description": "Hellflames by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true}
 ];

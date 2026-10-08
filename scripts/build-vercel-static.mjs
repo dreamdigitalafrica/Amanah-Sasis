@@ -11,9 +11,6 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
   <meta property="og:image" content="${image}" />
   <link rel="icon" type="image/png" href="/amanah-monogram-icon.png" />
   <link rel="apple-touch-icon" href="/amanah-monogram-icon.png" />
-  <link rel="preload" as="image" href="/amanah-saais-author-fast.webp" />
-  <link rel="preload" as="image" href="/island-nights-book-one-mockup-fast.webp" />
-  <link rel="preload" as="image" href="/island-nights-book-two-mockup-fast.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -21,11 +18,11 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
 </head>`;
 
 const header = (home = false) => String.raw`<header class="site-header">
-  <a class="brand-mark" href="${home ? '#home' : '/'}" aria-label="Amanah Saais home"><img class="brand-logo" src="/amanah-signature-logo.png" alt="Amanah Saais" width="360" height="125" /></a>
+  <a class="brand-mark" href="${home ? '#home' : '/'}" aria-label="Amanah Saais home"><img class="brand-logo" src="/amanah-signature-logo.webp" alt="Amanah Saais" width="360" height="125" /></a>
   <nav class="main-menu" aria-label="Primary">
     <a href="${home ? '#home' : '/'}">Home</a>
     <a href="/about/">About</a>
-    <a href="${home ? '#books' : '/#books'}">Books</a>
+    <a href="/books/">Books</a>
     <a href="/shop/">Shop</a>
     <a href="/podcast/">Podcast</a>
     <a href="${home ? '#contact' : '/#contact'}">Contact</a>
@@ -59,6 +56,7 @@ const initAverMotion = () => {
 
     const getActiveLink = () => {
       const path = window.location.pathname.replace(/\/$/, '') || '/';
+      if (path.startsWith('/books')) return linkMatching((url) => url.pathname.startsWith('/books'));
       if (path.startsWith('/about')) return linkMatching((url) => url.pathname.startsWith('/about'));
       if (path.startsWith('/shop')) return linkMatching((url) => url.pathname.startsWith('/shop'));
       if (path.startsWith('/podcast')) return linkMatching((url) => url.pathname.startsWith('/podcast'));
@@ -70,10 +68,10 @@ const initAverMotion = () => {
         return linkMatching((url) => url.hash === '#contact');
       }
       if (books && books.getBoundingClientRect().top <= probeLine) {
-        return linkMatching((url) => url.hash === '#books');
+        return linkMatching((url) => url.pathname.startsWith('/books'));
       }
       if (window.location.hash === '#contact') return linkMatching((url) => url.hash === '#contact');
-      if (window.location.hash === '#books') return linkMatching((url) => url.hash === '#books');
+      if (window.location.hash === '#books') return linkMatching((url) => url.pathname.startsWith('/books'));
       return links[0];
     };
 
@@ -151,7 +149,7 @@ const footer = String.raw`<footer class="footer-nevo">
       <div class="line-block-copy"><span><span class="cta-text">Enter Arcane du Beltah</span><span class="cta-icon">↗</span></span><span><span class="cta-text">Enter Arcane du Beltah</span><span class="cta-icon">↗</span></span><span><span class="cta-text">Enter Arcane du Beltah</span><span class="cta-icon">↗</span></span></div>
     </div>
   </a>
-  <a class="button" href="/#books"><span>View Book</span></a>
+  <a class="button" href="/books/"><span>View Book</span></a>
   <nav class="footer-social-links" aria-label="Social links"><a href="/#contact">FB</a><a href="/#contact">X</a><a href="/#contact">IN</a><a href="/#contact">MAIL</a><a class="substack-social-link" href="https://open.substack.com/pub/amanahsaais" target="_blank" rel="noreferrer" aria-label="Amanah Saais on Substack" title="Substack"><span class="substack-icon" aria-hidden="true"></span></a></nav>
   <div><span>Built for </span><strong>Amanah Saais</strong><p>Arcane du Beltah: Island Nights</p></div>
 </footer>`;
@@ -186,7 +184,7 @@ const shopDetailHtml = (book) => String.raw`<!doctype html>
 <html lang="en">
 ${head(`${book.title} ${book.subtitle} | Amanah Saais Shop`, `${book.title} by Amanah Saais. Ebook. ${book.comingSoon ? "Coming soon." : "Read a sample or buy the Ebook."}`, book.image)}
 <body>
-  <main class="site-shell aver-home shop-template-page shop-detail-page">
+  <main id="amanah-site" class="site-shell aver-home shop-template-page shop-detail-page">
     ${header(false)}
     ${motionScript}
     <div class="content-frame">
@@ -216,13 +214,13 @@ const homeHtml = String.raw`<!doctype html>
 <html lang="en">
 ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, storyteller, and author of Arcane du Beltah: Island Nights.')}
 <body>
-  <main class="site-shell aver-home author-home">
+  <main id="amanah-site" class="site-shell aver-home author-home">
     ${header(true)}
     ${motionScript}
     <div class="content-frame">
       <section id="home" class="author-hero" aria-labelledby="author-name">
         <div class="author-identity">
-          <h1 id="author-name" class="author-name">Amanah Saais</h1>
+          <h1 id="author-name" class="author-name"><img class="hero-signature" src="/amanah-signature-logo.webp" alt="Amanah Saais" width="1200" height="420" /></h1>
           <p class="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span class="discipline-divider" aria-hidden="true">/</span><span>Novelist</span><span class="discipline-divider" aria-hidden="true">/</span><span>Writer</span></p>
         </div>
       </section>
@@ -232,7 +230,7 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
             <div><h2>Books</h2></div>
           </div>
           <div class="shop-blog-grid">${shopBooks.map(shopCard).join('')}</div>
-          <div class="landing-center-action"><a class="button" href="/shop/"><span>All Books</span></a></div>
+          <div class="landing-center-action"><a class="button" href="/books/"><span>All Books</span></a></div>
         </div>
       </section>
       <section class="work-process-section">
@@ -272,7 +270,7 @@ const aboutHtml = String.raw`<!doctype html>
 <html lang="en">
 ${head('About Amanah Saais', 'The official About page for Amanah Saais, author of Arcane du Beltah: Island Nights.', '/amanah-saais-author-fast.webp')}
 <body>
-  <main class="site-shell aver-home about-template-page">
+  <main id="amanah-site" class="site-shell aver-home about-template-page">
     ${header(false)}
     ${motionScript}
     <div class="content-frame">
@@ -289,7 +287,7 @@ ${head('About Amanah Saais', 'The official About page for Amanah Saais, author o
             <p>Amanah Saais is a novelist, poet, and storyteller drawn to immersive worlds, unforgettable characters, and stories that stay with readers after the final page.</p>
             <p>Her writing blends imagination with emotion, exploring the extraordinary hidden within ordinary moments. Across genres, she writes with one clear aim: to captivate the heart and ignite the imagination.</p>
             <p>Arcane du Beltah: Island Nights is her debut novel and the first installment in a series where mystery, destiny, and courage collide.</p>
-            <a class="about-intro-button" href="/#books"><span aria-hidden="true">↻</span>More Books</a>
+            <a class="about-intro-button" href="/books/"><span aria-hidden="true">↻</span>More Books</a>
           </div>
         </div>
       </section>
@@ -316,13 +314,13 @@ const shopHtml = String.raw`<!doctype html>
 <html lang="en">
 ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights books by Amanah Saais.')}
 <body>
-  <main class="site-shell aver-home shop-template-page">
+  <main id="amanah-site" class="site-shell aver-home shop-template-page">
     ${header(false)}
     ${motionScript}
     <div class="content-frame">
       <section class="page-banner shop-page-banner">
         <div class="banner-watermark" aria-hidden="true"><span>Shop</span></div>
-        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>Amanah Books</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>Shop</span></nav></div><p>Shop</p></div>
+        <div class="container-nevo page-banner-inner page-banner-split"><div><h1>Shop</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>•</span><span>Shop</span></nav></div><p>Shop</p></div>
       </section>
       <section class="shop-listing-template">
         <div class="container-nevo">
@@ -335,11 +333,17 @@ ${head('Shop | Amanah Saais', 'Shop page for Arcane du Beltah: Island Nights boo
 </body>
 </html>`;
 
+const booksHtml = shopHtml
+  .replace('<title>Shop | Amanah Saais</title>', '<title>Books | Amanah Saais</title>')
+  .replace('<h1>Shop</h1>', '<h1>Books</h1>')
+  .replace('<span>Shop</span></nav>', '<span>Books</span></nav>')
+  .replace('<p>Shop</p></div>', '<p>Explore the collection</p></div>');
+
 const podcastHtml = String.raw`<!doctype html>
 <html lang="en">
 ${head('Podcast | Amanah Saais', 'A minimal podcast page for Amanah Saais, featuring book notes and conversations behind Amanah Books.', '/amanah-saais-author-fast.webp')}
 <body>
-  <main class="site-shell aver-home podcast-template-page">
+  <main id="amanah-site" class="site-shell aver-home podcast-template-page">
     ${header(false)}
     ${motionScript}
     <div class="content-frame">
@@ -373,6 +377,8 @@ const css = `*{box-sizing:border-box}:root{--font-lato:Lato,Arial,Helvetica,sans
 
 await mkdir('vercel-static/about', { recursive: true });
 await mkdir('vercel-static/shop', { recursive: true });
+await mkdir('vercel-static/books', { recursive: true });
+await writeFile('vercel-static/books/index.html', booksHtml);
 await mkdir('vercel-static/shop/book-one', { recursive: true });
 await mkdir('vercel-static/shop/book-two', { recursive: true });
 await mkdir('vercel-static/podcast', { recursive: true });
@@ -404,7 +410,7 @@ await cp('public/island-nights-movie-part-two-wide-fast.webp', 'vercel-static/is
 await cp('public/island-nights-movie-wide.jpg', 'vercel-static/island-nights-movie-wide.jpg');
 await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.png');
 await cp('public/amanah-saais-author-fast.webp', 'vercel-static/amanah-saais-author-fast.webp');
-await cp('public/amanah-signature-logo.png', 'vercel-static/amanah-signature-logo.png');
+await cp('public/amanah-signature-logo.webp', 'vercel-static/amanah-signature-logo.webp');
 await cp('public/favicon.svg', 'vercel-static/favicon.svg');
 await cp('public/amanah-monogram-icon.png', 'vercel-static/amanah-monogram-icon.png');
 await mkdir('vercel-static/excerpts', { recursive: true });

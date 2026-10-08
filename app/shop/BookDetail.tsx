@@ -4,15 +4,15 @@ type Book = (typeof books)[number];
 
 export default function BookDetail({ book }: { book: Book }) {
   return (
-    <main className="site-shell aver-home shop-template-page shop-detail-page min-h-screen">
+    <main id="amanah-site" className="site-shell aver-home shop-template-page shop-detail-page min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="/" aria-label="Amanah Saais home">
-          <img className="brand-logo" src="/amanah-signature-logo.png" alt="Amanah Saais" width={360} height={125} />
+          <img className="brand-logo" src="/amanah-signature-logo.webp" alt="Amanah Saais" width={360} height={125} />
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="/">Home</a>
           <a href="/about">About</a>
-          <a href="/#books">Books</a>
+          <a href="/books/">Books</a>
           <a href="/shop">Shop</a>
           <a href="/podcast">Podcast</a>
           <a href="/#contact">Contact</a>

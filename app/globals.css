@@ -10170,3 +10170,70 @@ body,
 @media(prefers-reduced-motion:reduce) {
   .aver-home.author-home .author-name,.author-disciplines span { animation:none; opacity:1; transform:none; filter:none; }
 }
+
+/* Monochrome surfaces and compact, left-aligned page banners. */
+html,body { background:#fff !important; }
+#amanah-site,#amanah-site .content-frame { background:#fff !important; color:#171717; }
+#amanah-site section { background:#fff !important; background-image:none !important; color:#171717 !important; }
+#amanah-site section::before,#amanah-site section::after { background-image:none !important; }
+#amanah-site .author-hero,#amanah-site .page-banner,#amanah-site .work-process-section,#amanah-site .footer-nevo { background:#171717 !important; color:#fff !important; }
+#amanah-site .author-hero,#amanah-site .page-banner { min-height:0 !important; padding:190px 0 82px !important; border-radius:0 0 20px 20px; }
+#amanah-site .author-hero { display:block; padding:175px 0 72px !important; }
+#amanah-site .author-identity { width:calc(100% - 96px); max-width:1264px; margin:0 auto; text-align:left; }
+#amanah-site .author-name { margin:0; line-height:1; }
+#amanah-site .hero-signature { display:block; width:clamp(240px,32vw,480px); height:auto; max-height:170px; object-fit:contain; object-position:left; filter:brightness(0) invert(1); }
+#amanah-site .author-disciplines { justify-content:flex-start; color:#fff; margin-top:24px; font-size:14px; letter-spacing:.2em; }
+#amanah-site .page-banner::before,#amanah-site .page-banner::after,#amanah-site .banner-watermark { display:none !important; }
+#amanah-site .page-banner-inner { min-height:0 !important; padding:0 !important; text-align:left !important; align-items:end !important; display:flex !important; justify-content:space-between !important; gap:32px; }
+#amanah-site .page-banner-inner > div { text-align:left !important; }
+#amanah-site .page-banner h1 { color:#fff !important; font-size:clamp(38px,4.2vw,66px) !important; line-height:1.15 !important; margin:0 0 28px !important; max-width:960px; }
+#amanah-site .page-banner-inner > p { color:#c9c9c9 !important; font-size:24px !important; margin:0 !important; }
+#amanah-site .page-breadcrumb { justify-content:flex-start !important; color:#c9c9c9 !important; }
+#amanah-site .page-breadcrumb a { color:#fff !important; }
+#amanah-site .site-header { background:#171717 !important; padding:24px 48px !important; }
+#amanah-site .brand-logo { filter:brightness(0) invert(1) !important; }
+#amanah-site .main-menu { background:#171717 !important; border-color:#444 !important; }
+#amanah-site .main-menu a,#amanah-site .social-links-mini,#amanah-site .social-links-mini a { color:#fff !important; }
+#amanah-site .main-menu a:hover,#amanah-site .main-menu a:focus-visible,#amanah-site .main-menu a.is-active { background:#333 !important; color:#fff !important; border-radius:30px; }
+#amanah-site .main-menu::before { background:#333 !important; }
+#amanah-site .social-links-mini a:hover { color:#fff !important; text-decoration:underline; }
+#amanah-site .catalogue-frame,#amanah-site .shop-detail-cover { background:#f1f1f1 !important; }
+#amanah-site .landing-books::before,#amanah-site .landing-books::after { display:none !important; }
+#amanah-site .landing-books h2,#amanah-site .shop-detail-copy h2,#amanah-site .shop-price-row strong { color:#171717 !important; }
+#amanah-site .shop-price-row em { color:#595959 !important; }
+#amanah-site .coming-soon-badge { background:#fff !important; color:#171717 !important; border-color:#aaa !important; }
+#amanah-site :is(.button,.button-dark,.button-outline,.about-intro-button,.shop-mini-actions a,.sample-hover) { background:#171717 !important; color:#fff !important; border:1px solid #171717 !important; }
+#amanah-site :is(.button,.button-dark,.button-outline,.about-intro-button,.shop-mini-actions a,.sample-hover):is(:hover,:focus-visible) { background:#fff !important; color:#171717 !important; border-color:#171717 !important; }
+#amanah-site :is(.button,.button-dark,.button-outline,.about-intro-button,.shop-mini-actions a,.sample-hover) * { color:inherit !important; }
+#amanah-site :is(.button,.button-dark,.button-outline,.about-intro-button)::before,#amanah-site :is(.button,.button-dark,.button-outline,.about-intro-button)::after { display:none !important; }
+#amanah-site .footer-nevo :is(.button,.button-dark),#amanah-site .work-process-section .button { border-color:#fff !important; }
+#amanah-site .footer-nevo a:hover { color:#fff !important; text-decoration:underline; }
+#amanah-site .footer-nevo :is(.button,.button-dark):hover { color:#171717 !important; }
+#amanah-site a:focus-visible,#amanah-site button:focus-visible { outline:3px solid #777 !important; outline-offset:4px; }
+#amanah-site .shop-blog-meta span,#amanah-site .journal-meta span { background:#eee !important; color:#171717 !important; }
+#amanah-site .about-service-grid article,#amanah-site .podcast-card,#amanah-site .quick-read-panel { background:#f5f5f5 !important; color:#171717 !important; }
+#amanah-site .work-process-section :is(h2,h3,p,span),#amanah-site .footer-nevo :is(h2,h3,p,span,strong) { color:#fff !important; }
+#amanah-site .about-intro-template :is(h2,h3,p),#amanah-site .about-services-template :is(h2,h3,p),#amanah-site .about-quote-template :is(h2,h3,p),#amanah-site .podcast-blog-template :is(h2,h3,p) { color:#171717 !important; }
+#amanah-site .about-service-grid article:hover { background:#e8e8e8 !important; }
+#amanah-site .podcast-card:hover { background:#e8e8e8 !important; }
+@media(max-width:900px) {
+  #amanah-site .site-header { padding:18px 24px !important; }
+  #amanah-site .author-hero,#amanah-site .page-banner { padding-top:200px !important; padding-bottom:56px !important; }
+  #amanah-site .author-identity { width:calc(100% - 48px); }
+  #amanah-site .page-banner-inner { align-items:flex-start !important; }
+  #amanah-site .page-banner-inner > p { font-size:18px !important; }
+}
+@media(max-width:520px) {
+  #amanah-site .page-banner-inner { flex-direction:column !important; gap:20px; }
+  #amanah-site .page-banner h1 { font-size:38px !important; }
+  #amanah-site .hero-signature { width:280px; max-width:100%; }
+  #amanah-site .author-disciplines { font-size:10px; gap:9px; }
+}
+#amanah-site .page-banner-inner { width:calc(100% - 96px) !important; max-width:1264px !important; margin-inline:auto !important; }
+#amanah-site .page-banner-inner > div { display:block !important; width:auto !important; flex:1; }
+#amanah-site .page-banner-inner h1,#amanah-site .page-banner-inner .page-breadcrumb { text-align:left !important; margin-left:0 !important; }
+#amanah-site .page-banner-inner > p { text-align:right !important; align-self:flex-end !important; }
+@media(max-width:900px) { #amanah-site .page-banner-inner { width:calc(100% - 48px) !important; } }
+@media(max-width:520px) { #amanah-site .page-banner-inner > p { text-align:left !important; align-self:flex-start !important; } }
+/* Switch foreground and background together so contrast stays readable during hover. */
+#amanah-site :is(.button,.button-dark,.button-outline,.about-intro-button,.shop-mini-actions a) { transition:transform 180ms ease !important; }

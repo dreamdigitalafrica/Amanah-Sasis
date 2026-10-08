@@ -1,7 +1,7 @@
-import BookCard from './BookCard';
-import { books, price, usdPrice } from './books';
+import BookCard from '../shop/BookCard';
+import { books, price, usdPrice } from '../shop/books';
 
-export default function ShopPage() {
+export default function BooksPage() {
   return (
     <main id="amanah-site" className="site-shell aver-home shop-template-page min-h-screen">
       <header className="site-header">
@@ -33,18 +33,18 @@ export default function ShopPage() {
       <div className="content-frame">
         <section className="page-banner shop-page-banner">
           <div className="banner-watermark" aria-hidden="true">
-            <span>Shop</span>
+            <span>Books</span>
           </div>
           <div className="container-nevo page-banner-inner page-banner-split">
             <div>
-              <h1>Shop</h1>
+              <h1>Books</h1>
               <nav className="page-breadcrumb" aria-label="Breadcrumb">
                 <a href="/">Home</a>
                 <span>•</span>
-                <span>Shop</span>
+                <span>Books</span>
               </nav>
             </div>
-            <p>Shop</p>
+            <p>Explore the collection</p>
           </div>
         </section>
 

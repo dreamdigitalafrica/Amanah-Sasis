@@ -27,15 +27,15 @@ const services = [
 
 export default function AboutPage() {
   return (
-    <main className="site-shell aver-home about-template-page min-h-screen">
+    <main id="amanah-site" className="site-shell aver-home about-template-page min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="/" aria-label="Amanah Saais home">
-          <img className="brand-logo" src="/amanah-signature-logo.png" alt="Amanah Saais" width={360} height={125} />
+          <img className="brand-logo" src="/amanah-signature-logo.webp" alt="Amanah Saais" width={360} height={125} />
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="/">Home</a>
           <a href="/about">About</a>
-          <a href="/#books">Books</a>
+          <a href="/books/">Books</a>
           <a href="/shop">Shop</a>
           <a href="/podcast">Podcast</a>
           <a href="/#contact">Contact</a>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 Arcane du Beltah: Island Nights is her debut novel and the first
                 installment in a series where mystery, destiny, and courage collide.
               </p>
-              <a className="about-intro-button" href="/#books">
+              <a className="about-intro-button" href="/books/">
                 <span aria-hidden="true">↻</span>
                 More Books
               </a>

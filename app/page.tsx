@@ -26,6 +26,7 @@ const initAverMotion = () => {
 
     const getActiveLink = () => {
       const path = window.location.pathname.replace(/\\/$/, '') || '/';
+      if (path.startsWith('/books')) return linkMatching((url) => url.pathname.startsWith('/books'));
       if (path.startsWith('/about')) return linkMatching((url) => url.pathname.startsWith('/about'));
       if (path.startsWith('/shop')) return linkMatching((url) => url.pathname.startsWith('/shop'));
       if (path.startsWith('/podcast')) return linkMatching((url) => url.pathname.startsWith('/podcast'));
@@ -37,10 +38,10 @@ const initAverMotion = () => {
         return linkMatching((url) => url.hash === '#contact');
       }
       if (books && books.getBoundingClientRect().top <= probeLine) {
-        return linkMatching((url) => url.hash === '#books');
+        return linkMatching((url) => url.pathname.startsWith('/books'));
       }
       if (window.location.hash === '#contact') return linkMatching((url) => url.hash === '#contact');
-      if (window.location.hash === '#books') return linkMatching((url) => url.hash === '#books');
+      if (window.location.hash === '#books') return linkMatching((url) => url.pathname.startsWith('/books'));
       return links[0];
     };
 
@@ -154,15 +155,15 @@ const notes = [
 
 export default function Home() {
   return (
-    <main className="site-shell aver-home author-home min-h-screen">
+    <main id="amanah-site" className="site-shell aver-home author-home min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="#home" aria-label="Amanah Saais home">
-          <img className="brand-logo" src="/amanah-signature-logo.png" alt="Amanah Saais" width={360} height={125} />
+          <img className="brand-logo" src="/amanah-signature-logo.webp" alt="Amanah Saais" width={360} height={125} />
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="#home">Home</a>
           <a href="/about">About</a>
-          <a href="#books">Books</a>
+          <a href="/books/">Books</a>
           <a href="/shop">Shop</a>
           <a href="/podcast">Podcast</a>
           <a href="#contact">Contact</a>
@@ -192,7 +193,7 @@ export default function Home() {
       <div className="content-frame">
         <section id="home" className="author-hero" aria-labelledby="author-name">
         <div className="author-identity">
-          <h1 id="author-name" className="author-name">Amanah Saais</h1>
+          <h1 id="author-name" className="author-name"><img className="hero-signature" src="/amanah-signature-logo.webp" alt="Amanah Saais" width={1200} height={420} /></h1>
           <p className="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span className="discipline-divider" aria-hidden="true">/</span><span>Novelist</span><span className="discipline-divider" aria-hidden="true">/</span><span>Writer</span></p>
         </div>
       </section>
@@ -209,7 +210,7 @@ export default function Home() {
             <div className="shop-blog-grid">{books.map((book, index) => <BookCard key={book.id} book={book} index={index} />)}</div>
 
             <div className="landing-center-action">
-              <a className="button" href="/shop">
+              <a className="button" href="/books/">
                 <span>All Books</span>
               </a>
             </div>
@@ -362,7 +363,7 @@ export default function Home() {
             </div>
           </div>
         </a>
-        <a className="button" href="#books">
+        <a className="button" href="/books/">
           <span>View Book</span>
         </a>
         <nav className="footer-social-links" aria-label="Social links">
