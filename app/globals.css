@@ -10287,3 +10287,21 @@ html,body { background:#fff !important; }
 #amanah-site .main-menu a.is-active {
   border-radius:999px !important;
 }
+
+/* White journal section with restrained ivory accents. */
+#amanah-site { --ivory-accent:#f3eadb; }
+#amanah-site.author-home .journal-section { background:#fff !important; color:#171717 !important; }
+#amanah-site.author-home .journal-section :is(h2,h3,h3 a),
+#amanah-site.author-home .journal-section .landing-section-head > span { color:#171717 !important; }
+#amanah-site.author-home .journal-section .journal-meta time { color:#595959 !important; }
+#amanah-site.author-home .journal-section .journal-card { background:#fff !important; }
+#amanah-site.author-home .journal-section .journal-meta span { background:var(--ivory-accent) !important; color:#29231c !important; }
+#amanah-site.author-home .journal-section .journal-card h3 a:hover { color:#57472f !important; text-decoration:underline; text-underline-offset:5px; }
+#amanah-site .coming-soon-badge { background:var(--ivory-accent) !important; color:#29231c !important; border-color:#c8bba5 !important; }
+#amanah-site.author-home .author-disciplines span { color:var(--ivory-accent); border-color:#f3eadb66; background:#f3eadb0d; }
+#amanah-site.author-home :is(.button,.button-dark,.button-outline,.shop-mini-actions a) { background:var(--ivory-accent) !important; color:#171717 !important; border-color:var(--ivory-accent) !important; }
+#amanah-site.author-home :is(.button,.button-dark,.button-outline,.shop-mini-actions a):is(:hover,:focus-visible) { background:#29252f !important; color:var(--ivory-accent) !important; border-color:var(--ivory-accent) !important; }
+#amanah-site .sample-hover { background:var(--ivory-accent) !important; color:#171717 !important; }
+#amanah-site .sample-hover:is(:hover,:focus-visible) { background:#171717 !important; color:var(--ivory-accent) !important; border-color:var(--ivory-accent) !important; }
+#amanah-site .main-menu a:is(:hover,:focus-visible,.is-active) { color:var(--ivory-accent) !important; }
+#amanah-site.author-home .footer-nevo :is(.button,.button-dark) * { color:inherit !important; }
