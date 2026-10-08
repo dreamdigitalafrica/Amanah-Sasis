@@ -10277,3 +10277,13 @@ html,body { background:#fff !important; }
   #amanah-site.author-home .author-disciplines { gap:8px; font-size:10px; margin-top:32px; }
   #amanah-site.author-home .author-disciplines span { padding:9px 12px; }
 }
+
+/* Keep the navigation highlight rounded in every row and interaction state. */
+#amanah-site .main-menu::before { display:none !important; }
+#amanah-site .main-menu a,
+#amanah-site .main-menu a:first-child,
+#amanah-site .main-menu a:hover,
+#amanah-site .main-menu a:focus-visible,
+#amanah-site .main-menu a.is-active {
+  border-radius:999px !important;
+}
