@@ -220,8 +220,8 @@ ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, s
     <div class="content-frame">
       <section id="home" class="author-hero" aria-labelledby="author-name">
         <div class="author-identity">
-          <h1 id="author-name" class="author-name"><img class="hero-signature" src="/amanah-signature-logo.webp" alt="Amanah Saais" width="1200" height="420" /></h1>
-          <p class="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span class="discipline-divider" aria-hidden="true">/</span><span>Novelist</span><span class="discipline-divider" aria-hidden="true">/</span><span>Writer</span></p>
+          <h1 id="author-name" class="author-name">Stories that stay.</h1>
+          <p class="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span>Novelist</span><span>Writer</span></p>
         </div>
       </section>
       <section id="books" class="landing-books section-size-2">

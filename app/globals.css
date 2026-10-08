@@ -10237,3 +10237,43 @@ html,body { background:#fff !important; }
 @media(max-width:520px) { #amanah-site .page-banner-inner > p { text-align:left !important; align-self:flex-start !important; } }
 /* Switch foreground and background together so contrast stays readable during hover. */
 #amanah-site :is(.button,.button-dark,.button-outline,.about-intro-button,.shop-mini-actions a) { transition:transform 180ms ease !important; }
+
+/* Continuous atmospheric landing background, inspired by the supplied reference. */
+#amanah-site.author-home { background:#161618 !important; }
+#amanah-site.author-home .content-frame {
+  background:radial-gradient(ellipse 90% 570px at 50% 310px,rgba(91,70,159,.78),transparent 100%),linear-gradient(180deg,#202026 0,#252039 430px,#161618 980px,#161618 100%) !important;
+  color:#fff !important;
+}
+#amanah-site.author-home .site-header { background:transparent !important; }
+#amanah-site.author-home .site-header.is-scrolled { background:rgba(22,22,24,.94) !important; }
+#amanah-site.author-home .main-menu { background:rgba(25,25,29,.72) !important; }
+#amanah-site.author-home section { background:transparent !important; color:#fff !important; }
+#amanah-site.author-home .author-hero {
+  display:flex !important; align-items:center; justify-content:center; min-height:860px !important;
+  padding:190px 32px 130px !important; border-radius:0; position:relative; overflow:hidden;
+}
+#amanah-site.author-home .author-hero::before {
+  content:''; display:block !important; position:absolute; inset:0; pointer-events:none; z-index:-1;
+  background:linear-gradient(90deg,transparent 46%,rgba(255,255,255,.02) 46%,rgba(255,255,255,.02) 51%,transparent 51%) !important;
+}
+#amanah-site.author-home .author-identity { width:100%; max-width:1200px; text-align:center; margin:0 auto; }
+#amanah-site.author-home .author-name { font-size:clamp(60px,8.8vw,132px); line-height:1.08; font-style:normal; letter-spacing:-.025em; color:#fff; }
+#amanah-site.author-home .author-disciplines { justify-content:center; gap:14px; margin:42px 0 0; font-size:13px; letter-spacing:.12em; }
+#amanah-site.author-home .author-disciplines span { padding:10px 19px; border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.05); border-radius:30px; }
+#amanah-site.author-home .landing-books { padding-top:60px !important; }
+#amanah-site.author-home .landing-books h2,#amanah-site.author-home .shop-price-row strong,#amanah-site.author-home .journal-section h2,#amanah-site.author-home .journal-card h3,#amanah-site.author-home .journal-card h3 a { color:#fff !important; }
+#amanah-site.author-home .shop-price-row em,#amanah-site.author-home .journal-meta time,#amanah-site.author-home .landing-section-head > span { color:#ccc !important; }
+#amanah-site.author-home .journal-card { background:transparent !important; }
+#amanah-site.author-home :is(.button,.button-dark,.button-outline,.shop-mini-actions a) { background:#fff !important; color:#171717 !important; border-color:#fff !important; }
+#amanah-site.author-home :is(.button,.button-dark,.button-outline,.shop-mini-actions a):is(:hover,:focus-visible) { background:#29252f !important; color:#fff !important; border-color:#fff !important; }
+#amanah-site.author-home .quote-section blockquote,#amanah-site.author-home .quote-section cite { color:#fff !important; }
+#amanah-site.author-home .contact-box { background:#202023 !important; color:#fff !important; }
+#amanah-site.author-home .contact-box :is(label,input,textarea) { color:#fff !important; }
+#amanah-site.author-home .contact-box :is(input,textarea) { background:#161618 !important; border-color:#777 !important; }
+#amanah-site.author-home .footer-nevo { background:#161618 !important; }
+@media(max-width:760px) {
+  #amanah-site.author-home .author-hero { min-height:720px !important; padding:210px 24px 110px !important; }
+  #amanah-site.author-home .author-name { font-size:clamp(54px,10vw,76px); }
+  #amanah-site.author-home .author-disciplines { gap:8px; font-size:10px; margin-top:32px; }
+  #amanah-site.author-home .author-disciplines span { padding:9px 12px; }
+}

@@ -193,8 +193,8 @@ export default function Home() {
       <div className="content-frame">
         <section id="home" className="author-hero" aria-labelledby="author-name">
         <div className="author-identity">
-          <h1 id="author-name" className="author-name"><img className="hero-signature" src="/amanah-signature-logo.webp" alt="Amanah Saais" width={1200} height={420} /></h1>
-          <p className="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span className="discipline-divider" aria-hidden="true">/</span><span>Novelist</span><span className="discipline-divider" aria-hidden="true">/</span><span>Writer</span></p>
+          <h1 id="author-name" className="author-name">Stories that stay.</h1>
+          <p className="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span>Novelist</span><span>Writer</span></p>
         </div>
       </section>
 
