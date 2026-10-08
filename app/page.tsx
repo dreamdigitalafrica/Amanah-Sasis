@@ -154,11 +154,10 @@ const notes = [
 
 export default function Home() {
   return (
-    <main className="site-shell aver-home min-h-screen">
+    <main className="site-shell aver-home author-home min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="#home" aria-label="Amanah Saais home">
-          <span className="brand-seal">AS</span>
-          <span>Amanah</span>
+          <img className="brand-logo" src="/amanah-signature-logo.png" alt="Amanah Saais" width={360} height={125} />
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="#home">Home</a>
@@ -191,22 +190,12 @@ export default function Home() {
       <script dangerouslySetInnerHTML={{ __html: motionScript }} />
 
       <div className="content-frame">
-        <section id="home" className="amanah-banner">
-          <div className="container-nevo">
-            <div className="banner-title hero-typewriter reveal-up">
-              <p className="eyebrow">Novelist / Writer / Poet</p>
-              <h1 aria-label="Stories that awaken faith, carry romance, hold mystery, and choose courage.">
-                <span className="typewriter-prefix">Stories that</span>
-                <span className="typewriter-words" aria-hidden="true">
-                  <span>awaken faith</span>
-                  <span>carry romance</span>
-                  <span>hold mystery</span>
-                  <span>choose courage</span>
-                </span>
-              </h1>
-            </div>
-          </div>
-        </section>
+        <section id="home" className="author-hero" aria-labelledby="author-name">
+        <div className="author-identity">
+          <h1 id="author-name" className="author-name">Amanah Saais</h1>
+          <p className="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span className="discipline-divider" aria-hidden="true">/</span><span>Novelist</span><span className="discipline-divider" aria-hidden="true">/</span><span>Writer</span></p>
+        </div>
+      </section>
 
         <section id="books" className="landing-books section-size-2">
           <div className="container-nevo">

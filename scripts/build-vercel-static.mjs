@@ -9,8 +9,8 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
   <meta property="og:image" content="${image}" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="/amanah-monogram-icon.png" />
+  <link rel="apple-touch-icon" href="/amanah-monogram-icon.png" />
   <link rel="preload" as="image" href="/amanah-saais-author-fast.webp" />
   <link rel="preload" as="image" href="/island-nights-book-one-mockup-fast.webp" />
   <link rel="preload" as="image" href="/island-nights-book-two-mockup-fast.webp" />
@@ -21,7 +21,7 @@ const head = (title, description, image = '/island-nights-cover.jpg') => String.
 </head>`;
 
 const header = (home = false) => String.raw`<header class="site-header">
-  <a class="brand-mark" href="${home ? '#home' : '/'}" aria-label="Amanah Saais home"><span class="brand-seal">AS</span><span>Amanah</span></a>
+  <a class="brand-mark" href="${home ? '#home' : '/'}" aria-label="Amanah Saais home"><img class="brand-logo" src="/amanah-signature-logo.png" alt="Amanah Saais" width="360" height="125" /></a>
   <nav class="main-menu" aria-label="Primary">
     <a href="${home ? '#home' : '/'}">Home</a>
     <a href="/about/">About</a>
@@ -216,16 +216,14 @@ const homeHtml = String.raw`<!doctype html>
 <html lang="en">
 ${head('Amanah Saais | About the Author', 'About Amanah Saais, novelist, poet, storyteller, and author of Arcane du Beltah: Island Nights.')}
 <body>
-  <main class="site-shell aver-home">
+  <main class="site-shell aver-home author-home">
     ${header(true)}
     ${motionScript}
     <div class="content-frame">
-      <section id="home" class="amanah-banner">
-        <div class="container-nevo">
-          <div class="banner-title hero-typewriter reveal-up">
-            <p class="eyebrow">Novelist / Writer / Poet</p>
-            <h1 aria-label="Stories that awaken faith, carry romance, hold mystery, and choose courage."><span class="typewriter-prefix">Stories that</span><span class="typewriter-words" aria-hidden="true"><span>awaken faith</span><span>carry romance</span><span>hold mystery</span><span>choose courage</span></span></h1>
-          </div>
+      <section id="home" class="author-hero" aria-labelledby="author-name">
+        <div class="author-identity">
+          <h1 id="author-name" class="author-name">Amanah Saais</h1>
+          <p class="author-disciplines" aria-label="Poet, Novelist, Writer"><span>Poet</span><span class="discipline-divider" aria-hidden="true">/</span><span>Novelist</span><span class="discipline-divider" aria-hidden="true">/</span><span>Writer</span></p>
         </div>
       </section>
       <section id="books" class="landing-books section-size-2">
@@ -406,8 +404,9 @@ await cp('public/island-nights-movie-part-two-wide-fast.webp', 'vercel-static/is
 await cp('public/island-nights-movie-wide.jpg', 'vercel-static/island-nights-movie-wide.jpg');
 await cp('public/amanah-saais-author.png', 'vercel-static/amanah-saais-author.png');
 await cp('public/amanah-saais-author-fast.webp', 'vercel-static/amanah-saais-author-fast.webp');
+await cp('public/amanah-signature-logo.png', 'vercel-static/amanah-signature-logo.png');
 await cp('public/favicon.svg', 'vercel-static/favicon.svg');
-await cp('public/favicon.png', 'vercel-static/favicon.png');
+await cp('public/amanah-monogram-icon.png', 'vercel-static/amanah-monogram-icon.png');
 await mkdir('vercel-static/excerpts', { recursive: true });
 await cp('public/excerpts/arcane-du-beltah-book-one-excerpt.pdf', 'vercel-static/excerpts/arcane-du-beltah-book-one-excerpt.pdf');
 await cp('public/excerpts/arcane-du-beltah-book-two-excerpt.pdf', 'vercel-static/excerpts/arcane-du-beltah-book-two-excerpt.pdf');

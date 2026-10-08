@@ -30,8 +30,7 @@ export default function AboutPage() {
     <main className="site-shell aver-home about-template-page min-h-screen">
       <header className="site-header">
         <a className="brand-mark" href="/" aria-label="Amanah Saais home">
-          <span className="brand-seal">AS</span>
-          <span>Amanah</span>
+          <img className="brand-logo" src="/amanah-signature-logo.png" alt="Amanah Saais" width={360} height={125} />
         </a>
         <nav className="main-menu" aria-label="Primary">
           <a href="/">Home</a>

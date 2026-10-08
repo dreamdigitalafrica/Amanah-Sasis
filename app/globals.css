@@ -10103,3 +10103,70 @@ body,
 .aver-home .landing-books .catalogue-card .shop-price-row em { color:#d3c7bc; }
 .aver-home .landing-books .catalogue-card .shop-mini-actions a { background:#f2e5d4; color:#30231e; border-color:#f2e5d4; }
 .aver-home .landing-books .catalogue-card .shop-mini-actions a:hover { background:#dac3a6; color:#30231e; }
+
+/* Signature logo asset. */
+.aver-home .brand-mark {
+  align-items: center !important;
+  display: inline-flex !important;
+  height: 68px !important;
+  letter-spacing: 0 !important;
+  max-width: clamp(150px, 14vw, 230px) !important;
+}
+
+.aver-home .brand-logo {
+  display: block !important;
+  filter: brightness(0) invert(1) !important;
+  height: auto !important;
+  max-height: 68px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  width: 100% !important;
+}
+
+@media (max-width: 760px) {
+  .aver-home .brand-mark {
+    height: 42px !important;
+    max-width: 136px !important;
+  }
+
+  .aver-home .brand-logo {
+    max-height: 42px !important;
+  }
+}
+
+/* Warm author introduction, sequenced name then disciplines. */
+.aver-home.author-home .author-hero {
+  min-height:90svh; display:flex; align-items:center; justify-content:center;
+  padding:200px 24px 120px; position:relative; isolation:isolate;
+  background:radial-gradient(ellipse at 50% 34%,#fff9ee 0%,#f5e3d2 45%,transparent 78%),linear-gradient(125deg,#e7c9b7,#f4dfce 48%,#d9b6a3);
+  color:#482513; overflow:hidden;
+}
+.aver-home.author-home .author-identity { width:100%; max-width:1550px; text-align:center; }
+.aver-home.author-home .author-name {
+  color:#482513; font-family:Melodrama,Georgia,'Times New Roman',serif; font-size:clamp(58px,11.8vw,194px);
+  font-style:italic; font-weight:400; line-height:1.12; letter-spacing:-.035em; margin:0;
+  animation:authorNameReveal 1100ms cubic-bezier(.2,.65,.3,1) 100ms both;
+}
+.aver-home.author-home .author-disciplines {
+  display:flex; justify-content:center; align-items:center; gap:clamp(12px,1.8vw,30px); margin:32px 0 0;
+  font-family:Lato,Arial,sans-serif; font-size:clamp(12px,1.65vw,27px); font-weight:400;
+  letter-spacing:.28em; line-height:1.6; text-transform:uppercase; color:#482513;
+}
+.author-disciplines span { animation:authorRoleReveal 700ms ease-out 1250ms both; }
+.author-disciplines span:nth-child(2) { animation-delay:1400ms; }
+.author-disciplines span:nth-child(3) { animation-delay:1550ms; }
+.author-disciplines span:nth-child(4) { animation-delay:1700ms; }
+.author-disciplines span:nth-child(5) { animation-delay:1850ms; }
+@keyframes authorNameReveal { from { opacity:0; transform:translateY(20px); filter:blur(5px); } to { opacity:1; transform:none; filter:blur(0); } }
+@keyframes authorRoleReveal { from { opacity:0; transform:translateY(9px); } to { opacity:1; transform:none; } }
+.aver-home.author-home .site-header:not(.is-scrolled) .brand-logo { filter:none !important; }
+.aver-home.author-home .site-header:not(.is-scrolled) .social-links-mini { color:#482513 !important; }
+.aver-home.author-home .site-header:not(.is-scrolled) .social-links-mini a { color:#482513 !important; }
+@media(max-width:760px) {
+  .aver-home.author-home .author-hero { min-height:85svh; padding:220px 20px 100px; }
+  .aver-home.author-home .author-name { font-size:clamp(50px,12vw,90px); }
+  .aver-home.author-home .author-disciplines { gap:10px; letter-spacing:.15em; font-size:clamp(10px,2.5vw,16px); margin-top:24px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .aver-home.author-home .author-name,.author-disciplines span { animation:none; opacity:1; transform:none; filter:none; }
+}
