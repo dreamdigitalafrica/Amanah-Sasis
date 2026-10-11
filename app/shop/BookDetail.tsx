@@ -70,10 +70,13 @@ export default function BookDetail({ book }: { book: Book }) {
               <div className="shop-listing-actions">
                 {book.comingSoon ? <div className="preorder-pending"><button className="button-dark" disabled>Preorder coming soon</button><p>Preorders are not open yet.</p></div> : <>
                 <a className="button-dark" href={book.paystackUrl} target="_blank" rel="noreferrer">
-                  <span>Buy with Paystack</span>
+                  <span>Buy on Paystack</span>
                 </a>
+                {book.selarUrl && <a className="button-outline" href={book.selarUrl} target="_blank" rel="noreferrer">
+                  Buy on Selar
+                </a>}
                 <a className="button-outline" href={book.amazonUrl} target="_blank" rel="noreferrer">
-                  Buy from Amazon
+                  Buy on Amazon
                 </a></>}
               </div>
             </article>

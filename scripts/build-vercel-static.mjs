@@ -200,7 +200,7 @@ ${head(`${book.title} ${book.subtitle} | Amanah Saais Shop`, `${book.title} by A
             <h2>${book.subtitle}</h2>
             <p>${book.description}</p>
             <div class="shop-price-row"><strong>${bookPrice}</strong><em>${bookUsdPrice}</em></div>
-            ${book.comingSoon ? '<div class="preorder-pending"><button class="button-dark" disabled>Preorder coming soon</button><p>Preorders are not open yet.</p></div>' : `<div class="shop-listing-actions"><a class="button-dark" href="${book.paystackUrl}" target="_blank" rel="noreferrer"><span>Buy with Paystack</span></a><a class="button-outline" href="${book.amazonUrl}" target="_blank" rel="noreferrer">Buy from Amazon</a></div>`}
+            ${book.comingSoon ? '<div class="preorder-pending"><button class="button-dark" disabled>Preorder coming soon</button><p>Preorders are not open yet.</p></div>' : `<div class="shop-listing-actions"><a class="button-dark" href="${book.paystackUrl}" target="_blank" rel="noreferrer"><span>Buy on Paystack</span></a>${book.selarUrl ? `<a class="button-outline" href="${book.selarUrl}" target="_blank" rel="noreferrer">Buy on Selar</a>` : ''}<a class="button-outline" href="${book.amazonUrl}" target="_blank" rel="noreferrer">Buy on Amazon</a></div>`}
           </article>
         </div>
         ${book.pdf ? `<div id="sample" class="container-nevo quick-read-panel"><div><span>Ebook preview</span><h3>Read sample</h3></div><a class="button-dark" href="${book.pdf}" target="_blank" rel="noreferrer"><span>Read sample</span></a></div>` : ''}
