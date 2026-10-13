@@ -29,9 +29,9 @@ export const books = [
     description: 'Part Two carries the story into a more dangerous and intimate chapter, where every answer opens another door and every bond is tested by what the island refuses to reveal.',
     excerpt: 'Above the bridge, the sky was split between storm and gold. She could feel the island below her, breathing through towers, water, and prayer. Somewhere ahead, the next truth waited, but it would not come gently.',
     pdf: '/excerpts/arcane-du-beltah-book-two-excerpt.pdf',
-    amazonUrl: 'https://www.amazon.com/Arcane-Du-Beltah-Amanah-Sasis-ebook/dp/B0HDR1H55S/ref=sr_1_3?dib=eyJ2IjoiMSJ9.CxCcJFU2nLDFWZ2y_I1hqt7NGVOxQKQE5e9FNjHkx8HGjHj071QN20LucGBJIEps.65QKABuPNIYRwg-3CRjFSNIvAWT9oggMjGC0GQgg_RY&dib_tag=se&keywords=arcane+du+beltah+book&qid=1790701568&sr=8-3',
-    paystackUrl: 'https://paystack.shop/pay/pzgls2hyaw',
-    selarUrl: 'https://selar.com/6z76263466',
+    amazonUrl: 'https://www.amazon.com/Arcane-Du-Beltah-Island-Nights-ebook/dp/B0HJ7719YF/ref=sr_1_1?crid=1W25SBUWUXK92&dib=eyJ2IjoiMSJ9.udP2G7HJzbfqH8tp0nwavQ.3YOMUBl4pE3eQTXSTwz52Tzeoq2DjFAXGoaHaF6lYns&dib_tag=se&keywords=arcane+du+beltah+book+two&qid=1791874666&sprefix=arcane+du+beltah+book+two%2Caps%2C280&sr=8-1',
+    paystackUrl: 'https://paystack.shop/pay/upo8hau6f1',
+    selarUrl: 'https://selar.com/655y47s48q',
   },{"id": "the-she-wolf-breathes", "href": "/shop/the-she-wolf-breathes/", "volume": "The She-Wolf Breathes", "category": "Ebook", "date": "", "image": "/the-she-wolf-breathes-original.webp", "title": "The She-Wolf Breathes", "subtitle": "Ebook", "description": "The She-Wolf Breathes by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true},
 {"id": "storm-kissed", "href": "/shop/storm-kissed/", "volume": "Storm Kissed", "category": "Ebook", "date": "", "image": "/storm-kissed-original.webp", "title": "Storm Kissed", "subtitle": "Ebook", "description": "Storm Kissed by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true},
 {"id": "hellflames", "href": "/shop/hellflames/", "volume": "Hellflames", "category": "Ebook", "date": "", "image": "/hellflames-original.webp", "title": "Hellflames", "subtitle": "Ebook", "description": "Hellflames by Amanah Saais. Coming soon as an Ebook.", "excerpt": "", "pdf": "", "amazonUrl": "", "paystackUrl": "", "comingSoon": true}
